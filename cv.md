@@ -15,3 +15,18 @@ I am proficient in the C# programming language and am also learning GO, C++, and
 First HTML project:
 [GitHub-Project](https://github.com/ArtemSharov11/Test/blob/main/HTML%20Site)
 
+Education
+Currently studying at Belarusian-Russian University. Expected graduation: 2028. Focus on software development and information systems
+
+Contacts
+Email: artshar977@email.com
+Telegram: @nov4nov4
+Viber: +375 29 179 73 63
+VKontakte: @sharikstrongs
+Phone: +375 29 179 73 63
+BRU website: (http://bru.by/)
+
+Languages
+
+Deutch: Completed a basic course of German at the level of complete secondary education
+English: I am studying English
