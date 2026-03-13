@@ -30,3 +30,17 @@ Currently studying at Belarusian-Russian University. Expected graduation: 2028. 
 
 1. **Deutch**: Completed a basic course of German at the level of complete secondary education
 2. **English**: I am studying English
+
+```
+static bool SearchProduct(Product[] products, int id)
+{
+    for (int i = 0; i < products.Length; i++)
+    {
+        if (products[i].id == id)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+```
