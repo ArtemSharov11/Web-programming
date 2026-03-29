@@ -194,6 +194,149 @@ body {
     box-sizing: border-box; 
 }
 
+.phones-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    margin-bottom: 5rem;
+}
+
+.phones-header__title {
+    margin: 0;
+    max-width: 38rem;
+    text-align: left;
+}
+
+.phones-header__title h2 {
+    margin: 0;
+}
+
+.phones-header__subtitle {
+    max-width: 30rem;
+    padding: 0 0 0 6.2rem;
+    text-align: left;
+}
+
+.phones-header__subtitle p {
+    margin: 0;
+}
+
+.phones-grid {
+    display: grid;  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.7rem 3.875rem;  
+}
+
+.phone-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.phone-card__image-wrapper {
+    width: 100%;
+    max-width: 38.75rem;  
+    height: 29.0625rem;   
+    padding: 0;
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.phone-card__image {
+    width: 17.125rem;      
+    height: 29.0625rem;    
+    object-fit: contain;
+    display: block;
+}
+
+.phone-card .phone-card__title {
+    margin: 1.2rem 0;
+}
+
+.phone-card__text {
+    margin: 0;         
+    max-width: 37rem;     
+    text-align: center;
+}
+
+/* 2 коммит */
+
+.phones-info {
+    width: 100%;
+    max-width: 51rem;    
+    margin: 25.2rem auto 12.3rem;    
+    text-align: center;     
+}
+
+.phones-info__text {
+    margin: 0;
+    text-align: center;  
+    display: block;
+}
+.phones-info__text--offset {
+    padding-top: 6.1rem;    
+}
+
+/*3 комит */
+
+.content-cards-section {
+    width: 100%;
+    margin-bottom: 6.5rem;
+    background-color: #FFFFFF;
+}
+
+.content-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.7rem 3.875rem;  
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    text-align: left;
+}
+
+.content-card__image-wrapper {
+    width: 100%;
+    max-width: 38.75rem; 
+    height: 31rem;    
+    background-color: #F1F1F1;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.content-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    display: block;
+}
+
+.content-card .content-card__title {
+    margin: 1.1rem 0 1rem 0;
+    text-align: left; 
+    max-width: 37rem;  
+}
+
+.content-card__text {
+    max-width: 38rem;   
+    text-align: left;
+}
+
+
 .text-body-gray-30 {
     font-size: 1.32rem;
     font-weight: 400;
