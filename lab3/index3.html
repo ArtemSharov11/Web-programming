@@ -21,15 +21,22 @@
         <section class="core-section" aria-label="Главный баннер">
             <img src="img/hero-photo.png" alt="" class="core-section__photo">
             
+            <section class="hero-text" aria-label="Основной заголовок">
+                <h1 class="hero-text__title">
+                    Все услуги вашего отеля сразу в телефоне гостя. Без установок.
+                </h1>
+            </section>
+            
             <aside class="qr-code" aria-label="QR-код для демо">
                 <img src="img/qr-code.png" alt="QR-код" class="qr-code__image">
                 <section class="qr-code__text" aria-label="Текст о демо">
                     <p class="qr-code__title">Попробуйте демо</p>
                     <p class="qr-code__description">Наведите камеру <br>смартфона на QR-код</p>
+                    <img src="img/smile-icon.png" alt="" class="qr-code__smile" aria-hidden="true">
                 </section>
-            </aside>
-            
+            </aside>     
         </section>
+
         <section class="features-section" aria-label="Преимущества">
             <section class="features-grid features-grid--2-cols" aria-label="Список преимуществ">
                 <article class="features-card">
@@ -58,8 +65,7 @@
             </p>
         </section>
 
-        <!-- Секция: работает в браузере -->
-        <section aria-label="Работа в браузере">
+        <section>
             <section class="phones-header" aria-label="Заголовок секции">
                 <section class="phones-header__title" aria-label="Заголовок">
                     <h2 class="text-h2">
@@ -198,9 +204,49 @@
                 страницы подключения Wi-Fi.
             </p>
         </section>
+        
+        <section class="admin-section" aria-label="Админ панель">
+            <section class="admin-texts" aria-label="Текст об админке">
+                <h2 class="admin-title text-h2">
+                    Доступ ко всем заказам в ваших руках. Даже если вы не у ресепшн.
+                </h2>
+                <p class="admin-text text-body-gray-30">
+                    Единая админка позволяет управлять заказами гостей с компьютера и со смартфона. Новые уведомления приходят в Telegram-бот. Вы не пропустите их, даже если на ресепшн никого нет.
+                </p>
+            </section>
+            <figure class="admin-image">
+                <img src="img/admin-panel.png" alt="Панель администратора" class="admin-image__photo">
+            </figure>
+        </section>
 
+        <section class="phones-header" aria-label="Заголовок секции">
+            <section class="phones-header__title" aria-label="Заголовок">
+                <h2 class="text-h2">
+                    Адаптируется под фирменный стиль отеля
+                </h2>
+            </section>
+            <section class="phones-header__subtitle" aria-label="Подзаголовок">
+                <p class="text-body-gray-30">
+                    Неограниченные возможности кастомизации и полное соответствие фирменному стилю бренда отеля
+                </p>
+            </section>
+        </section>
 
+        <section class="phones-showcase" aria-label="Витрина телефонов">
+            <section class="phones-showcase__background" aria-label="Фон витрины">
+                <article class="showcase-phone showcase-phone--left" aria-label="Holiday Inn">
+                    <img src="img/phone1.png" alt="Holiday Inn" class="showcase-phone__image">
+                </article>
+                
+                <article class="showcase-phone showcase-phone--center" aria-label="Park Inn">
+                    <img src="img/phone2.png" alt="Park Inn" class="showcase-phone__image">
+                </article>
+                
+                <article class="showcase-phone showcase-phone--right" aria-label="Mövenpick">
+                    <img src="img/phone3.png" alt="Mövenpick" class="showcase-phone__image">
+                </article>
+            </section>
+        </section>
     </main>
-
 </body>
 </html>

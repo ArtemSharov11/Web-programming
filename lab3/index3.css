@@ -24,8 +24,9 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 85.125rem;
-    margin: 0 auto;
+    max-width: 85.125rem; 
+    margin: 0 auto;        
+    padding: 0 1.875rem; 
     height: 5.3125rem;
     background-color: #FFFFFF;
     z-index: 1000;
@@ -37,35 +38,61 @@ body {
 
 .logo {
     position: absolute;
-    left: 1.25rem;
+    left: 1.4rem;
     top: 1.0625rem;
     width: 12.5rem;
     height: 1.875rem;
     object-fit: contain;
 }
 
-    .btn-connect {
-        position: absolute;
-        left: 69.3125rem;
-        top: 0.75rem;
-        width: 12.75rem;
-        height: 2.4375rem;
-        padding: 0;
-        background-color: #000000;
-        border: none;
-        border-radius: 1.875rem;
-        color: #FFFFFF;
-        font-size: 0.875rem;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-sizing: border-box;
-    }
+.btn-connect {
+    position: absolute;
+    right: 3rem;
+    top: 0.75rem;
+    width: 12.75rem;
+    height: 2.4375rem;
+    padding: 0;
+    background-color: #000000;
+    border: none;
+    border-radius: 1.875rem;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
 
 .btn-connect:hover {
     background-color: #333333;
+}
+
+.hero-text {
+    position: absolute; 
+    left: 2.7rem;        
+    top: 5rem;     
+    max-width: 40rem;
+    text-align: left;
+}
+
+.hero-text__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.03;
+    color: #FFFFFF;
+    margin: 0;
+    max-width: 40rem;
+    text-align: left;
+}
+
+.qr-code__smile {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: -0.9rem 0 0 1rem;
+    object-fit: contain;
+    opacity: 0.9;
 }
 
 .core-section {
@@ -79,8 +106,9 @@ body {
 
 .core-section__photo {
     display: block;
-    width: 80.875rem;
-    height: 45rem;
+    width: 100%;
+    max-width: 80.875rem;
+    height: auto;
     object-fit: cover;
 }
 
@@ -89,13 +117,11 @@ body {
     left: 2rem;
     top: 41rem;
     display: flex;
-    gap: 0.75rem;
 }
 
 .qr-code__image {
     width: 6.875rem;
     height: 6.875rem;
-    margin-right: 0.7rem;
     display: block;
 }
 
@@ -103,11 +129,10 @@ body {
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
 }
 
 .qr-code__title {
-    margin: 0;
+    margin: -0.4rem 0 0.5rem 1.4rem;
     font-size: 1.6rem;
     white-space: nowrap;
 }
@@ -119,11 +144,11 @@ body {
 }
 
 .qr-code__description {
-    margin: 0;
-    font-size: 1.4rem;
+    margin: 0 0 0 1.4rem;
+    font-size: 1.35rem;
+    line-height: 1.4;
     opacity: 0.9;
 }
-
 
 .features-section {
     position: relative;
@@ -136,6 +161,7 @@ body {
     width: 100%;
     display: grid;
     gap: 2.5rem;
+    grid-auto-rows: 1fr;
 }
 
 .features-grid--2-cols {
@@ -148,7 +174,6 @@ body {
 
 .features-card {
     padding: 4rem 2.5rem;
-    min-height: 25rem;
     background-color: #FFFFFF;
     border: 1px solid #E5E5E5;
     border-radius: 1.25rem;
@@ -193,6 +218,7 @@ body {
     text-align: left;
     box-sizing: border-box; 
 }
+
 
 .phones-header {
     display: grid;
@@ -335,6 +361,92 @@ body {
     max-width: 38rem;   
     text-align: left;
 }
+
+
+
+.admin-section {
+    width: 100%;
+    height: 45rem;
+    margin-bottom: 4.7rem;
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.admin-texts {
+    grid-column: 1;
+    margin: 8.5rem 0 0 1.4rem;
+}
+
+.admin-section .admin-texts .admin-title {
+    margin: 0;
+    max-width: 30rem;   
+    text-align: center;
+}
+
+.admin-section .admin-texts .admin-text {
+    margin: 4rem 0 0 0;
+    max-width: 30rem; 
+    line-height: 1.4;
+    text-align: center; 
+}
+
+.admin-image {
+    grid-column: 2;
+    margin: 4.9rem 0 0 0;
+    justify-self: end;
+}
+
+.admin-image__photo {
+    width: 31.25rem;
+    height: 37.75rem;
+    display: block;
+    object-fit: contain;
+}
+ 
+
+.phones-showcase {
+    width: 100%;
+    max-width: 80.875rem;
+    margin: 4rem auto 3.4rem 0;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.phones-showcase__background {
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    padding: 0 2rem 0.625rem; 
+    height: 43rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.5rem;
+}
+
+.showcase-phone {
+    flex-shrink: 0;
+}
+
+.showcase-phone--left,
+.showcase-phone--right {
+    margin-top: 4.6rem;
+}
+
+.showcase-phone--center {
+    margin-top: 0;
+}
+
+.showcase-phone__image {
+    width: 21.875rem;     
+    height: 42.375rem;
+    display: block;
+    object-fit: contain;
+}
+
+
 
 
 .text-body-gray-30 {
