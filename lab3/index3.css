@@ -70,12 +70,11 @@ body {
 }
 
 .hero-text {
-    position: absolute; 
-    left: 2.7rem;        
-    top: 5rem;     
     max-width: 40rem;
+    padding-left: 0.8rem;
     text-align: left;
 }
+
 
 .hero-text__title {
     font-size: 4.5rem;
@@ -83,17 +82,30 @@ body {
     line-height: 1.03;
     color: #FFFFFF;
     margin: 0;
-    max-width: 40rem;
-    text-align: left;
 }
 
 .core-section {
     position: relative;
     width: 100%;
-    padding-top: 5rem;
+    max-width: 85.125rem;
+    margin: 5rem auto 0 auto; 
+    padding: 0 0 0 2rem; 
+    background-image: url('img/hero-photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 45rem;
+    overflow: hidden;
     box-sizing: border-box;
+}
+
+.core-section__content {
+    position: relative;
+    min-height: 45rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .core-section__photo {
@@ -105,27 +117,19 @@ body {
     margin: 0 auto;
 }
 
-.qr-code__smile {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: -0.9rem 0 0 1rem;
-    object-fit: contain;
-    opacity: 0.9;
-}
-
 .qr-code {
-    position: absolute;
-    left: 2rem;
-    top: 41rem;
     display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    align-self: flex-start;
 }
 
 .qr-code__image {
     width: 6.875rem;
     height: 6.875rem;
     display: block;
+    flex-shrink: 0;
 }
-
 .qr-code__text {
     color: #FFFFFF;
     display: flex;
@@ -133,7 +137,7 @@ body {
 }
 
 .qr-code__title {
-    margin: -0.4rem 0 0.5rem 1.4rem;
+    margin: 0 0 0.5rem 0;
     font-size: 1.6rem;
     white-space: nowrap;
 }
@@ -145,9 +149,17 @@ body {
 }
 
 .qr-code__description {
-    margin: 0 0 0 1.4rem;
+    margin: 0;
     font-size: 1.35rem;
     line-height: 1.4;
+    opacity: 0.9;
+}
+
+.qr-code__smile {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0 0 -0.7rem;
+    object-fit: contain;
     opacity: 0.9;
 }
 
@@ -292,8 +304,6 @@ body {
     text-align: center;
 }
 
-/* 2 коммит */
-
 .phones-info {
     width: 100%;
     max-width: 51rem;    
@@ -309,8 +319,6 @@ body {
 .phones-info__text--offset {
     padding-top: 6.1rem;    
 }
-
-/*3 комит */
 
 .content-cards-section {
     width: 100%;
@@ -362,8 +370,6 @@ body {
     max-width: 38rem;   
     text-align: left;
 }
-
-
 
 .admin-section {
     width: 100%;
@@ -447,9 +453,6 @@ body {
     object-fit: contain;
 }
 
-
-
-
 .brands-section {
     width: 100%;
     margin-top: 7rem;
@@ -488,8 +491,6 @@ body {
 .brand-item__logo:hover {
     opacity: 1;
 }
-
-/* 6 комит */
 
 
 .pricing-section {
@@ -535,9 +536,6 @@ body {
     margin: 0 -1.2rem;
     width: 130%;
 }
-
-
-/* 7 комит */
 
 .tariffs-section {
     margin-top: 6rem;
@@ -744,6 +742,284 @@ body {
 
 .tariff-card--addons .tariff-card__title--inverse {
     color: #9EF01A !important;
+}
+
+.reviews-section {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.reviews-section__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.reviews-section__title {
+    margin: 0;
+}
+
+.reviews-section__arrows {
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 1.8rem 2.3rem 0 0;
+    gap: 4.6rem;
+}
+
+.reviews-section__arrow {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.review-card {
+    display: flex;
+    gap: 3.1rem;
+    align-items: flex-start;
+    margin-bottom: 5.3rem;
+}
+
+.review-card__photo {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.review-card__image {
+    width: 25.5rem; 
+    height: 29.6rem;
+    object-fit: cover;
+    border-radius: 1rem; 
+}
+
+.review-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+.review-card__text.text-banner {
+    max-width: 50rem;
+    margin-bottom: 1.4rem;
+}
+
+.review-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
+
+.review-card__name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0;
+}
+
+.review-card__position.text-body-gray-30 {
+    font-size: 1.2rem; 
+    line-height: 1.4;
+    margin: 0;
+}
+
+.reviews-grid-section {
+    width: 100%;
+    margin: -0.8rem 0 5rem 0;
+}
+
+.reviews-grid {
+    display: grid;  
+    grid-template-columns: repeat(3, 404px);
+    row-gap: 1.9rem;
+    column-gap: 2rem;
+}
+
+.reviews-columns {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.reviews-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    width: 404px;
+}
+
+.review-block {
+    background-color: #F5F5F5;
+    border-radius: 1.25rem;
+    padding: 1.9rem 0 0 1.9rem;
+    box-sizing: border-box;
+}
+
+.review-block__header {
+    display: flex;
+    margin-bottom: 0.9rem;
+    gap: 0.7rem;
+}
+
+.review-block__photo {
+    margin: 0;
+}
+
+.review-block__image {
+    object-fit: cover;
+}
+
+.review-block__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.6rem;
+}
+
+.review-block__name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #000000;
+    margin: 0;
+}
+
+.review-block__source {
+    height: 1.18rem; 
+    object-fit: contain;
+}
+
+.review-block__text.text-body-30 {
+    margin: 0;
+    max-width: 21.2rem;
+    line-height: 1.45;
+    width: 340px; 
+}
+
+.review-block--emilly {
+    height: 290px;
+}
+
+.review-block--margaret {
+    height: 350px;
+}
+
+.review-block--thomas {
+    height: 230px;
+}
+
+.review-block--christopher {
+    height: 290px;
+}
+
+.review-block--clare {
+    height: 290px;
+}
+
+.review-block--benedict {
+    height: 380px;
+}
+
+.faq-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    margin-bottom: 2.2rem;
+}
+
+.faq-header__title {
+    margin: 0;
+    max-width: 10rem;  
+    text-align: left;
+}
+
+.faq-header__title h2 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.faq-header__questions {
+    display: flex;
+    flex-direction: column; 
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0 0 0; 
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.faq-question:hover {
+    opacity: 0.7;
+}
+
+.faq-question:last-child {
+    border-bottom: none; 
+}
+
+
+.faq-question__arrow {
+    padding: 1rem 1.8rem 0 0;
+}
+
+.site-footer {
+    width: 100%;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.footer-cta {
+    width: 100%;
+    background-color: #9EF01A;
+    border-radius: 2rem;
+    padding: 0 0 6.2rem 0;
+    box-sizing: border-box;
+}
+
+.footer-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-cta__icon {
+    margin-top: 5rem;
+    margin-bottom: 0.6rem;
+}
+
+.footer-cta__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 0 0 4rem 0;
+    text-align: center;
+}
+
+.footer-cta__description.text-body-gray-30 {
+    max-width: 45rem;
+    margin-bottom: 2.7rem;
+    text-align: center;
+}
+
+.footer-cta__button {
+    padding: 1.2rem 4.7rem;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.site-footer__copyright {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #808080;
+    margin-top: 3.3rem;
+    text-align: center;
 }
 
 .text-body-gray-30 {

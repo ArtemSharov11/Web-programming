@@ -14,29 +14,33 @@
 <body>
 
     <header class="header">
-        <img src="img/Frame.svg" alt="HOTELA" class="logo">
+        <img src="img/Frame.svg" alt="" class="logo">
         <button type="button" class="btn-connect">Подключиться сейчас</button>
     </header>
 
     <main class="container">
 
-        <section class="core-section" aria-label="Главный баннер">
-            <img src="img/hero-photo.png" alt="" class="core-section__photo">
-            
-            <section class="hero-text" aria-label="Основной заголовок">
-                <h1 class="hero-text__title">
-                    Все услуги вашего отеля сразу в телефоне гостя. Без установок.
-                </h1>
+        <section class="core-section">
+    
+            <section class="core-section__content">
+                
+                <section class="hero-text">
+                    <h1 class="hero-text__title">
+                        Все услуги вашего отеля сразу в телефоне гостя. Без установок.
+                    </h1>
+                </section>
+                
+                <aside class="qr-code">
+                    <img src="img/qr-code.png" alt="" class="qr-code__image">
+                    <section class="qr-code__text">
+                        <p class="qr-code__title">Попробуйте демо</p>
+                        <p class="qr-code__description">Наведите камеру <br>смартфона на QR-код</p>
+                        <img src="img/smile-icon.png" alt="" class="qr-code__smile">
+                    </section>
+                </aside>
+                
             </section>
             
-            <aside class="qr-code" aria-label="QR-код для демо">
-                <img src="img/qr-code.png" alt="QR-код" class="qr-code__image">
-                <section class="qr-code__text" aria-label="Текст о демо">
-                    <p class="qr-code__title">Попробуйте демо</p>
-                    <p class="qr-code__description">Наведите камеру <br>смартфона на QR-код</p>
-                    <img src="img/smile-icon.png" alt="" class="qr-code__smile" aria-hidden="true">
-                </section>
-            </aside>     
         </section>
 
         <section class="features-section" aria-label="Преимущества">
@@ -425,6 +429,261 @@
 
             </section>
         </section>
+
+        <section class="reviews-section" aria-label="Отзывы отелей">
+            <section class="reviews-section__header">
+                <h2 class="reviews-section__title text-h2">
+                    Что говорят отели
+                </h2>
+                <section class="reviews-section__arrows">
+                    <img src="img/pointer-left.png" alt="">
+                    <img src="img/pointer-right.png" alt="">
+                </section>
+            </section>
+        </section>>
+
+        <section class="review-card" aria-label="Отзыв отеля">
+            <figure class="review-card__photo">
+                <img src="img/caroline-rowe.png" alt="Caroline Rowe" class="review-card__image">
+            </figure>
+            <section class="review-card__content">
+                <p class="review-card__text text-banner">
+                    Мы очень рады внедрению Hoteza. 
+                    Это решение даёт нам множество возможностей радовать наших 
+                    гостей и дарить им незабываемые 
+                    впечатления. Система проста в 
+                    использовании, легко обновляется 
+                    и существенно сокращает 
+                    трудозатраты на 
+                    администрирование.
+                </p>
+                <section class="review-card__author">
+                    <p class="review-card__name">Caroline Rowe</p>
+                    <p class="review-card__position text-body-gray-30">Директор по маркетингу и коммуникациям, Media One Hotel Dubai</p>
+                </section>
+            </section>
+        </section>
+
+        <section class="phones-header" aria-label="Заголовок секции">
+            <section class="phones-header__title" aria-label="Заголовок">
+                <h2 class="text-h2">
+                    Что говорят гости отелей
+                </h2>                
+            </section>
+        </section>
+
+
+        <section class="reviews-grid-section" aria-label="Отзывы гостей">
+            <section class="reviews-columns">
+                
+                <section class="reviews-column">
+                    
+                    <article class="review-block review-block--emilly" aria-label="Отзыв Emilly Barrett">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/emilly-barrett.png" alt="Emilly Barrett" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Emilly Barrett</p>
+                                <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            Я вегетарианка. Мне 
+                            понравилось, что можно не 
+                            уточнять состав каждого блюда 
+                            в меню, а ознакомиться и 
+                            заказать всё через смартфон. 
+                            Везде бы так.
+                        </p>
+                    </article>
+
+                    <article class="review-block review-block--christopher" aria-label="Отзыв Christopher Doyle">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/christopher-doyle.png" alt="Christopher Doyle" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Christopher Doyle</p>
+                                <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            Спасибо, что теперь совсем не 
+                            нужно общаться с людьми! Во 
+                            время командировок это спасает. 
+                            А ещё понравилось переключать 
+                            телек с телефона.
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="reviews-column">
+                    
+                    <article class="review-block review-block--margaret" aria-label="Отзыв Margaret Sims">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/margaret-sims.png" alt="Margaret Sims" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Margaret Sims</p>
+                                <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            О приложении я узнал из письма, которое пришло на мою почту. Приложение залогинило сразу, мне не пришлось вбивать свои данные. Пользовался услугами доставки в номер и оплачивал через ApplePay. Удобно.
+                        </p>
+                    </article>
+
+                    <article class="review-block review-block--clare" aria-label="Отзыв Clare Hamilton">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/clare-hamilton.png" alt="Clare Hamilton" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Clare Hamilton</p>
+                                <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            Первый раз была в отеле и ни разу не пообщалась ни с кем из стафа. Все мои прихоти выполняли как по велению волшебной палочки. Хочу ещё!
+                        </p>
+                    </article>
+
+                </section>
+
+                <section class="reviews-column">
+                    
+                    <article class="review-block review-block--thomas" aria-label="Отзыв Thomas Fletcher">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/thomas-fletcher.png" alt="Thomas Fletcher" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Thomas Fletcher</p>
+                                <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            Очень классно, когда у отеля такой удобный сайт и не нужно никуда звонить, чтобы записаться в SPA.
+                        </p>
+                    </article>
+
+                    <article class="review-block review-block--benedict" aria-label="Отзыв Benedict French">
+                        <header class="review-block__header">
+                            <figure class="review-block__photo">
+                                <img src="img/benedict-french.png" alt="Benedict French" class="review-block__image">
+                            </figure>
+                            <section class="review-block__info">
+                                <p class="review-block__name">Benedict French</p>
+                                <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
+                            </section>
+                        </header>
+                        <p class="review-block__text text-body-30">
+                            Отсканировал QR-код в номере и 
+                            далее на протяжении всего 
+                            проживания постоянно 
+                            заказывал еду и услуги в номер 
+                            прямо со своего телефона. Даже 
+                            ещё находясь у бассейна, 
+                            заказывал ужин, поднимался в 
+                            номер, а еду уже принесли!                        
+                        </p>
+                    </article>
+
+                </section> 
+            </section> 
+        </section>
+
+
+
+
+        <section class="faq-header" aria-label="Заголовок секции FAQ">
+            <section class="faq-header__title" aria-label="Заголовок">
+                <h2 class="text-h2">
+                    Отвечаем на вопросы
+                </h2>
+            </section>
+            <section class="faq-header__questions" aria-label="Список вопросов">
+                
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Сколько времени требуется для запуска приложения?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Какой адрес будет иметь наше приложение?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Что требуется от отеля для наполнения приложения контентом?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Что требуется для кастомизации приложения?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Что дает интеграция с PMS?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Как происходит эквайринг в случае подключения онлайн-оплат?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+                <article class="faq-question" aria-label="Вопрос">
+                    <p class="faq-question__text text-body-30">
+                        Какие способы онлайн-оплаты доступны для гостей?
+                    </p>
+                    <img src="img/arrow-down.png" alt="Развернуть" class="faq-question__arrow">
+                </article>
+
+            </section>
+        </section>
     </main>
+
+    <footer class="container">    
+        <section class="footer-cta">
+            <section class="footer-cta__content">
+                <img src="img/lightning-icon.png" alt="" class="footer-cta__icon" aria-hidden="true">
+                    
+                <h2 class="footer-cta__title">
+                    Начните <br>
+                    эффективно продавать <br>
+                    услуги отеля онлайн
+                </h2>
+                    
+                <p class="footer-cta__description text-body-gray-30">
+                    Hoteza поможет оптимизировать работу ресепшн, увеличить средний чек и подарить вашим гостям ещё больше комфорта.
+                </p>
+                    
+                <button type="button" class="footer-cta__button">
+                    Подключиться сейчас
+                </button>
+            </section>
+        </section>
+        
+        <p class="site-footer__copyright">
+            © 2022 Hoteza Web. Все права защищены.
+        </p>
+    </footer>  
 </body>
 </html>
