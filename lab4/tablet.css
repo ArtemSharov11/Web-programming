@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+    .container {
+        width: 100%;   
+        max-width: 768px;
+        padding: 0rem 2rem;
+        margin: 0 auto;
+    }
+
+    .header {       
+        padding: 0 1.4rem; 
+        height: 2.5rem;
+        margin-bottom: 2.8rem;
+    }
+
+    .btn-connect {
+        margin: 0 -1.8rem 0 0;
+    }
+}
