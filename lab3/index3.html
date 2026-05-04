@@ -7,16 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="index3.css">
-    <link rel="stylesheet" href="tablet.css" media="(max-width: 1024px)">
+    <link rel="stylesheet" href="tablet.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="phone.css" media="(max-width: 320px)">
 
 </head>
 <body>
 
     <header class="header">
-        <img src="img/Frame.svg" alt="" class="logo">
-        <button type="button" class="btn-connect">Подключиться сейчас</button>
+        <img src="img/Frame.svg" alt="Logo" class="logo">
+        
+        <button type="button" class="burger-menu" id="burgerToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="side-menu" id="sideMenu">
+        <nav class="side-menu__nav">
+            <a href="#">О сервисе</a>
+            <a href="#">Тарифы</a>
+            <a href="#">Отзывы</a>
+            <hr>
+            <p class="side-menu__text">Подключиться сейчас</p>
+        </nav>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
 
     <main class="container">
 
@@ -43,7 +62,7 @@
             
         </section>
 
-        <section class="features-section" aria-label="Преимущества">
+       <section class="features-section" aria-label="Преимущества">
             <section class="features-grid features-grid--2-cols" aria-label="Список преимуществ">
                 <article class="features-card">
                     <img src="img/icon-covid.png" alt="" class="features-card__icon">
@@ -72,75 +91,84 @@
         </section>
 
         <section>
-            <section class="phones-header" aria-label="Заголовок секции">
-                <section class="phones-header__title" aria-label="Заголовок">
+            <section class="phones-header">
+                <section class="phones-header__title">
                     <h2 class="text-h2">
                         Работает прямо в браузере смартфона
                     </h2>
                 </section>
-                <section class="phones-header__subtitle" aria-label="Подзаголовок">
+                <section class="phones-header__subtitle">
                     <p class="text-body-gray-30">
                         Все услуги отеля доступны сразу. Гостю не нужно ничего скачивать и устанавливать на свой смартфон.
                     </p>
                 </section>
             </section>
 
-            <section class="phones-grid" aria-label="Сетка функций">
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-food.png" alt="Еда в номер" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Еда в номер</h3>
-                    <p class="phone-card__text text-body-30">Ознакомиться с меню, выбрать и оплатить блюда онлайн</p>
-                </article>
+            <div class="phones-slider-wrapper" style="position: relative; width: 100%;">
+                
+                <button id="btn-prev" class="real-arrow real-arrow-left"></button>
+                <button id="btn-next" class="real-arrow real-arrow-right"></button>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-services.png" alt="Гостиничные услуги" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Гостиничные услуги и бронирование</h3>
-                    <p class="phone-card__text text-body-30">Заказать уборку номера или постельные принадлежности. Забронировать столик в ресторане или сеанс в спа.</p>
-                </article>
+                <section class="phones-grid" id="phones-track" aria-label="Сетка функций">
+                    
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-food.png" alt="Еда в номер" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Еда в номер</h3>
+                        <p class="phone-card__text text-body-30">Ознакомиться с меню, выбрать и оплатить блюда онлайн</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-profile.png" alt="Профиль гостя" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Профиль гостя, счёт и экспресс check-out</h3>
-                    <p class="phone-card__text text-body-30">Посмотреть дату и время выезда, счёт за услуги, а также быстро выехать, не создавая очереди на ресепшн.</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-services.png" alt="Гостиничные услуги" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Гостиничные услуги и бронирование</h3>
+                        <p class="phone-card__text text-body-30">Заказать уборку номера или постельные принадлежности. Забронировать столик в ресторане или сеанс в спа.</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-messenger.png" alt="Мессенджер" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Мессенджер с персоналом</h3>
-                    <p class="phone-card__text text-body-30">Задать любой вопрос сотрудникам отеля с помощью встроенного мессенджера</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-profile.png" alt="Профиль гостя" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Профиль гостя, счёт и экспресс check-out</h3>
+                        <p class="phone-card__text text-body-30">Посмотреть дату и время выезда, счёт за услуги, а также быстро выехать, не создавая очереди на ресепшн.</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-tv.png" alt="Мобильный пульт ТВ" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Мобильный пульт ТВ</h3>
-                    <p class="phone-card__text text-body-30">Управлять телевизором и номером прямо со смартфона</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-messenger.png" alt="Мессенджер" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Мессенджер с персоналом</h3>
+                        <p class="phone-card__text text-body-30">Задать любой вопрос сотрудникам отеля с помощью встроенного мессенджера</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-grms.png" alt="Умный номер GRMS" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">«Умный» номер (GRMS)</h3>
-                    <p class="phone-card__text text-body-30">Настроить температуру и степень освещённости в номере</p>
-                </article>
-            </section>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-tv.png" alt="Мобильный пульт ТВ" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Мобильный пульт ТВ</h3>
+                        <p class="phone-card__text text-body-30">Управлять телевизором в номере прямо со смартфона</p>
+                    </article>
+
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-grms.png" alt="Умный номер GRMS" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">«Умный» номер (GRMS)</h3>
+                        <p class="phone-card__text text-body-30">Настроить температуру и степень освещённости в номере</p>
+                    </article>
+
+                </section>
+            </div>       
         </section>
 
-        <section class="phones-info" aria-label="Информация о телефоне">
+        <section class="phones-info">
             <p class="phones-info__text text-h2">
                 Услуги отеля, заказ еды в номер, бронирование спа и ресторанов, управление номером — всё это доступно гостю в браузере его смартфона
             </p>
         </section>
+
 
         <section class="phones-header" aria-label="Заголовок секции">
             <section class="phones-header__title" aria-label="Заголовок">
@@ -156,52 +184,59 @@
         </section>
 
         <section class="content-cards-section" aria-label="Карточки контента">
-            <section class="content-cards-grid" aria-label="Сетка контента">
-                
-                <article class="content-card">
-                    <figure class="content-card__image-wrapper">
-                        <img src="img/print-materials.png" alt="Печатные материалы" class="content-card__image">
-                    </figure>
-                    <h3 class="content-card__title text-body-41">Печатные материалы</h3>
-                    <p class="content-card__text text-body-gray-30">
-                        QR-коды можно разместить на печатных и электронных носителях в любом месте отеля. Например, на стойке регистрации, в лифте, в номерах или на пластиковых ключах.
-                    </p>
-                </article>
 
-                <article class="content-card">
-                    <figure class="content-card__image-wrapper">
-                        <img src="img/guest-letter.png" alt="Письмо гостю" class="content-card__image">
-                    </figure>
-                    <h3 class="content-card__title text-body-41">Письмо гостю</h3>
-                    <p class="content-card__text text-body-gray-30">
-                        Приветственное письмо с персональной ссылкой и приглашением. Гостю не придётся вводить номер комнаты и фамилию — вся информация о нём уже будет в системе.
-                    </p>
-                </article>
+            <div class="content-slider-wrapper" style="position: relative; width: 100%;">
 
-                <article class="content-card">
-                    <figure class="content-card__image-wrapper">
-                        <img src="img/tv-in-room.png" alt="ТВ в номере" class="content-card__image">
-                    </figure>
-                    <h3 class="content-card__title text-body-41">ТВ в номере</h3>
-                    <p class="content-card__text text-body-gray-30">
-                        Персональный QR-код появится на экране телевизора. На него нужно просто навести камеру телефона и гостю не придётся вводить номер комнаты и фамилию — вся информация о нём уже будет в системе.
-                    </p>
-                </article>
+                <button id="content-prev" class="real-arrow real-arrow-left"></button>
+                <button id="content-next" class="real-arrow real-arrow-right"></button>
 
-                <article class="content-card">
-                    <figure class="content-card__image-wrapper">
-                        <img src="img/after-internet.png" alt="После подключения интернета" class="content-card__image">
-                    </figure>
-                    <h3 class="content-card__title text-body-41">После подключения интернета</h3>
-                    <p class="content-card__text text-body-gray-30">
-                        После успешного подключения к Wi-Fi отеля гость увидит приглашение перейти в приложение.
-                    </p>
-                </article>
+                <section class="content-cards-grid" id="content-cards-grid" aria-label="Сетка контента">
+                    
+                    <article class="content-card">
+                        <figure class="content-card__image-wrapper">
+                            <img src="img/print-materials.png" alt="Печатные материалы" class="content-card__image">
+                        </figure>
+                        <h3 class="content-card__title text-body-41">Печатные материалы</h3>
+                        <p class="content-card__text text-body-gray-30">
+                            QR-коды можно разместить на печатных и электронных носителях в любом месте отеля. Например, на стойке регистрации, в лифте, в номерах или на пластиковых ключах.
+                        </p>
+                    </article>
 
-            </section>
+                    <article class="content-card">
+                        <figure class="content-card__image-wrapper">
+                            <img src="img/guest-letter.png" alt="Письмо гостю" class="content-card__image">
+                        </figure>
+                        <h3 class="content-card__title text-body-41">Письмо гостю</h3>
+                        <p class="content-card__text text-body-gray-30">
+                            Приветственное письмо с персональной ссылкой и приглашением. Гостю не придётся вводить номер комнаты и фамилию — вся информация о нём уже будет в системе.
+                        </p>
+                    </article>
+
+                    <article class="content-card">
+                        <figure class="content-card__image-wrapper">
+                            <img src="img/tv-in-room.png" alt="ТВ в номере" class="content-card__image">
+                        </figure>
+                        <h3 class="content-card__title text-body-41">ТВ в номере</h3>
+                        <p class="content-card__text text-body-gray-30">
+                            Персональный QR-код появится на экране телевизора. На него нужно просто навести камеру телефона и гостю не придётся вводить номер комнаты и фамилию — вся информация о нём уже будет в системе.
+                        </p>
+                    </article>
+
+                    <article class="content-card">
+                        <figure class="content-card__image-wrapper">
+                            <img src="img/after-internet.png" alt="После подключения интернета" class="content-card__image">
+                        </figure>
+                        <h3 class="content-card__title text-body-41">После подключения интернета</h3>
+                        <p class="content-card__text text-body-gray-30">
+                            После успешного подключения к Wi-Fi отеля гость увидит приглашение перейти в приложение.
+                        </p>
+                    </article>
+
+                </section>
+            </div>
         </section>
 
-        <section class="info-banner" aria-label="Информационный баннер">
+        <section class="info-banner">
             <p class="info-banner__text text-banner">
                 Мы поможем настроить каналы продвижения вашего
                 веб-приложения, которые действительно работают!
@@ -225,13 +260,13 @@
             </figure>
         </section>
 
-        <section class="phones-header" aria-label="Заголовок секции">
-            <section class="phones-header__title" aria-label="Заголовок">
+        <section class="phones-header">
+            <section class="phones-header__title">
                 <h2 class="text-h2">
                     Адаптируется под фирменный стиль отеля
                 </h2>
             </section>
-            <section class="phones-header__subtitle" aria-label="Подзаголовок">
+            <section class="phones-header__subtitle">
                 <p class="text-body-gray-30">
                     Неограниченные возможности кастомизации и полное соответствие фирменному стилю бренда отеля
                 </p>
@@ -321,8 +356,8 @@
             </section>
         </section>
 
-        <section class="pricing-section" aria-label="Тарифы">
-            <nav class="pricing-nav" aria-label="Период оплаты">
+        <section class="pricing-section">
+            <nav class="pricing-nav">
                 <ul class="toggle-list">
                     <li class="toggle-item text-pricing-nav">
                         Раз в год
@@ -334,7 +369,7 @@
                 </ul>
             </nav>
 
-            <aside class="pricing-info" aria-label="Информация о подключении">
+            <aside class="pricing-info">
                 <p class="text-pricing-descr">
                     Единоразово оплачивается подключение и наполнение контентом вашего отеля — $900
                 </p>
@@ -342,92 +377,100 @@
         </section>
 
         <section class="tariffs-section" aria-label="Тарифы">
-
-            <section class="tariffs-grid" aria-label="Сетка тарифов">
+            
+            <div class="tariffs-slider-wrapper" style="position: relative;">
                 
-                <article class="tariff-card tariff-card--basic" aria-labelledby="tariff-basic-title">
-                    <header class="tariff-card__header">
-                        <h3 id="tariff-basic-title" class="tariff-card__title text-body-41">Тариф Basic</h3>
-                        <p class="tariff-card__subtitle text-body-gray-30">Электронная брошюра услуг</p>
-                    </header>
-                    
-                    <ul class="tariff-card__list" aria-label="Список услуг">
-                        <li class="tariff-card__item text-body-gray-30">Система управления веб-приложением</li>
-                        <li class="tariff-card__item text-body-gray-30">QR-код гостям для быстрого доступа</li>
-                        <li class="tariff-card__item text-body-gray-30">Брендинг приложения</li>
-                        <li class="tariff-card__item text-body-gray-30">Информационные страницы</li>
-                        <li class="tariff-card__item text-body-gray-30">Многоязычная поддержка</li>
-                        <li class="tariff-card__item text-body-gray-30">Меню ресторанов</li>
-                        <li class="tariff-card__item text-body-gray-30">Фотогалерея</li>
-                    </ul>
-                    
-                    <footer class="tariff-card__footer" aria-label="Цена">
-                        <section class="tariff-card__price-large">
-                            <span class="tariff-card__price text-price-large">$85</span>
-                        </section>
-                        <section class="tariff-card__price-info">
-                            <span class="tariff-card__price-old text-price-old">$99</span>
-                            <span class="tariff-card__period text-body-gray-30">/месяц</span>
-                        </section>
-                    </footer>
-                </article>
+                <button id="tariffs-prev" class="real-arrow real-arrow-left"></button>
+                <button id="tariffs-next" class="real-arrow real-arrow-right"></button>
 
-                <article class="tariff-card tariff-card--pro" aria-labelledby="tariff-pro-title">
-                    <header class="tariff-card__header">  
-                        <h3 id="tariff-pro-title" class="tariff-card__title text-body-41">Тариф Pro</h3>
-                        <p class="tariff-card__subtitle text-body-gray-30">Приём заказов, персонализация, общение с гостем</p>
-                    </header>
+                <section class="tariffs-grid" id="tariffs-track" aria-label="Сетка тарифов">
                     
-                    <p class="tariff-card__accent text-body-medium">Всё из тарифа Basic, а также:</p>
-                    
-                    <ul class="tariff-card__list" aria-label="Список услуг">
-                        <li class="tariff-card__item text-body-gray-30">Письмо гостю с QR-кодом</li>
-                        <li class="tariff-card__item text-body-gray-30">Заказ еды в номер</li>
-                        <li class="tariff-card__item text-body-gray-30">Бронирование ресторанов и спа</li>
-                        <li class="tariff-card__item text-body-gray-30">Заказ гостиничных услуг</li>
-                        <li class="tariff-card__item text-body-gray-30">Telegram-бот для персонала</li>
-                        <li class="tariff-card__item text-body-gray-30">Профиль гостя</li>
-                        <li class="tariff-card__item text-body-gray-30">Переписка с гостями</li>
-                        <li class="tariff-card__item text-body-gray-30">Просмотр счёта</li>
-                        <li class="tariff-card__item text-body-gray-30">Экспресс check-out</li>
-                        <li class="tariff-card__item text-body-gray-30">Обратная связь от гостей</li>
-                        <li class="tariff-card__item text-body-gray-30">Маркетинг-модуль</li>
-                        <li class="tariff-card__item text-body-gray-30">Модуль статистики</li>
-                    </ul>
-                    
-                    <footer class="tariff-card__footer" aria-label="Цена">
-                        <section class="tariff-card__price-large">
-                            <span class="tariff-card__price text-price-large">$209</span>
-                        </section>
-                        <section class="tariff-card__price-info">
-                            <span class="tariff-card__price-old text-price-old">$249</span>
-                            <span class="tariff-card__period text-body-gray-30">/месяц</span>
-                        </section>
-                    </footer>
-                </article>
+                    <article class="tariff-card tariff-card--basic" aria-labelledby="tariff-basic-title">
+                        <header class="tariff-card__header">
+                            <h3 id="tariff-basic-title" class="tariff-card__title text-body-41">Тариф Basic</h3>
+                            <p class="tariff-card__subtitle text-body-gray-30">Электронная брошюра услуг</p>
+                        </header>
+                        
+                        <ul class="tariff-card__list" aria-label="Список услуг">
+                            <li class="tariff-card__item text-body-gray-30">Система управления веб-приложением</li>
+                            <li class="tariff-card__item text-body-gray-30">QR-код гостям для быстрого доступа</li>
+                            <li class="tariff-card__item text-body-gray-30">Брендинг приложения</li>
+                            <li class="tariff-card__item text-body-gray-30">Информационные страницы</li>
+                            <li class="tariff-card__item text-body-gray-30">Многоязычная поддержка</li>
+                            <li class="tariff-card__item text-body-gray-30">Меню ресторанов</li>
+                            <li class="tariff-card__item text-body-gray-30">Фотогалерея</li>
+                        </ul>
+                        
+                        <footer class="tariff-card__footer" aria-label="Цена">
+                            <section class="tariff-card__price-large">
+                                <span class="tariff-card__price text-price-large">$85</span>
+                            </section>
+                            <section class="tariff-card__price-info">
+                                <span class="tariff-card__price-old text-price-old">$99</span>
+                                <span class="tariff-card__period text-body-gray-30">/месяц</span>
+                            </section>
+                        </footer>
+                    </article>
 
-                <article class="tariff-card tariff-card--addons" aria-labelledby="tariff-addons-title">
-                    <header class="tariff-card__header tariff-card__header--inverse"> 
-                        <h3 id="tariff-addons-title" class="tariff-card__title tariff-card__title--inverse text-body-41">Add-ons</h3>
-                        <p class="tariff-card__subtitle tariff-card__subtitle--inverse text-body-light">Расширение возможностей Pro-версии за счёт дополнительных интеграций</p>
-                    </header>
-                    
-                    <ul class="tariff-card__list tariff-card__list--inverse" aria-label="Список услуг">
-                        <li class="tariff-card__item tariff-card__item--inverse text-body-light">Интеграция с PMS (рекомендуется)</li>
-                        <li class="tariff-card__item tariff-card__item--inverse text-body-light">Мобильный ТВ-пульт</li>
-                        <li class="tariff-card__item tariff-card__item--inverse text-body-light">Интеграция с POS и SOS системами</li>
-                        <li class="tariff-card__item tariff-card__item--inverse text-body-light">Интеграция с GRMS и управление оборудованием номера</li>
-                        <li class="tariff-card__item tariff-card__item--inverse text-body-light">Интеграция с платёжным шлюзом для приёма онлайн-оплат</li>
-                    </ul>
-                    
-                    <footer class="tariff-card__footer tariff-card__footer--inverse" aria-label="Цена">
-                        <section class="tariff-card__price-large">
-                            <span class="tariff-card__price text-price-large-inverse">По запросу</span>
-                        </section>
-                    </footer>
-                </article>
+                    <article class="tariff-card tariff-card--pro">
+                        <header class="tariff-card__header">  
+                            <h3 id="tariff-pro-title" class="tariff-card__title text-body-41">Тариф Pro</h3>
+                            <p class="tariff-card__subtitle text-body-gray-30">Приём заказов, персонализация, общение с гостем</p>
+                        </header>
+                        
+                        <p class="tariff-card__accent">Всё из тарифа Basic, а также:</p>
+                        
+                        <ul class="tariff-card__list" aria-label="Список услуг">
+                            <li class="tariff-card__item text-body-gray-30">Письмо гостю с QR-кодом</li>
+                            <li class="tariff-card__item text-body-gray-30">Заказ еды в номер</li>
+                            <li class="tariff-card__item text-body-gray-30">Бронирование ресторанов и спа</li>
+                            <li class="tariff-card__item text-body-gray-30">Заказ гостиничных услуг</li>
+                            <li class="tariff-card__item text-body-gray-30">Telegram-бот для персонала</li>
+                            <li class="tariff-card__item text-body-gray-30">Профиль гостя</li>
+                            <li class="tariff-card__item text-body-gray-30">Переписка с гостями</li>
+                            <li class="tariff-card__item text-body-gray-30">Просмотр счёта</li>
+                            <li class="tariff-card__item text-body-gray-30">Экспресс check-out</li>
+                            <li class="tariff-card__item text-body-gray-30">Обратная связь от гостей</li>
+                            <li class="tariff-card__item text-body-gray-30">Маркетинг-модуль</li>
+                            <li class="tariff-card__item text-body-gray-30">Модуль статистики</li>
+                        </ul>
+                        
+                        <footer class="tariff-card__footer" aria-label="Цена">
+                            <section class="tariff-card__price-large">
+                                <span class="tariff-card__price text-price-large">$209</span>
+                            </section>
+                            <section class="tariff-card__price-info">
+                                <span class="tariff-card__price-old text-price-old">$249</span>
+                                <span class="tariff-card__period text-body-gray-30">/месяц</span>
+                            </section>
+                        </footer>
+                    </article>
 
-            </section>
+                    <article class="tariff-card tariff-card--addons">
+                        <header class="tariff-card__header tariff-card__header--inverse"> 
+                            <h3 id="tariff-addons-title" class="tariff-card__title tariff-card__title--inverse text-body-41">
+                                Add-ons
+                                <img src="img/lightning-icon.png" alt="" class="tariff-card__icon">
+                            </h3>
+                            <p class="tariff-card__subtitle tariff-card__subtitle--inverse">Расширение возможностей Pro-версии за счёт дополнительных интеграций</p>
+                        </header>
+                        
+                        <ul class="tariff-card__list">
+                            <li class="tariff-card__item">Интеграция с PMS (рекомендуется)</li>
+                            <li class="tariff-card__item">Мобильный ТВ-пульт</li>
+                            <li class="tariff-card__item">Интеграция с POS и SOS системами</li>
+                            <li class="tariff-card__item">Интеграция с GRMS и управление оборудованием номера</li>
+                            <li class="tariff-card__item">Интеграция с платёжным шлюзом для приёма онлайн-оплат</li>
+                        </ul>
+                        
+                        <footer class="tariff-card__footer tariff-card__footer--inverse" aria-label="Цена">
+                            <section class="tariff-card__price-large">
+                                <span class="tariff-card__price text-price-large-inverse">По запросу</span>
+                            </section>
+                        </footer>
+                    </article>
+                </section>
+            </div>
         </section>
 
         <section class="reviews-section" aria-label="Отзывы отелей">
@@ -435,33 +478,64 @@
                 <h2 class="reviews-section__title text-h2">
                     Что говорят отели
                 </h2>
-                <section class="reviews-section__arrows">
-                    <img src="img/pointer-left.png" alt="">
-                    <img src="img/pointer-right.png" alt="">
-                </section>
             </section>
         </section>>
 
-        <section class="review-card" aria-label="Отзыв отеля">
-            <figure class="review-card__photo">
-                <img src="img/caroline-rowe.png" alt="Caroline Rowe" class="review-card__image">
-            </figure>
-            <section class="review-card__content">
-                <p class="review-card__text text-banner">
-                    Мы очень рады внедрению Hoteza. 
-                    Это решение даёт нам множество возможностей радовать наших 
-                    гостей и дарить им незабываемые 
-                    впечатления. Система проста в 
-                    использовании, легко обновляется 
-                    и существенно сокращает 
-                    трудозатраты на 
-                    администрирование.
-                </p>
-                <section class="review-card__author">
-                    <p class="review-card__name">Caroline Rowe</p>
-                    <p class="review-card__position text-body-gray-30">Директор по маркетингу и коммуникациям, Media One Hotel Dubai</p>
+        <section class="reviews-section" aria-label="Отзывы отелей">
+            <div class="reviews-slider-wrapper" style="position: relative; width: 100%;">
+                
+                <button id="reviews-prev" class="real-arrow real-arrow-left"></button>
+                <button id="reviews-next" class="real-arrow real-arrow-right"></button>
+
+                <section id="reviews-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;">
+                    
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/caroline-rowe.png" alt="Caroline Rowe" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Мы очень рады внедрению Hoteza. Это решение даёт нам множество возможностей радовать наших гостей и дарить им незабываемые впечатления. Система проста в использовании, легко обновляется и существенно сокращает трудозатраты на администрирование.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Caroline Rowe</p>
+                                <p class="review-card__position text-body-gray-30">Директор по маркетингу и коммуникациям, Media One Hotel Dubai</p>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/vasja-cretnik.png" alt="Vasja Čretnik" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Внедрение системы Hoteza позволило нам расширить границы внутреннего маркетинга — выросло число посещений мероприятий и объемы внутренних продаж.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Vasja Čretnik</p>
+                                <p class="review-card__position text-body-gray-30">Менеджер по маркетингу и продажам Terme Olimia & Terme Tuhelj</p>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/elshan-babayev.png" alt="Эльшан Бабаев" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Мы получили действительно высококлассную систему, которая позволяет оставаться в постоянном контакте с нашими гостями, и сервис, который полностью соответствует нашим ожиданиям.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Эльшан Бабаев</p>
+                                <p class="review-card__position text-body-gray-30">Генеральный директор официальной гостиницы государственного музея «Эрмитаж»</p>
+                            </section>
+                        </section>
+                    </article>
+
                 </section>
-            </section>
+            </div>
         </section>
 
         <section class="phones-header" aria-label="Заголовок секции">
@@ -472,12 +546,14 @@
             </section>
         </section>
 
+       <section class="reviews-grid-section" aria-label="Отзывы гостей">
+            <div style="position: relative; width: 100%;        ">
 
-        <section class="reviews-grid-section" aria-label="Отзывы гостей">
-            <section class="reviews-columns">
-                
-                <section class="reviews-column">
-                    
+                <button id="reviews2-prev" class="real-arrow real-arrow-left"></button>
+                <button id="reviews2-next" class="real-arrow real-arrow-right"></button>
+
+                <div id="reviews-track2">
+
                     <article class="review-block review-block--emilly" aria-label="Отзыв Emilly Barrett">
                         <header class="review-block__header">
                             <figure class="review-block__photo">
@@ -488,14 +564,7 @@
                                 <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            Я вегетарианка. Мне 
-                            понравилось, что можно не 
-                            уточнять состав каждого блюда 
-                            в меню, а ознакомиться и 
-                            заказать всё через смартфон. 
-                            Везде бы так.
-                        </p>
+                        <p class="review-block__text text-body-30">Я вегетарианка. Мне понравилось, что можно не уточнять состав каждого блюда в меню, а ознакомиться и заказать всё через смартфон. Везде бы так.</p>
                     </article>
 
                     <article class="review-block review-block--christopher" aria-label="Отзыв Christopher Doyle">
@@ -508,19 +577,9 @@
                                 <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            Спасибо, что теперь совсем не 
-                            нужно общаться с людьми! Во 
-                            время командировок это спасает. 
-                            А ещё понравилось переключать 
-                            телек с телефона.
-                        </p>
+                        <p class="review-block__text text-body-30">Спасибо, что теперь совсем не нужно общаться с людьми! Во время командировок это спасает. А ещё понравилось переключать телек с телефона.</p>
                     </article>
 
-                </section>
-
-                <section class="reviews-column">
-                    
                     <article class="review-block review-block--margaret" aria-label="Отзыв Margaret Sims">
                         <header class="review-block__header">
                             <figure class="review-block__photo">
@@ -531,9 +590,7 @@
                                 <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            О приложении я узнал из письма, которое пришло на мою почту. Приложение залогинило сразу, мне не пришлось вбивать свои данные. Пользовался услугами доставки в номер и оплачивал через ApplePay. Удобно.
-                        </p>
+                        <p class="review-block__text text-body-30">О приложении я узнал из письма, которое пришло на мою почту. Приложение залогинило сразу, мне не пришлось вбивать свои данные. Пользовался услугами доставки в номер и оплачивал через ApplePay. Удобно.</p>
                     </article>
 
                     <article class="review-block review-block--clare" aria-label="Отзыв Clare Hamilton">
@@ -546,15 +603,9 @@
                                 <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            Первый раз была в отеле и ни разу не пообщалась ни с кем из стафа. Все мои прихоти выполняли как по велению волшебной палочки. Хочу ещё!
-                        </p>
+                        <p class="review-block__text text-body-30">Первый раз была в отеле и ни разу не пообщалась ни с кем из стафа. Все мои прихоти выполняли как по велению волшебной палочки. Хочу ещё!</p>
                     </article>
 
-                </section>
-
-                <section class="reviews-column">
-                    
                     <article class="review-block review-block--thomas" aria-label="Отзыв Thomas Fletcher">
                         <header class="review-block__header">
                             <figure class="review-block__photo">
@@ -565,9 +616,7 @@
                                 <img src="img/tripadvisor-logo.png" alt="TripAdvisor" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            Очень классно, когда у отеля такой удобный сайт и не нужно никуда звонить, чтобы записаться в SPA.
-                        </p>
+                        <p class="review-block__text text-body-30">Очень классно, когда у отеля такой удобный сайт и не нужно никуда звонить, чтобы записаться в SPA.</p>
                     </article>
 
                     <article class="review-block review-block--benedict" aria-label="Отзыв Benedict French">
@@ -580,24 +629,12 @@
                                 <img src="img/booking-logo.png" alt="Booking.com" class="review-block__source">
                             </section>
                         </header>
-                        <p class="review-block__text text-body-30">
-                            Отсканировал QR-код в номере и 
-                            далее на протяжении всего 
-                            проживания постоянно 
-                            заказывал еду и услуги в номер 
-                            прямо со своего телефона. Даже 
-                            ещё находясь у бассейна, 
-                            заказывал ужин, поднимался в 
-                            номер, а еду уже принесли!                        
-                        </p>
+                        <p class="review-block__text text-body-30">Отсканировал QR-код в номере и далее на протяжении всего проживания постоянно заказывал еду и услуги в номер прямо со своего телефона. Даже ещё находясь у бассейна, заказывал ужин, поднимался в номер, а еду уже принесли!</p>
                     </article>
 
-                </section> 
-            </section> 
+                </div>
+            </div>
         </section>
-
-
-
 
         <section class="faq-header" aria-label="Заголовок секции FAQ">
             <section class="faq-header__title" aria-label="Заголовок">
@@ -684,6 +721,7 @@
         <p class="site-footer__copyright">
             © 2022 Hoteza Web. Все права защищены.
         </p>
-    </footer>  
+    </footer> 
+    <script src="animation.js"></script> 
 </body>
 </html>
