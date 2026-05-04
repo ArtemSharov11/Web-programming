@@ -191,8 +191,8 @@ p {
 
 
 .info-banner {
-    margin: 6em 0 5rem 0;
-    padding: 0.75rem 3.7rem 2.75rem 1.625rem;
+    margin: 6.2rem 0 5rem 0;
+    padding: 0.75rem 0 2.75rem 1.8rem;
     background-color: #9EF01A;
     border-radius: 1.25rem;
     box-sizing: border-box;
@@ -200,10 +200,9 @@ p {
 
 .info-banner__text {
     max-width: 75rem;
-    width: 100%;             
     text-align: left;
-    box-sizing: border-box; 
 }
+
 
 
 .phones-header {
