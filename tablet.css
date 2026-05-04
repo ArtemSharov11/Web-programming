@@ -39,4 +39,27 @@
         bottom: 1.5rem;
         left: 1.6rem;       
     }
+
+    .features-section {
+        margin-top: 6.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;  
+        gap: 1.25rem;                
+        justify-items: center;      
+    }
+
+    .features-card {
+        max-width: 39rem;
+        padding: 3.5rem 2.5rem 4rem 2.5rem;;
+    }
+
+    .features-card__icon {
+        margin: 0 0 1.3rem 0;
+    }
+
+    .features-card .features-card__title {
+        margin: 0 auto 6.5rem auto;
+    }
 }

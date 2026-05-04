@@ -159,13 +159,12 @@ p {
 }
 
 .features-card {
-    padding: 4rem 2.5rem;
+    padding: 3.8rem 2.5rem 4rem 2.5rem;
     background-color: #FFFFFF;
     border: 1px solid #E5E5E5;
     border-radius: 1.25rem;
     text-align: center;
     box-sizing: border-box;
-    transition: box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,11 +183,12 @@ p {
 }
 
 .features-card .features-card__title {
-    margin: 0 0 6.8rem 0;
+    margin: 0 auto 6.6rem auto;
 }
-.features-card__text {
-    flex-grow: 1;
-}
+
+
+
+
 
 .info-banner {
     margin: 6em 0 5rem 0;
