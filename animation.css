@@ -84,3 +84,44 @@
     border-top: 1px solid #E5E5E5;
     margin: 0.5rem 0;
 }
+
+
+.real-arrow {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.real-arrow-left 
+{ 
+    background-image: url('img/pointer-left.png'); 
+}
+.real-arrow-right 
+{
+     background-image: url('img/pointer-right.png'); 
+}
+
+@media (min-width: 769px) {
+    #btn-prev, #btn-next { display: none; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #btn-prev, #btn-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 2rem;
+    }
+    #btn-prev { left: 2.6rem; }
+    #btn-next { right: 2.4rem; }
+}
+
+.phones-grid {
+    scrollbar-width: none;
+}
+.phones-grid::-webkit-scrollbar {
+    display: none;
+}

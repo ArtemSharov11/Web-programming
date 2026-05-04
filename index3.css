@@ -208,8 +208,8 @@ p {
 .phones-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center; 
-    margin-bottom: 5rem;
+    align-items: center;
+    margin-bottom: 4.9rem;
 }
 
 .phones-header__title {
@@ -218,24 +218,18 @@ p {
     text-align: left;
 }
 
-.phones-header__title h2 {
-    margin: 0;
-}
-
 .phones-header__subtitle {
     max-width: 30rem;
     padding: 0 0 0 6.2rem;
     text-align: left;
-}
-
-.phones-header__subtitle p {
-    margin: 0;
+    margin-top: 0.3rem;
 }
 
 .phones-grid {
-    display: grid;  
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.7rem 3.875rem;  
+    gap: 3.6rem 3.875rem;
+    width: 100%;
 }
 
 .phone-card {
@@ -243,54 +237,35 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .phone-card__image-wrapper {
     width: 100%;
-    max-width: 38.75rem;  
-    height: 29.0625rem;   
-    padding: 0;
+    max-width: 38.75rem;
+    height: 29.0625rem;
     background-color: #F1F1F1;
     border-radius: 1.25rem;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
 }
 
 .phone-card__image {
-    width: 17.125rem;      
-    height: 29.0625rem;    
+    width: 17.125rem;
+    height: 29.0625rem;
     object-fit: contain;
-    display: block;
-}
-
-.phone-card .phone-card__title {
-    margin: 1.2rem 0;
-}
-
-.phone-card__text {
-    margin: 0;         
-    max-width: 37rem;     
-    text-align: center;
 }
 
 .phones-info {
     width: 100%;
-    max-width: 51rem;    
-    margin: 25.2rem auto 12.3rem;    
-    text-align: center;     
+    max-width: 50rem;
+    margin: 25.2rem auto 12.3rem;
+    text-align: center;
 }
 
-.phones-info__text {
-    margin: 0;
-    text-align: center;  
-    display: block;
-}
-.phones-info__text--offset {
-    padding-top: 6.1rem;    
-}
+
+
 
 .content-cards-section {
     width: 100%;

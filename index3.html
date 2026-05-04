@@ -90,75 +90,84 @@
         </section>
 
         <section>
-            <section class="phones-header" aria-label="Заголовок секции">
-                <section class="phones-header__title" aria-label="Заголовок">
+            <section class="phones-header">
+                <section class="phones-header__title">
                     <h2 class="text-h2">
                         Работает прямо в браузере смартфона
                     </h2>
                 </section>
-                <section class="phones-header__subtitle" aria-label="Подзаголовок">
+                <section class="phones-header__subtitle">
                     <p class="text-body-gray-30">
                         Все услуги отеля доступны сразу. Гостю не нужно ничего скачивать и устанавливать на свой смартфон.
                     </p>
                 </section>
             </section>
 
-            <section class="phones-grid" aria-label="Сетка функций">
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-food.png" alt="Еда в номер" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Еда в номер</h3>
-                    <p class="phone-card__text text-body-30">Ознакомиться с меню, выбрать и оплатить блюда онлайн</p>
-                </article>
+            <div class="phones-slider-wrapper" style="position: relative; width: 100%;">
+                
+                <button id="btn-prev" class="real-arrow real-arrow-left"></button>
+                <button id="btn-next" class="real-arrow real-arrow-right"></button>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-services.png" alt="Гостиничные услуги" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Гостиничные услуги и бронирование</h3>
-                    <p class="phone-card__text text-body-30">Заказать уборку номера или постельные принадлежности. Забронировать столик в ресторане или сеанс в спа.</p>
-                </article>
+                <section class="phones-grid" id="phones-track" aria-label="Сетка функций">
+                    
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-food.png" alt="Еда в номер" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Еда в номер</h3>
+                        <p class="phone-card__text text-body-30">Ознакомиться с меню, выбрать и оплатить блюда онлайн</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-profile.png" alt="Профиль гостя" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Профиль гостя, счёт и экспресс check-out</h3>
-                    <p class="phone-card__text text-body-30">Посмотреть дату и время выезда, счёт за услуги, а также быстро выехать, не создавая очереди на ресепшн.</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-services.png" alt="Гостиничные услуги" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Гостиничные услуги и бронирование</h3>
+                        <p class="phone-card__text text-body-30">Заказать уборку номера или постельные принадлежности. Забронировать столик в ресторане или сеанс в спа.</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-messenger.png" alt="Мессенджер" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Мессенджер с персоналом</h3>
-                    <p class="phone-card__text text-body-30">Задать любой вопрос сотрудникам отеля с помощью встроенного мессенджера</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-profile.png" alt="Профиль гостя" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Профиль гостя, счёт и экспресс check-out</h3>
+                        <p class="phone-card__text text-body-30">Посмотреть дату и время выезда, счёт за услуги, а также быстро выехать, не создавая очереди на ресепшн.</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-tv.png" alt="Мобильный пульт ТВ" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">Мобильный пульт ТВ</h3>
-                    <p class="phone-card__text text-body-30">Управлять телевизором и номером прямо со смартфона</p>
-                </article>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-messenger.png" alt="Мессенджер" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Мессенджер с персоналом</h3>
+                        <p class="phone-card__text text-body-30">Задать любой вопрос сотрудникам отеля с помощью встроенного мессенджера</p>
+                    </article>
 
-                <article class="phone-card">
-                    <figure class="phone-card__image-wrapper">
-                        <img src="img/phone-grms.png" alt="Умный номер GRMS" class="phone-card__image">
-                    </figure>
-                    <h3 class="phone-card__title text-body-34">«Умный» номер (GRMS)</h3>
-                    <p class="phone-card__text text-body-30">Настроить температуру и степень освещённости в номере</p>
-                </article>
-            </section>
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-tv.png" alt="Мобильный пульт ТВ" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">Мобильный пульт ТВ</h3>
+                        <p class="phone-card__text text-body-30">Управлять телевизором в номере прямо со смартфона</p>
+                    </article>
+
+                    <article class="phone-card">
+                        <figure class="phone-card__image-wrapper">
+                            <img src="img/phone-grms.png" alt="Умный номер GRMS" class="phone-card__image">
+                        </figure>
+                        <h3 class="phone-card__title text-body-34">«Умный» номер (GRMS)</h3>
+                        <p class="phone-card__text text-body-30">Настроить температуру и степень освещённости в номере</p>
+                    </article>
+
+                </section>
+            </div>       
         </section>
 
-        <section class="phones-info" aria-label="Информация о телефоне">
+        <section class="phones-info">
             <p class="phones-info__text text-h2">
                 Услуги отеля, заказ еды в номер, бронирование спа и ресторанов, управление номером — всё это доступно гостю в браузере его смартфона
             </p>
         </section>
+
 
         <section class="phones-header" aria-label="Заголовок секции">
             <section class="phones-header__title" aria-label="Заголовок">
