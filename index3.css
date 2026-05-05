@@ -268,28 +268,27 @@ p {
 
 
 .content-cards-section {
-    width: 100%;
-    margin-bottom: 6.5rem;
     background-color: #FFFFFF;
 }
 
 .content-cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.7rem 3.875rem;  
+    gap: 3.5rem 3.875rem;
 }
 
 .content-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  
+    align-items: flex-start;
     text-align: left;
+    margin-bottom: 0.1rem;
 }
 
 .content-card__image-wrapper {
     width: 100%;
-    max-width: 38.75rem; 
-    height: 31rem;    
+    max-width: 38.75rem;
+    height: 31rem;
     background-color: #F1F1F1;
     border-radius: 1rem;
     box-sizing: border-box;
@@ -303,20 +302,21 @@ p {
 .content-card__image {
     width: 100%;
     height: 100%;
-    object-fit: cover;    
+    object-fit: cover;
     display: block;
 }
 
 .content-card .content-card__title {
-    margin: 1.1rem 0 1rem 0;
-    text-align: left; 
-    max-width: 37rem;  
+    margin: 1.1rem 0 0.9rem 0;
+    text-align: left;
+    max-width: 37rem;
 }
 
 .content-card__text {
-    max-width: 38rem;   
+    max-width: 38rem;
     text-align: left;
 }
+
 
 .admin-section {
     width: 100%;

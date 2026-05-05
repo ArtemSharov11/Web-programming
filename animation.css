@@ -106,7 +106,10 @@
 }
 
 @media (min-width: 769px) {
-    #btn-prev, #btn-next { display: none; }
+    #btn-prev, #btn-next 
+    { 
+        display: none; 
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -115,8 +118,30 @@
         height: 2.5rem;
         top: 2rem;
     }
-    #btn-prev { left: 2.6rem; }
-    #btn-next { right: 2.4rem; }
+    #btn-prev 
+    { 
+        left: 2.6rem; 
+    }
+    #btn-next 
+    {
+         right: 2.4rem; 
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    #content-prev, #content-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: 1.8rem;
+    }
+    #content-prev 
+    { 
+        left: 2.6rem; 
+    }
+    #content-next 
+    {
+         right: 2.4rem; 
+    }
 }
 
 .phones-grid {
