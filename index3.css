@@ -404,11 +404,15 @@ p {
     object-fit: contain;
 }
 
+
+
+
 .brands-section {
     width: 100%;
-    margin-top: 7rem;
-    margin-bottom: 6.5rem;
+    margin-top: 6.8rem;
+    margin-bottom: 6.4rem;
     background-color: #FFFFFF;
+    align-items: center;
 }
 
 .brands-row {
@@ -416,16 +420,12 @@ p {
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-items: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .brands-row--first {
-    margin-top: 0;
-    margin-bottom: 3.5rem; 
-}
-
-.brands-row--second {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 3.5rem;
 }
 
 .brand-item {
@@ -439,9 +439,6 @@ p {
     object-fit: contain;
 }
 
-.brand-item__logo:hover {
-    opacity: 1;
-}
 
 
 .pricing-section {

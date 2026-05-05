@@ -221,4 +221,28 @@
         justify-content: center;
     }
     
+
+
+    .brands-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(5, auto);
+        gap: 2.55rem 0.5rem; 
+        margin-top: -2rem;
+        margin-bottom: 4rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .brands-row {
+        display: contents; 
+    }
+
+    .brands-row--first,
+    .brands-row--second {
+        margin-bottom: 0;
+    }
+
+
+    
 }
