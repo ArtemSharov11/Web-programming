@@ -361,6 +361,8 @@ p {
     display: block;
     object-fit: contain;
 }
+
+
  
 
 .phones-showcase {
@@ -374,7 +376,7 @@ p {
 .phones-showcase__background {
     background-color: #F1F1F1;
     border-radius: 1.25rem;
-    padding: 0 2rem 0.625rem; 
+    padding: 0 2rem 0.625rem;
     height: 43rem;
     display: flex;
     justify-content: center;
@@ -396,7 +398,7 @@ p {
 }
 
 .showcase-phone__image {
-    width: 21.875rem;     
+    width: 21.875rem;
     height: 42.375rem;
     display: block;
     object-fit: contain;
