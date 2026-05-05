@@ -318,6 +318,8 @@ p {
 }
 
 
+
+
 .admin-section {
     width: 100%;
     height: 45rem;
@@ -336,15 +338,15 @@ p {
 
 .admin-section .admin-texts .admin-title {
     margin: 0;
-    max-width: 30rem;   
+    max-width: 30rem;
     text-align: center;
 }
 
 .admin-section .admin-texts .admin-text {
     margin: 4rem 0 0 0;
-    max-width: 30rem; 
+    max-width: 30rem;
     line-height: 1.4;
-    text-align: center; 
+    text-align: center;
 }
 
 .admin-image {
