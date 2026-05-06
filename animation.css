@@ -126,6 +126,20 @@
     {
          right: 2.4rem; 
     }
+
+     #tariffs-prev, #tariffs-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: -3rem;
+    }
+    #tariffs-prev 
+    { 
+        left: 2.5rem; 
+    }
+    #tariffs-next 
+    {
+        right: 2.5rem;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -141,6 +155,13 @@
     #content-next 
     {
          right: 2.4rem; 
+    }
+}
+
+@media (min-width: 1025px) {
+    #tariffs-prev, #tariffs-next 
+    { 
+        display: none; 
     }
 }
 

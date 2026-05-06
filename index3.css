@@ -485,6 +485,10 @@ p {
     width: 130%;
 }
 
+
+
+
+
 .tariffs-section {
     margin-top: 6rem;
     margin-bottom: 5rem;
@@ -493,7 +497,7 @@ p {
 
 .tariffs-grid {
     margin-left: -1.375rem;
-    margin-right: -1.375rem; 
+    margin-right: -1.375rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
@@ -504,8 +508,8 @@ p {
     border-radius: 1.25rem;
     display: flex;
     flex-direction: column;
-    min-height: 54rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    margin: 0;
 }
 
 .tariff-card:hover {
@@ -513,19 +517,14 @@ p {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.tariff-card--basic {
-    border: 1px solid #F1F1F1;
-    background: #FFFFFF;
+.tariff-card--basic { 
+    border: 1px solid #F1F1F1; background: #FFFFFF; 
 }
-
-.tariff-card--pro {
-    border: 1px solid #F1F1F1;
-    background: #F1F1F1;
+.tariff-card--pro { 
+    border: 1px solid #F1F1F1; background: #F1F1F1; 
 }
-
-.tariff-card--addons {
-    border: 1px solid #F1F1F1;
-    background: #000000;
+.tariff-card--addons { 
+    border: 1px solid #F1F1F1; background: #000000; 
 }
 
 .tariff-card__header {
@@ -533,83 +532,82 @@ p {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.tariff-card__header--inverse {
-    border-bottom-color: rgba(255, 255, 255, 0.2);
+.tariff-card__header--inverse { 
+    border-bottom-color: rgba(255, 255, 255, 0.2); 
 }
 
-.tariff-card--basic .tariff-card__list {
-    padding: 0.9rem 0 0 2.6rem;          
-    list-style: none;
+.tariff-card__title {
+    padding: 0.9rem 0 0 1.8rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000000;
 }
 
-.tariff-card--pro .tariff-card__list {
-    padding: 0 0 0 4rem;
-    list-style: none;
+.tariff-card__title--inverse {
+    color: #707378;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1.2rem 0 2rem;
 }
 
-.tariff-card--addons .tariff-card__list {
-    padding: 0.9rem 0 0 2.7rem;
-    list-style: none;
+.tariff-card--addons .tariff-card__title--inverse { 
+    color: #9EF01A; 
+}
+
+.tariff-card__subtitle {
+    padding: 1.5rem 0 0 1.9rem;
+    font-size: 1.32rem;
+    line-height: 1.4;
+    max-width: 23rem;
+}
+
+.tariff-card__subtitle--inverse { 
+    color: #808080; margin-top: -1.5rem; 
+}
+
+.tariff-card__accent {
+    margin: 2rem 0 0 0;
+    padding: 0 0 0 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.tariff-card__list { 
+    list-style: none; 
+}
+.tariff-card--basic .tariff-card__list { 
+    padding: 0.9rem 0 0 2.6rem; height: 32rem; 
+}
+.tariff-card--pro .tariff-card__list { 
+    padding: 0 0 0 4rem; }
+.tariff-card--addons .tariff-card__list { 
+    padding: 0.9rem 0 0 2.7rem; color: #808080; 
+}
+
+.tariff-card__item { 
+    font-size: 1.25rem; line-height: 1.4; color: #808080; 
+}
+.tariff-card--pro .tariff-card__item {
+     padding: 0 0 0.4rem 0; color: #000; 
 }
 
 .tariff-card__footer {
-    padding: 0 0 3rem 2rem;
+    padding: 0 0 3rem 1.8rem;
     margin-top: auto;
     display: flex;
-    flex-direction: row;  
-    align-items: flex-start; 
     gap: 1.9rem;
-}
-
-.tariff-card__price-large {
-    display: flex;
 }
 
 .tariff-card__price-info {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
     padding-top: 2.4rem;
-    gap: 0.5rem;
 }
 
-.tariff-card__title {
-    padding: 0.9rem 0 0 1.8rem;  
-    font-size: 2.2rem;           
-    font-weight: 400;
-    line-height: 1.3;
-    color: #000000;
-    margin: 0;
-}
-
-.tariff-card__title--inverse {
-    color: #9EF01A;  
-}
-
-.tariff-card__subtitle {
-    padding: 1.5rem 0 0 1.9rem;  
-    margin: 0;
-    font-size: 1.32rem;        
-    font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: -0.005em;
-    max-width: 23rem;
-    color: #808080;
-}
-
-.tariff-card__subtitle--inverse {
-    color: #707378;
-}
-
-.tariff-card__accent {
-    margin: 2rem 0 0 0;
-    padding: 0 0 0 2rem;   
-    letter-spacing: 0.07rem;    
-    font-size: 1.1rem;         
-    font-weight: 500;
-    line-height: 1.4;
-    color: #000000;
+.tariff-card__price-large {
+    display: flex;
 }
 
 .tariff-card--basic .tariff-card__item {
@@ -621,13 +619,6 @@ p {
     color: #808080;                  
 }
 
-.tariff-card--pro .tariff-card__item { 
-    font-size: 1.25rem;               
-    font-weight: 400;
-    line-height: 1.4;                
-    min-width: 23rem;
-    padding: 0 0 0.4rem 0;
-}
 
 .tariff-card--addons .tariff-card__item {  
     padding: 0 0 0.3rem 1.6rem;
@@ -688,9 +679,6 @@ p {
     margin: 0;
 }
 
-.tariff-card--addons .tariff-card__title--inverse {
-    color: #9EF01A !important;
-}
 
 .reviews-section {
     width: 100%;
