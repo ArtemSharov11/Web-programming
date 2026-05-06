@@ -244,5 +244,35 @@
     }
 
 
-    
+    .pricing-section {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 2rem;
+        margin: -5.2rem 0 0 0;
+        padding: 0;
+    }
+
+    .pricing-nav {
+        padding: 0 0 0 1.3rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .toggle-list {
+        gap: 2.2rem;
+    }
+
+    .text-pricing-descr {
+        display: block;
+        line-height: 1.25;      
+        text-align: left;
+    }
+
+    .active-underline {
+        position: absolute;
+        left: 0;
+        border: none;
+        border-bottom: 2.5px solid #000;
+        width: 135%;
+    }
+
 }
