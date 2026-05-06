@@ -477,33 +477,64 @@
                 <h2 class="reviews-section__title text-h2">
                     Что говорят отели
                 </h2>
-                <section class="reviews-section__arrows">
-                    <img src="img/pointer-left.png" alt="">
-                    <img src="img/pointer-right.png" alt="">
-                </section>
             </section>
         </section>>
 
-        <section class="review-card" aria-label="Отзыв отеля">
-            <figure class="review-card__photo">
-                <img src="img/caroline-rowe.png" alt="Caroline Rowe" class="review-card__image">
-            </figure>
-            <section class="review-card__content">
-                <p class="review-card__text text-banner">
-                    Мы очень рады внедрению Hoteza. 
-                    Это решение даёт нам множество возможностей радовать наших 
-                    гостей и дарить им незабываемые 
-                    впечатления. Система проста в 
-                    использовании, легко обновляется 
-                    и существенно сокращает 
-                    трудозатраты на 
-                    администрирование.
-                </p>
-                <section class="review-card__author">
-                    <p class="review-card__name">Caroline Rowe</p>
-                    <p class="review-card__position text-body-gray-30">Директор по маркетингу и коммуникациям, Media One Hotel Dubai</p>
+        <section class="reviews-section" aria-label="Отзывы отелей">
+            <div class="reviews-slider-wrapper" style="position: relative; width: 100%;">
+                
+                <button id="reviews-prev" class="real-arrow real-arrow-left"></button>
+                <button id="reviews-next" class="real-arrow real-arrow-right"></button>
+
+                <section id="reviews-track" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;">
+                    
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/caroline-rowe.png" alt="Caroline Rowe" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Мы очень рады внедрению Hoteza. Это решение даёт нам множество возможностей радовать наших гостей и дарить им незабываемые впечатления. Система проста в использовании, легко обновляется и существенно сокращает трудозатраты на администрирование.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Caroline Rowe</p>
+                                <p class="review-card__position text-body-gray-30">Директор по маркетингу и коммуникациям, Media One Hotel Dubai</p>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/vasja-cretnik.png" alt="Vasja Čretnik" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Внедрение системы Hoteza позволило нам расширить границы внутреннего маркетинга — выросло число посещений мероприятий и объемы внутренних продаж.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Vasja Čretnik</p>
+                                <p class="review-card__position text-body-gray-30">Менеджер по маркетингу и продажам Terme Olimia & Terme Tuhelj</p>
+                            </section>
+                        </section>
+                    </article>
+
+                    <article class="review-card" style="flex: 0 0 100%; scroll-snap-align: center;">
+                        <figure class="review-card__photo">
+                            <img src="img/elshan-babayev.png" alt="Эльшан Бабаев" class="review-card__image">
+                        </figure>
+                        <section class="review-card__content">
+                            <p class="review-card__text text-banner">
+                                Мы получили действительно высококлассную систему, которая позволяет оставаться в постоянном контакте с нашими гостями, и сервис, который полностью соответствует нашим ожиданиям.
+                            </p>
+                            <section class="review-card__author">
+                                <p class="review-card__name">Эльшан Бабаев</p>
+                                <p class="review-card__position text-body-gray-30">Генеральный директор официальной гостиницы государственного музея «Эрмитаж»</p>
+                            </section>
+                        </section>
+                    </article>
+
                 </section>
-            </section>
+            </div>
         </section>
 
         <section class="phones-header" aria-label="Заголовок секции">

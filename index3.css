@@ -713,7 +713,7 @@ p {
     display: flex;
     gap: 3.1rem;
     align-items: flex-start;
-    margin-bottom: 5.3rem;
+    margin-bottom: 3.8rem;
 }
 
 .review-card__photo {
@@ -722,16 +722,16 @@ p {
 }
 
 .review-card__image {
-    width: 25.5rem; 
+    width: 25.5rem;
     height: 29.6rem;
     object-fit: cover;
-    border-radius: 1rem; 
+    border-radius: 1rem;
 }
 
 .review-card__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; 
+    gap: 1.5rem;
 }
 
 .review-card__text.text-banner {
@@ -742,7 +742,7 @@ p {
 .review-card__author {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; 
+    gap: 0.5rem;
 }
 
 .review-card__name {
@@ -754,10 +754,14 @@ p {
 }
 
 .review-card__position.text-body-gray-30 {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     line-height: 1.4;
     margin: 0;
 }
+
+
+
+
 
 .reviews-grid-section {
     width: 100%;

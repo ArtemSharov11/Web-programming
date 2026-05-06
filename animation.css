@@ -85,7 +85,6 @@
     margin: 0.5rem 0;
 }
 
-
 .real-arrow {
     position: absolute;
     background-size: contain;
@@ -154,7 +153,19 @@
     }
     #content-next 
     {
-         right: 2.4rem; 
+        right: 2.4rem; 
+    }
+
+    #reviews-prev, #reviews-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: 40%;
+    }
+    #reviews-prev { 
+        left: 0; 
+    }
+    #reviews-next { 
+        right: 0;
     }
 }
 
@@ -162,6 +173,21 @@
     #tariffs-prev, #tariffs-next 
     { 
         display: none; 
+    }
+
+    #reviews-prev, #reviews-next { 
+        display: block;
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: -5rem;
+    }
+    #reviews-prev { 
+        right: 7.1rem; 
+        left: auto;
+    }
+    #reviews-next { 
+        right: 0; 
+        left: auto; 
     }
 }
 
