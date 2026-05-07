@@ -765,20 +765,7 @@ p {
 
 .reviews-grid-section {
     width: 100%;
-    margin: -0.8rem 0 5rem 0;
-}
-
-.reviews-grid {
-    display: grid;  
-    grid-template-columns: repeat(3, 404px);
-    row-gap: 1.9rem;
-    column-gap: 2rem;
-}
-
-.reviews-columns {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+    margin: 0 0 5.3rem 0;
 }
 
 .reviews-column {
@@ -826,39 +813,57 @@ p {
 }
 
 .review-block__source {
-    height: 1.18rem; 
+    height: 1.18rem;
     object-fit: contain;
 }
 
 .review-block__text.text-body-30 {
     margin: 0;
-    max-width: 21.2rem;
+    max-width: 21.4rem;
     line-height: 1.45;
-    width: 340px; 
 }
 
-.review-block--emilly {
-    height: 290px;
+.review-block--emilly { 
+    height: 290px; 
 }
-
-.review-block--margaret {
-    height: 350px;
+.review-block--margaret { 
+    height: 350px; 
 }
-
-.review-block--thomas {
+.review-block--thomas { 
     height: 230px;
+ }
+.review-block--christopher { 
+    height: 290px; 
+}
+.review-block--clare { 
+    height: 290px; 
+}
+.review-block--benedict { 
+    height: 380px; 
 }
 
-.review-block--christopher {
-    height: 290px;
-}
+@media (min-width: 769px) {
+    .reviews-grid-section {
+        display: block;
+    }
 
-.review-block--clare {
-    height: 290px;
-}
+    #reviews-track2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem 2rem;
+        overflow: visible;
+    }
 
-.review-block--benedict {
-    height: 380px;
+    #reviews-track2 .review-block {
+        flex: 0 0 calc(33.333% - 1.4rem);
+        scroll-snap-align: none;
+        width: 100%;
+    }
+
+    #reviews2-prev,
+    #reviews2-next {
+        display: none;
+    }
 }
 
 .faq-header {
