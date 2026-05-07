@@ -453,7 +453,6 @@
         align-items: flex-start;
         text-align: left;
     }
-
     
 
     .reviews-grid-section {
@@ -531,4 +530,54 @@
     }
 
 
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .faq-header__title {
+        margin-bottom: 4rem;
+        max-width: 10rem;  
+        text-align: left;
+    }
+
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2.2rem;
+        width: 100%;
+    }
+
+    .faq-header__questions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        border-bottom: 1px solid #E5E5E5;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .faq-question:last-child {
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .faq-question__text {
+        margin-bottom: 2rem;
+        letter-spacing: 0.01rem;
+        max-width: 50rem;  
+    }
+
+    .faq-question__arrow {
+        margin: -2rem -0.8rem 0 0;
+        width: 1.5rem;
+        height: auto;
+        display: block;
+    }  
 }

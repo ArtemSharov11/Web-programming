@@ -868,13 +868,13 @@ p {
 
 .faq-header {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 1fr 2fr;
     margin-bottom: 2.2rem;
 }
 
 .faq-header__title {
     margin: 0;
-    max-width: 10rem;  
+    max-width: 10rem;
     text-align: left;
 }
 
@@ -884,15 +884,17 @@ p {
 }
 
 .faq-header__questions {
+    margin-top: -2.2rem;
+    padding: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 1rem 0 0 0; 
+    padding: 2.8rem 0 0 0;
     border-bottom: 1px solid #E5E5E5;
 }
 
@@ -901,12 +903,16 @@ p {
 }
 
 .faq-question:last-child {
-    border-bottom: none; 
+    border-bottom: none;
 }
-
 
 .faq-question__arrow {
     padding: 1rem 1.8rem 0 0;
+}
+
+.faq-question__text {
+    margin-bottom: 2rem;
+    line-height: 1.4;
 }
 
 .site-footer {
