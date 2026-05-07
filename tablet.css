@@ -580,4 +580,13 @@
         height: auto;
         display: block;
     }  
+
+    .footer-cta__icon {
+        margin-bottom: 0.3rem;
+        margin-top: 4.9rem;
+    }
+
+    .footer-cta__title {
+        font-size: 2.5rem;
+    }
 }
