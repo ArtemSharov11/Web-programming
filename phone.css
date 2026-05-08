@@ -99,5 +99,77 @@
         margin-left: 0;
     }    
 
+    .features-section {
+        margin: 0rem;
+        width: 23rem;    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: scale(0.8);
+        transform-origin: center center;
+        margin-top: -2.3rem;
+    }
+
+    .features-grid--2-cols,
+    .content-cards-grid,
+    .tariffs-grid,
+    .admin-section {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .features-card {
+        padding: 0rem 1.5rem 2rem 1.5rem;
+    }
+
+    .features-card .features-card__title {
+        margin-bottom: 1.5rem;
+        margin-top: -1.5rem;
+        font-size: 2rem;
+    }
+
+    .features-card__text.text-body-gray-30 {
+        margin-top: 2.3rem;
+        font-size: 0.8rem;
+        min-width: 20.5rem;
+    }
+
+    .features-section {
+        margin: 0rem;
+        width: 23rem;    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: scale(0.8);
+        transform-origin: center center;
+        margin-top: -2.3rem;
+    }
+
+    .features-card__icon {
+        margin-top: -0.7rem;
+        width: 2.8rem;
+    }
+
+    .features-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .features-card .features-card__title {
+        margin-bottom: 1.5rem;
+        margin-top: -1.5rem;
+        font-size: 2rem;
+    }
+
+    .features-card__text.text-body-gray-30 {
+        margin-top: 2.3rem;
+        font-size: 0.8rem;
+        min-width: 20.5rem;
+    }
 
 }
