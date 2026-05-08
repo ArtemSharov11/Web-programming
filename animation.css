@@ -191,6 +191,32 @@
     }
 }
 
+@media (max-width: 480px) {
+    #btn-prev, #btn-next {
+        width: 1.3rem; 
+        height: 1.3rem;
+        top: 3.5rem;
+    }
+    #btn-prev { 
+        left: calc(50% - 9.25rem); 
+    }
+    #btn-next { 
+        right: calc(50% - 9.25rem); 
+    }
+
+    #content-prev, #content-next {
+        width: 1.3rem; 
+        height: 1.3rem;
+        top: 2.35rem;
+    }
+    #content-prev { 
+        left: calc(50% - 9.1rem); 
+    }
+    #content-next { 
+        right: calc(50% - 9.4rem);
+    }
+}
+
 .phones-grid {
     scrollbar-width: none;
 }

@@ -189,6 +189,8 @@
         line-height: 1.18;
     }
 
+
+
     .phones-header {
         display: flex;
         flex-direction: column;
@@ -279,5 +281,9 @@
         max-width: 22rem;
         line-height: 1.1;
         width: 100%;
+    }
+
+    .text-h2 {
+        font-size: 1.6rem;
     }
 }
