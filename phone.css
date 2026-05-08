@@ -1,0 +1,103 @@
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .header {
+        height: 3.5rem;
+        padding: 0 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 0.9rem;
+    }
+
+    .logo {
+        position: static;
+        width: 6rem;
+        height: auto;
+    }
+
+    .btn-connect {
+        position: static;
+        width: 6rem; 
+        padding: 0.4rem 0.7rem;
+        font-size: 0.5rem;
+        height: auto;
+        border-radius: 1rem;
+        margin-right: 0rem;
+        white-space: nowrap;
+    }
+
+    .core-section {
+        position: relative;
+        max-width: 20.6rem;      
+        min-height: 11.4rem;        
+        background-size: cover;  
+        background-position: center center;
+        padding: 0;
+        margin-bottom: 0.2rem;
+    }
+
+    .core-section__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .hero-text {
+        padding: 0.4rem 0 0 0.6rem;
+        max-width: 12rem;
+    }
+
+    .hero-text__title {
+        font-size: 1.17rem; 
+        line-height: 1;
+    }
+
+    .qr-code {
+        margin: 0 0 -0.8rem -0.8rem;
+        display: flex;   
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 0.6rem;       
+    }
+
+    .qr-code__image {
+        width: 3.2rem;    
+        height: 3.2rem;
+        background: white;
+        border-radius: 0.4rem;
+    }
+
+    .qr-code__text {
+        line-height: 1;
+        margin-top: 0;
+    }
+
+    .qr-code__title {
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin: -0.3rem 0 0.5rem 0;
+    }
+
+    .qr-code__description {
+        margin: 0;
+        font-size: 0.6rem;
+        line-height: 1.1;
+    }
+
+    .qr-code__smile {
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-top: 0.2rem;
+        margin-left: 0;
+    }    
+
+
+}
