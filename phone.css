@@ -827,6 +827,85 @@
     }
 
 
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .faq-header__title {
+        max-width: 8rem;
+        padding-left: 1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0.8rem 0 0 0.9rem; 
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .faq-question__text {
+        margin-bottom: 0.55rem;
+        letter-spacing: 0.01rem;
+        max-width: 50rem;  
+    }
+
+    .faq-question__arrow {
+        margin: -0.5rem 0.4rem 0 0;
+        width: 0.7rem;
+        height: auto;
+        display: block;
+    } 
+
+    .footer-cta {
+        border-radius: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        padding: 0;
+        padding-bottom: 3rem;            
+        width: 100%;
+        max-width: 21rem; 
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .footer-cta__icon {
+        width: 2rem;
+        margin-top: 2.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .footer-cta__title {
+        font-size: 1.2rem; 
+        line-height: 1;
+        margin: 0 0 2rem 0;
+    }
+
+    .footer-cta__description.text-body-gray-30 {
+        font-size: 0.6rem;
+        min-width: 21rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 1.2rem;
+        padding: 0;
+    }
+
+    .footer-cta__button {
+        width: 100%;       
+        max-width: 11.5rem;
+        min-height: 1.9rem;
+        padding: 0;
+        font-size: 0.6rem;
+    }
+
+    .site-footer__copyright {
+        font-size: 0.47rem;
+        margin-top: 1.7rem;
+        text-align: center;
+    }
+
 
     .text-h2 {
         font-size: 1.6rem;
