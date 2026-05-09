@@ -457,9 +457,417 @@
         object-fit: contain;
     }
 
+
+    .pricing-nav {
+        padding-left: 1.5rem;
+    }
+
+    .pricing-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: -1rem 0 0 0;
+        gap: 1rem;
+    }
     
+    .toggle-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 1.2rem; 
+        align-items: center;
+    }
+
+    .active-underline {
+        position: absolute;
+        bottom: -0.7rem; 
+        border: none;
+        border-bottom: 2px solid #000;
+        margin-left: -0.3rem;
+        width: 130%;
+    }
+
+    .text-pricing-descr {
+        padding-left: 1rem;
+        text-align: left;
+        font-size: 0.7rem;
+        max-width: 13rem;
+    }
+
+    .tariffs-section {
+        margin-top: 3.8rem; 
+        margin-bottom: 0.5rem;
+        padding: 0 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tariffs-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10rem;
+        padding: 0 calc(50% - 6.5rem) 1rem;
+        scrollbar-width: none;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .tariffs-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tariff-card {
+        flex: 0 0 13rem;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        border-radius: 1rem;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        max-height: 26.5rem;
+    }
+
+    .tariff-card--basic .tariff-card__item,
+    .tariff-card--pro .tariff-card__item,
+    .tariff-card--addons .tariff-card__item {
+        font-size: 0.6rem;
+        padding: 0 0 0.15rem 0;
+    }
+
+    .tariff-card--addons .tariff-card__item {
+        font-size: 0.55rem;
+        padding: 0 0 0.2rem 0;
+        min-width: 10rem;
+    }
+
+    .tariff-card--basic .tariff-card__list,
+    .tariff-card--pro .tariff-card__list,
+    .tariff-card--addons .tariff-card__list {
+        margin-top: 0rem;
+        padding: 0.5rem 0 0 2rem;
+        max-width: 8rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tariff-card--basic .tariff-card__list {
+        margin-top: 1.1rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .tariff-card--basic .tariff-card__item {
+        margin-bottom: 0rem;
+        line-height: 1.5;
+    }
+
+    .tariff-card .tariff-card__title--inverse {
+        padding: 0.1rem 0 0 0.5rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .tariff-card__price.text-price-large-inverse {
+        margin-top: 7.5rem;
+        padding-left: 0.1rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .tariff-card__icon {
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
+
+    .tariff-card__accent {
+        font-size: 0.5rem;
+        padding: 0 0 0 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        letter-spacing: 0.025rem;
+    }
+
+    .tariff-card__header {
+        min-height: 4rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0.4rem 0 0 0.4rem;
+    }
+
+    .tariff-card__title {
+        padding: 0 0 0 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tariff-card__subtitle {
+        font-size: 0.6rem;
+        padding: 0 0.6rem;
+        max-width: 10rem;
+        letter-spacing: 0.01rem;
+        margin: 0 0 0.3rem 0;
+    }
+
+    .tariff-card__list {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .tariff-card__item {
+        font-size: 0.6rem;
+        padding: 0 0 0.2rem 0;
+        width: 100%;
+    }
+
+    .tariff-card__footer {
+        padding: 1rem 0 1rem 0.9rem;
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    .tariff-card__price-info {
+        padding: 1.1rem 0 0 0.3rem;
+        gap: 0.3rem;
+    }
+        
+
+    .tariff-card__price.text-price-large {
+        font-size: 2.2rem;
+    }
+
+    .tariff-card__price-old.text-price-old {
+        font-size: 0.6rem;
+    }
+
+    .reviews-section {
+        margin-bottom: 0.2rem;
+    }
+
+    .reviews-section__header {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+
+    #reviews-prev, #reviews-next {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: -1.3rem;
+        transform: none;
+    }
+
+    #reviews-prev {
+        left: 2.3rem;
+    }
+
+    #reviews-next {
+        right: 2.2rem;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 2.4rem;
+    }
+
+    .review-card {
+        flex-direction: column;
+        gap: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 1.8rem;
+    }
+
+    .review-card__image {
+        width: 12rem;
+        height: auto;
+        border-radius: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .review-card__text.text-banner {
+        max-width: 18rem;
+        margin-bottom: 0;
+        padding-left: 1rem;
+        letter-spacing: 0.03rem;
+        line-height: 1.17;
+        font-size: 1.3rem;
+    }
+
+    .review-card__author {
+        margin-top: -0.2rem;
+        padding-left: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem; 
+    }
+
+    .review-card__position.text-body-gray-30 {
+        font-size: 0.6rem; 
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .review-block__image {
+        object-fit: cover;
+        width: 2rem;
+    }
+
+    .review-card__name {
+        font-size: 0.7rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0;
+    }
+
+    .reviews-grid-section {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #guest-track {
+        padding: 0 1rem;
+    }
+
+    .reviews-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        min-width: 18.5rem;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .review-block {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .reviews-column:first-child {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .reviews-column:first-child .review-block:first-child {
+        margin-top: 2rem; 
+        width: 100%;
+        min-width: 12rem;
+        height: auto;      
+        min-height: 8.5rem; 
+        background-color: #F5F5F5;
+        border-radius: 1.25rem;
+        box-sizing: border-box;
+        padding: 0.7rem 0 0 0.9rem;
+    }
+
+    .review-block__image {
+        width: 2rem;
+        border-radius: 50%;
+    }
+
+    .review-block__header {
+        display: flex;
+        margin-bottom: 0.2rem;
+        gap: 0.2rem;
+    }
+
+    .review-block__info {
+        gap: 0rem;
+    }
+
+    .review-block__source {
+        width: 3rem;
+        object-fit: contain;
+    }
+
+    .review-block__name {
+        font-size: 0.6rem;
+    }
+
+    .review-block__text.text-body-30 {
+        font-size: 0.6rem;
+        line-height: 1.4;
+        max-width: 100%;
+        width: 10.3rem;
+        letter-spacing: 0.02rem;
+        line-height: 1.45;
+    }
+
+    #reviews-track2 {
+        max-width: 12.2rem;
+        margin: 0 auto;
+        align-items: flex-start;
+    }
+
+    #reviews-track2 .review-block {
+        padding: 0.7rem 0.9rem 0.7rem 1rem;
+        margin-top: 1.8rem;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    #reviews2-prev,
+    #reviews2-next {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: 0.8rem;
+        transform: translateY(-50%);
+    }
+
+    #reviews2-prev {
+        left: 2.3rem;
+    }
+
+    #reviews2-next {
+        right: 2.3rem;
+    }
+
+
 
     .text-h2 {
         font-size: 1.6rem;
     }
+
+    .text-h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-body-41 {
+        font-size: 1rem;
+    }
+
+    .text-body-34 {
+        font-size: 1.2rem;
+    }
+
+    .text-body-30, .text-body-gray-30 {
+        font-size: 0.6rem;
+    }
+
+    .text-pricing-nav {
+        font-size: 0.7rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .tariff-card__price-old.text-price-old {
+        font-size: 0.6rem;         
+        font-weight: 400;
+        line-height: 1;
+        color: #FF6B6B;
+    }
+    
+    .tariff-card__period.text-body-gray-30 {
+        font-size: 0.5rem;          
+        font-weight: 400;
+        line-height: 1;
+        color: #808080;  
+    }   
 }
