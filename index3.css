@@ -1,0 +1,1053 @@
+html {
+    font-size: 16px;
+    max-width: 85.125rem;
+    margin: 0 auto;
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 0.6rem 1.875rem 0 1.875rem;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 1.875rem 0 1.2rem;
+    height: 5.3rem;
+    background-color: #FFFFFF;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 12.5rem;
+    height: 1.875rem;
+    object-fit: contain;
+}
+
+.btn-connect {
+    position: absolute;
+    right: 3rem;
+    top: 0.75rem;
+    width: 12.75rem;
+    height: 2.4375rem;
+    padding: 0;
+    background-color: #000000;
+    border: none;
+    border-radius: 1.875rem;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn-connect:hover {
+    background-color: #333333;
+}
+
+.core-section {
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    padding-left: 2rem;
+    padding-bottom: 0.5rem;
+    background-image: url('img/hero-photo.png');
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.core-section__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-text {
+    max-width: 40rem;
+    padding-left: 0.8rem;
+    text-align: left;
+}
+
+.hero-text__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.03;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.qr-code {
+    display: flex;
+    margin-top: 17.5rem;
+    gap: 1.5rem;
+}
+
+.qr-code__image {
+    width: 6.875rem;
+    height: 6.875rem;
+}
+
+.qr-code__text {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    margin-top: -0.3rem;
+}
+
+.qr-code__title {
+    font-size: 1.6rem;
+}
+
+.qr-code__description {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+.qr-code__smile {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -0.3rem;
+    margin-left: -0.3rem;
+}
+
+.features-section {
+    position: relative;
+    width: 100%;
+    margin-top: 6rem;
+    background-color: #FFFFFF;
+}
+
+.features-grid {
+    width: 100%;
+    display: grid;
+    gap: 2.5rem;
+    grid-auto-rows: 1fr;
+}
+
+.features-grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.features-grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.features-card {
+    padding: 3.8rem 2.5rem 4rem 2.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 1.25rem;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.features-card__icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 0 1rem 0;
+    object-fit: contain;
+    display: block;
+}
+
+.features-card .features-card__title {
+    margin: 0 auto 6.6rem auto;
+}
+
+
+
+
+.info-banner {
+    margin: 6.2rem 0 5rem 0;
+    padding: 0.75rem 0 2.75rem 1.8rem;
+    background-color: #9EF01A;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+}
+
+.info-banner__text {
+    max-width: 75rem;
+    text-align: left;
+}
+
+
+
+.phones-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 4.9rem;
+}
+
+.phones-header__title {
+    margin: 0;
+    max-width: 38rem;
+    text-align: left;
+}
+
+.phones-header__title h2 {
+    margin: 0;
+}
+
+.phones-header__subtitle {
+    max-width: 30rem;
+    padding: 0 0 0 6.2rem;
+    text-align: left;
+    margin-top: 0.3rem;
+}
+
+.phones-header__subtitle p {
+    margin: 0;
+}
+
+.phones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.6rem 3.875rem;
+    width: 100%;
+}
+
+.phone-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.phone-card__image-wrapper {
+    width: 100%;
+    max-width: 38.75rem;
+    height: 29.0625rem;
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.phone-card__image {
+    width: 17.125rem;
+    height: 29.0625rem;
+    object-fit: contain;
+    display: block;
+}
+
+.phone-card .phone-card__title {
+    margin: 1.3rem 0 1rem 0;
+}
+
+.phone-card__text {
+    margin: 0;
+    max-width: 37rem;
+    text-align: center;
+}
+
+.phones-info {
+    width: 100%;
+    max-width: 50rem;
+    margin: 25.2rem auto 12.3rem;
+    text-align: center;
+}
+
+.phones-info__text {
+    margin: 0;
+    text-align: center;
+    display: block;
+}
+
+.content-cards-section {
+    background-color: #FFFFFF;
+}
+
+.content-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem 3.875rem;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0.1rem;
+}
+
+.content-card__image-wrapper {
+    width: 100%;
+    max-width: 38.75rem;
+    height: 31rem;
+    background-color: #F1F1F1;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.content-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content-card .content-card__title {
+    margin: 1.1rem 0 0.9rem 0;
+    text-align: left;
+    max-width: 37rem;
+}
+
+.content-card__text {
+    max-width: 38rem;
+    text-align: left;
+}
+
+.admin-section {
+    width: 100%;
+    height: 45rem;
+    margin-bottom: 4.7rem;
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.admin-texts {
+    grid-column: 1;
+    margin: 8.5rem 0 0 1.4rem;
+}
+
+.admin-section .admin-texts .admin-title {
+    margin: 0;
+    max-width: 30rem;
+    text-align: center;
+}
+
+.admin-section .admin-texts .admin-text {
+    margin: 4rem 0 0 0;
+    max-width: 30rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.admin-image {
+    grid-column: 2;
+    margin: 4.9rem 0 0 0;
+    justify-self: end;
+}
+
+.admin-image__photo {
+    width: 31.25rem;
+    height: 37.75rem;
+    display: block;
+    object-fit: contain;
+}
+
+.phones-showcase {
+    width: 100%;
+    max-width: 80.875rem;
+    margin: 4rem auto 3.4rem 0;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.phones-showcase__background {
+    background-color: #F1F1F1;
+    border-radius: 1.25rem;
+    padding: 0 2rem 0.625rem;
+    height: 43rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.5rem;
+}
+
+.showcase-phone {
+    flex-shrink: 0;
+}
+
+.showcase-phone--left,
+.showcase-phone--right {
+    margin-top: 4.6rem;
+}
+
+.showcase-phone--center {
+    margin-top: 0;
+}
+
+.showcase-phone__image {
+    width: 21.875rem;
+    height: 42.375rem;
+    display: block;
+    object-fit: contain;
+}
+
+.brands-section {
+    width: 100%;
+    margin-top: 6.8rem;
+    margin-bottom: 6.4rem;
+    background-color: #FFFFFF;
+    align-items: center;
+}
+
+.brands-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.brands-row--first {
+    margin-bottom: 3.5rem;
+}
+
+.brand-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-item__logo {
+    height: 6.3rem;
+    object-fit: contain;
+}
+
+.pricing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.3rem;
+    margin: -1.4rem 0 -3.2rem 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.toggle-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2.4rem;
+    align-items: center;
+}
+
+.toggle-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+
+.pricing-info {
+    max-width: 28rem;
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.active-underline {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    border: none;
+    border-bottom: 2px solid #000;
+    margin: 0 -1.2rem;
+    width: 130%;
+}
+
+.tariffs-section {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+.tariffs-grid {
+    margin-left: -1.375rem;
+    margin-right: -1.375rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    box-sizing: border-box;
+}
+
+.tariff-card {
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.tariff-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.tariff-card--basic {
+    border: 1px solid #F1F1F1;
+    background: #FFFFFF;
+}
+
+.tariff-card--pro {
+    border: 1px solid #F1F1F1;
+    background: #F1F1F1;
+}
+
+.tariff-card--addons {
+    border: 1px solid #F1F1F1;
+    background: #000000;
+}
+
+.tariff-card__header {
+    min-height: 11rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tariff-card__header--inverse {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.tariff-card__title {
+    padding: 0.9rem 0 0 1.8rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000000;
+    margin: 0;
+}
+
+.tariff-card__title--inverse {
+    color: #707378;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1.2rem 0 2rem;
+}
+
+.tariff-card--addons .tariff-card__title--inverse {
+    color: #9EF01A !important;
+}
+
+.tariff-card__subtitle {
+    padding: 1.5rem 0 0 1.9rem;
+    margin: 0;
+    font-size: 1.32rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    max-width: 23rem;
+}
+
+.tariff-card__subtitle--inverse {
+    color: #808080;
+    margin: -1.5rem 0 0 0;
+}
+
+.tariff-card__accent {
+    margin: 2rem 0 0 0;
+    padding: 0 0 0 2rem;
+    letter-spacing: 0.07rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000000;
+}
+
+.tariff-card--basic .tariff-card__list {
+    padding: 0.9rem 0 0 2.6rem;
+    list-style: none;
+    height: 32rem;
+}
+
+.tariff-card--pro .tariff-card__list {
+    padding: 0 0 0 4rem;
+    list-style: none;
+}
+
+.tariff-card--addons .tariff-card__list {
+    padding: 0.9rem 0 0 2.7rem;
+    list-style: none;
+    color: #808080;
+}
+
+.tariff-card--basic .tariff-card__item {
+    padding: 0 0 0.35rem 1.4rem;
+    max-width: 17rem;
+    font-size: 1.32rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #808080;
+}
+
+.tariff-card--pro .tariff-card__item {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+    min-width: 23rem;
+    padding: 0 0 0.4rem 0;
+}
+
+.tariff-card--addons .tariff-card__item {
+    padding: 0 0 0.3rem 1.6rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #808080;
+    max-width: 22rem;
+}
+
+.tariff-card__footer {
+    padding: 0 0 3rem 1.8rem;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.9rem;
+}
+
+.tariff-card__price-large {
+    display: flex;
+}
+
+.tariff-card__price-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 2.4rem;
+    gap: 0.5rem;
+}
+
+.tariff-card__icon {
+    margin-top: 0.8rem;
+    margin-right: -0.6rem;
+}
+
+.reviews-section {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.reviews-section__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.reviews-section__title {
+    margin: 0;
+}
+
+.reviews-section__arrows {
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 1.8rem 2.3rem 0 0;
+    gap: 4.6rem;
+}
+
+.reviews-section__arrow {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.review-card {
+    display: flex;
+    gap: 3.1rem;
+    align-items: flex-start;
+    margin-bottom: 3.8rem;
+}
+
+.review-card__photo {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.review-card__image {
+    width: 25.5rem;
+    height: 29.6rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.review-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-card__text.text-banner {
+    max-width: 50rem;
+    margin-bottom: 1.4rem;
+}
+
+.review-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.review-card__name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0;
+}
+
+.review-card__position.text-body-gray-30 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.reviews-grid-section {
+    width: 100%;
+    margin: 0 0 5.3rem 0;
+}
+
+.reviews-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    width: 404px;
+}
+
+.review-block {
+    background-color: #F5F5F5;
+    border-radius: 1.25rem;
+    padding: 1.9rem 0 0 1.9rem;
+    box-sizing: border-box;
+}
+
+.review-block__header {
+    display: flex;
+    margin-bottom: 0.9rem;
+    gap: 0.7rem;
+}
+
+.review-block__photo {
+    margin: 0;
+}
+
+.review-block__image {
+    object-fit: cover;
+}
+
+.review-block__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.6rem;
+}
+
+.review-block__name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #000000;
+    margin: 0;
+}
+
+.review-block__source {
+    height: 1.18rem;
+    object-fit: contain;
+}
+
+.review-block__text.text-body-30 {
+    margin: 0;
+    max-width: 21.4rem;
+    line-height: 1.45;
+}
+
+.review-block--emilly { height: 290px; }
+.review-block--margaret { height: 350px; }
+.review-block--thomas { height: 230px; }
+.review-block--christopher { height: 290px; }
+.review-block--clare { height: 290px; }
+.review-block--benedict { height: 380px; }
+
+/* Десктоп сетка для reviews-track2 */
+@media (min-width: 769px) {
+    .reviews-grid-section {
+        display: block;
+    }
+
+    #reviews-track2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem 2rem;
+        overflow: visible;
+    }
+
+    #reviews-track2 .review-block {
+        flex: 0 0 calc(33.333% - 1.4rem);
+        scroll-snap-align: none;
+        width: 100%;
+    }
+
+    #reviews2-prev,
+    #reviews2-next {
+        display: none;
+    }
+}
+
+.faq-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 2.2rem;
+}
+
+.faq-header__title {
+    margin: 0;
+    max-width: 10rem;
+    text-align: left;
+}
+
+.faq-header__title h2 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.faq-header__questions {
+    margin-top: -2.2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.8rem 0 0 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.faq-question:hover {
+    opacity: 0.7;
+}
+
+.faq-question:last-child {
+    border-bottom: none;
+}
+
+.faq-question__arrow {
+    padding: 1rem 1.8rem 0 0;
+}
+
+.faq-question__text {
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.footer-cta {
+    width: 100%;
+    background-color: #9EF01A;
+    border-radius: 2rem;
+    padding: 0 0 6.2rem 0;
+    box-sizing: border-box;
+    margin-top: 5.5rem;
+}
+
+.footer-cta__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-cta__icon {
+    margin-top: 5rem;
+    margin-bottom: 0.6rem;
+}
+
+.footer-cta__title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 0 0 3.7rem 0;
+    text-align: center;
+}
+
+.footer-cta__description.text-body-gray-30 {
+    max-width: 45rem;
+    margin-bottom: 2.7rem;
+    text-align: center;
+}
+
+.footer-cta__button {
+    padding: 1.2rem 4.7rem;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.site-footer__copyright {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #808080;
+    margin-top: 3.3rem;
+    text-align: center;
+}
+
+.text-h2 {
+    font-size: 3.3rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02rem;
+    color: #000000;
+    margin: 0;
+}
+
+.text-banner {
+    font-size: 2.875rem;
+    font-weight: 400;
+    line-height: 51px;
+    color: #000000;
+    margin: 0;
+}
+
+.text-body-41 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000000;
+    letter-spacing: 0.02rem;
+    margin: 0;
+}
+
+.text-body-34 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000000;
+    letter-spacing: 0.01rem;
+    margin: 0;
+}
+
+.text-body-30 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #000000;
+    letter-spacing: 0.01rem;
+    margin: 0;
+}
+
+.text-body-gray-30 {
+    font-size: 1.32rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #808080;
+    margin: 0;
+}
+
+.text-body-27 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.text-body-27--gray {
+    font-size: 1.71875rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #808080;
+    margin: 0;
+}
+
+.text-pricing-nav {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.text-pricing-descr {
+    font-size: 1.5rem;
+    max-width: 30rem;
+    line-height: 1.3;
+    color: #000;
+    text-align: right;
+    margin: 0;
+}
+
+.tariff-card__price.text-price-large {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #000000;
+}
+
+.tariff-card__price-old.text-price-old {
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #FF6B6B;
+}
+
+.tariff-card__price.text-price-large-inverse {
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #FFFFFF;
+}
+
+.tariff-card__period.text-body-gray-30 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #808080;
+}
+
+.tariff-card--addons .tariff-card__period {
+    color: rgba(255, 255, 255, 0.8);
+}
