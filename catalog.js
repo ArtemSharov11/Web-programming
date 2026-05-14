@@ -16,19 +16,19 @@ const initialServices = [
     { id: 15, name: "Поздний выезд", category: "Размещение", description: "Продление номера до 18:00.", price: 40, rating: 4.2, image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" }
 ];
 
-const formatPrice = (price) => {
-    return price === 0 ? "Free" : `$${price}`;
-};
+let favorites = JSON.parse(localStorage.getItem('hotel_favorites')) || [];
 
-
-function getFilteredData(list, searchValue, category) {
-    return list.filter(item => {
-        const matchesSearch = item.name.toLowerCase().includes(searchValue.toLowerCase()) || 
-                             item.description.toLowerCase().includes(searchValue.toLowerCase());
-        const matchesCategory = category === 'all' || item.category === category;
-        return matchesSearch && matchesCategory;
-    });
+function toggleFavorite(id) {
+    if (favorites.includes(id)) {
+        favorites = favorites.filter(favId => favId !== id);
+    } else {
+        favorites.push(id);
+    }
+    localStorage.setItem('hotel_favorites', JSON.stringify(favorites));
+    applyFilters();
 }
+
+const formatPrice = (price) => price === 0 ? "Free" : `$${price}`;
 
 function renderCatalog(data) {
     const container = document.getElementById('catalog-container');
@@ -40,6 +40,7 @@ function renderCatalog(data) {
     }
 
     data.forEach(item => {
+        const isFav = favorites.includes(item.id);
         const card = document.createElement('article');
         card.className = 'service-card pop-in';
         
@@ -47,13 +48,18 @@ function renderCatalog(data) {
             <div class="service-card__image-container">
                 <img src="${item.image}" alt="${item.name}" class="service-card__image">
                 <span class="service-card__badge">${item.category}</span>
+                <button class="fav-btn ${isFav ? 'active' : ''}" onclick="toggleFavorite(${item.id})">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="${isFav ? '#FF4B4B' : 'none'}" stroke="${isFav ? '#FF4B4B' : '#808080'}" stroke-width="2">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
             </div>
             <div class="service-card__content">
                 <h3 class="service-card__title text-body-34">${item.name}</h3>
                 <p class="service-card__description text-body-gray-30">${item.description}</p>
                 <div class="service-card__footer">
                     <span class="service-card__price text-price-large" style="font-size: 1.6rem;">${formatPrice(item.price)}</span>
-                    <span class="service-card__rating">⭐ ${item.rating}</span>
+                    <span class="service-card__rating">${item.rating}</span>
                 </div>
             </div>
         `;
@@ -62,22 +68,49 @@ function renderCatalog(data) {
 }
 
 function applyFilters() {
-    const searchValue = document.getElementById('search-input').value;
+    const searchValue = document.getElementById('search-input').value.toLowerCase();
     const sortValue = document.getElementById('sort-select').value;
-    const activeCat = document.querySelector('.cat-btn.active').getAttribute('data-category');
+    const activeBtn = document.querySelector('.cat-btn.active');
+    const category = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
 
-    let data = getFilteredData(initialServices, searchValue, activeCat);
+    let data = initialServices.filter(item => {
+        const matchesSearch = item.name.toLowerCase().includes(searchValue) || 
+                             item.description.toLowerCase().includes(searchValue);
+        const matchesCategory = category === 'all' || item.category === category;
+        return matchesSearch && matchesCategory;
+    });
 
     if (sortValue === 'price-asc') data.sort((a, b) => a.price - b.price);
     else if (sortValue === 'price-desc') data.sort((a, b) => b.price - a.price);
     else if (sortValue === 'rating-desc') data.sort((a, b) => b.rating - a.rating);
+    else if (sortValue === 'name-asc') data.sort((a, b) => a.name.localeCompare(b.name));
 
     renderCatalog(data);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderCatalog(initialServices);
+function initCategories() {
+    const catList = document.getElementById('category-list');
+    const categories = ['all', ...new Set(initialServices.map(s => s.category))];
+    
+    catList.innerHTML = '';
+    categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `cat-btn ${cat === 'all' ? 'active' : ''}`;
+        btn.setAttribute('data-category', cat);
+        btn.textContent = cat === 'all' ? 'Все' : cat;
+        
+        btn.onclick = (e) => {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            applyFilters();
+        };
+        catList.appendChild(btn);
+    });
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    initCategories();
+    renderCatalog(initialServices);
     document.getElementById('search-input').oninput = applyFilters;
     document.getElementById('sort-select').onchange = applyFilters;
     
