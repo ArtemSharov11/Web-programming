@@ -2,14 +2,12 @@
     text-align: center;
     margin: 4rem 0 3rem;
 }
-
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2.5rem;
     padding: 1rem 0;
 }
-
 .service-card {
     background: #fff;
     border-radius: 1.25rem;
@@ -19,29 +17,24 @@
     flex-direction: column;
     transition: all 0.3s ease;
 }
-
 .service-card:hover {
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     transform: translateY(-5px);
 }
-
 .service-card__image-container {
     position: relative;
     height: 220px;
     overflow: hidden;
 }
-
 .service-card__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .service-card:hover .service-card__image {
     transform: scale(1.1);
 }
-
 .service-card__badge {
     position: absolute;
     top: 1rem;
@@ -52,24 +45,20 @@
     font-size: 0.8rem;
     font-weight: 500;
 }
-
 .service-card__content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
-
 .service-card__title {
     margin-bottom: 0.8rem;
 }
-
 .service-card__description {
     margin-bottom: 2rem;
     line-height: 1.5;
     flex-grow: 1;
 }
-
 .service-card__footer {
     display: flex;
     justify-content: space-between;
@@ -77,7 +66,6 @@
     padding-top: 1.2rem;
     border-top: 1px solid #F1F1F1;
 }
-
 @media (max-width: 480px) {
     .catalog-grid {
         grid-template-columns: 1fr;
@@ -87,23 +75,13 @@
         height: 180px;
     }
 }
-
-
-
-
-
-.filter-panel {
-    margin: 2rem auto;
-    text-align: center;
-}
-
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    margin: 20px 0;
 }
-
 .filter-buttons button {
     padding: 0.8rem 1.2rem;
     background-color: #F1F1F1;
@@ -113,36 +91,17 @@
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
-
 .filter-buttons button:hover {
     background-color: #9EF01A;
     border-color: #9EF01A;
     transform: translateY(-2px);
 }
-
-.total-sum-banner {
-    background: #000;
-    color: #9EF01A;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-}
-
-.filter-buttons button.active {
-    background-color: #000;
-    color: #9EF01A;
-    border-color: #000;
-    transform: scale(1.05);
-}
-
 .catalog-controls {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
-
 #search-input {
     width: 100%;
     padding: 1.2rem 1.5rem;
@@ -152,18 +111,15 @@
     outline: none;
     transition: border-color 0.3s;
 }
-
 #search-input:focus {
     border-color: #9EF01A;
 }
-
 .filters-row {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
 }
-
 #sort-select {
     padding: 0.8rem 1.2rem;
     border-radius: 1rem;
@@ -171,13 +127,11 @@
     background: #fff;
     cursor: pointer;
 }
-
 .category-list {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
-
 .cat-btn {
     padding: 0.6rem 1.2rem;
     border-radius: 2rem;
@@ -186,20 +140,12 @@
     cursor: pointer;
     transition: all 0.2s;
 }
-
 .cat-btn.active {
     background: #9EF01A;
     border-color: #9EF01A;
 }
-
 .no-results {
     grid-column: 1 / -1;
     text-align: center;
     padding: 5rem 0;
-}
-
-.no-results img {
-    width: 100px;
-    margin-bottom: 1rem;
-    opacity: 0.5;
 }

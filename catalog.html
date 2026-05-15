@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="index3.css">
     <link rel="stylesheet" href="tablet.css" media="(max-width: 768px)">
@@ -15,13 +14,10 @@
     <link rel="stylesheet" href="catalog.css">
 </head>
 <body>
-
     <header class="header">
-
         <a href="index3.html" style="display: flex; align-items: center;">
             <img src="img/Frame.svg" alt="Logo" class="logo">
         </a>
-        
         <div style="display: flex; align-items: center; gap: 20px;">
             <a href="index3.html" class="btn-connect" style="position: static; text-decoration: none;">На главную</a>
             <button type="button" class="burger-menu" id="burgerToggle">
@@ -31,7 +27,6 @@
             </button>
         </div>
     </header>
-
     <div class="side-menu" id="sideMenu">
         <nav class="side-menu__nav">
             <a href="index3.html">Главная</a>
@@ -42,39 +37,35 @@
         </nav>
     </div>
     <div class="overlay" id="overlay"></div>
-
     <main class="container">
         <section class="catalog-intro fade-in">
-            <h1 class="text-h2">Демо-каталог для гостя</h1>
-            <p class="text-body-gray-30">Посмотрите, как гость видит услуги вашего отеля в своем браузере</p>
+            <h1 class="text-h2">Каталог услуг отеля</h1>
         </section>
         <section class="catalog-controls container">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Поиск услуги или блюда...">
-            </div>
-
+            <input type="text" id="search-input" placeholder="Поиск по названию или описанию...">
             <div class="filters-row">
                 <select id="sort-select">
                     <option value="default">Сортировать по...</option>
-                    <option value="price-asc">Цена: сначала дешевле</option>
-                    <option value="price-desc">Цена: сначала дороже</option>
-                    <option value="name-asc">Название: А-Я</option>
-                    <option value="rating-desc">Рейтинг: высокий</option>
+                    <option value="price-asc">Цена (возрастание)</option>
+                    <option value="name-asc">Название (А-Я)</option>
+                    <option value="rating-desc">Рейтинг (высокий)</option>
                 </select>
-
-                <div class="category-list" id="category-list">
-                    <button class="cat-btn active" data-category="all">Все</button>
+                <div class="category-list" id="category-list"></div>
+            </div>
+            <div class="method-panel">
+                <div class="filter-buttons">
+                    <button id="btn-filter">Дешевле $25</button>
+                    <button id="btn-map">Формат HIT</button>
+                    <button id="btn-slice">Первые 6</button>
+                    <button id="btn-reduce">Сумма цен</button>
                 </div>
             </div>
         </section>
-
         <div id="catalog-container" class="catalog-grid"></div>
     </main>
-
     <footer class="container" style="margin-top: 5rem; padding-bottom: 2rem;">
         <p class="site-footer__copyright">© 2022 Hoteza Web. Все права защищены.</p>
     </footer>
-
     <script src="catalog.js"></script>
 </body>
 </html>
