@@ -1,0 +1,547 @@
+.real-arrow {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.real-arrow-left 
+{ 
+    background-image: url('img/pointer-left.png'); 
+}
+
+.real-arrow-right 
+{ 
+    background-image: url('img/pointer-right.png'); 
+}
+
+@media (max-width: 480px) {
+
+    #btn-prev, #btn-next {
+        width: 1.3rem; 
+        height: 1.3rem;
+        top: 3.5rem;
+    }
+    #btn-prev 
+    { 
+        left: calc(50% - 9.25rem); 
+    }
+    #btn-next 
+    { 
+        right: calc(50% - 9.25rem); 
+    }
+
+    #reviews2-prev, #reviews2-next {
+        width: 1.3rem;
+        height: 1.3rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #reviews2-prev { left: -1.5rem; }
+    #reviews2-next { right: -1.5rem; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #btn-prev, #btn-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 2rem;
+    }
+    #btn-prev 
+    {
+        left: 2.6rem; 
+    }
+    #btn-next 
+    { 
+        right: 2.4rem; 
+    }
+
+    #reviews-prev, #reviews-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: 40%;
+    }
+
+    #reviews-prev 
+    { 
+        left: 0; 
+    }
+    
+    #reviews-next 
+    { 
+        right: 0; 
+    }
+}
+
+@media (min-width: 769px) {
+    #btn-prev, #btn-next 
+    { 
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    #tariffs-prev, #tariffs-next {
+        width: 1.3rem;
+        height: 1.3rem;
+        top: -1.6rem;
+    }
+    #tariffs-prev 
+    { 
+        left: calc(50% - 9.1rem); 
+    }
+    #tariffs-next 
+    { 
+        right: calc(50% - 9.5rem); 
+    }
+
+    #content-prev, #content-next {
+        width: 1.3rem; 
+        height: 1.3rem;
+        top: 2.35rem;
+    }
+    #content-prev 
+    { 
+        left: calc(50% - 9.1rem); 
+    }
+    #content-next 
+    { 
+        right: calc(50% - 9.4rem);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    #tariffs-prev, #tariffs-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: -3rem;
+    }
+    #tariffs-prev 
+    { 
+        left: 2.5rem; 
+    }
+
+    #tariffs-next
+    { 
+        right: 2.5rem; 
+    }
+
+    #content-prev, #content-next {
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: 1.8rem;
+    }
+    #content-prev 
+    { 
+        left: 2.6rem; 
+    }
+    #content-next 
+    {
+        right: 2.4rem; 
+    }
+
+    #reviews2-prev, #reviews2-next {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    #reviews2-prev 
+    { 
+        left: -3rem; 
+    }
+    #reviews2-next
+     { 
+        right: -3rem; 
+    }
+
+}
+
+@media (min-width: 1025px) {
+    #tariffs-prev, #tariffs-next { 
+        display: none; 
+    }
+
+    #reviews2-prev, #reviews2-next {
+        display: none;
+    }
+
+    #reviews-prev, #reviews-next { 
+        display: block;
+        width: 2.5rem; 
+        height: 2.5rem;
+        top: -5rem;
+    }
+
+    #reviews-prev { 
+        right: 7.1rem; 
+        left: auto;
+    }
+
+    #reviews-next { 
+        right: 0; 
+        left: auto; 
+    }
+}
+
+.phones-grid, .tariffs-grid {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.phones-grid::-webkit-scrollbar, .tariffs-grid::-webkit-scrollbar, .reviews-track::-webkit-scrollbar {
+    display: none;
+}
+
+.burger-menu {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.5rem;
+    height: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2001;
+}
+ 
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: 0.3s;
+}
+ 
+.burger-menu.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+ 
+.burger-menu.is-active span:nth-child(2) {
+    opacity: 0;
+}
+ 
+.burger-menu.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+ 
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: #fff;
+    z-index: 2000;
+    padding: 3rem 1.5rem; 
+    box-sizing: border-box;   
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+ 
+.side-menu.is-open {
+    transform: translateX(0);
+}
+ 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1999; 
+    opacity: 0;
+    visibility: hidden;    
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+ 
+.overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+ 
+.side-menu__nav {
+    display: flex;
+    flex-direction: column; 
+    gap: 1.5rem;             
+    align-items: flex-start; 
+    padding: 0;
+    margin: 0;
+}
+ 
+.side-menu__nav a {
+    text-decoration: none; 
+    color: #000000;          
+    font-size: 1.4rem;       
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+ 
+.side-menu__nav a:hover {
+    opacity: 0.6;
+}
+ 
+.side-menu__nav hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #E5E5E5;
+    margin: 0.5rem 0;
+}
+ 
+.side-menu__text {
+    font-size: 1rem;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+@keyframes fadeIn {
+    from {
+         opacity: 0; 
+    }
+    to { 
+        opacity: 1;
+    }
+}
+.fade-in
+{ 
+    animation: fadeIn 0.8s ease-out forwards; 
+}
+
+@keyframes popIn {
+    0% { 
+        transform: scale(0);
+    }
+    70% { 
+        transform: scale(1.1); 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+}
+.pop-in 
+{ 
+    animation: popIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+}
+
+@keyframes flipX {
+    0% { transform: perspective(400px) rotateX(90deg); opacity: 0; 
+    }
+    100% { transform: perspective(400px) rotateX(0deg); opacity: 1; 
+    }
+}
+.flip-x 
+{ 
+    animation: flipX 0.7s ease-out forwards;
+}
+
+@keyframes reveal {
+    0% { 
+        clip-path: inset(0 100% 0 0); 
+    }
+    100% { 
+        clip-path: inset(0 0 0 0);
+    }
+}
+.reveal 
+{
+    animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards; 
+}
+
+@keyframes jelly {
+    0%, 100% {
+        transform: scale(1, 1); 
+    }
+    25% { 
+        transform: scale(1.2, 0.8);
+     }
+    50% {
+         transform: scale(0.8, 1.2);
+     }
+    75% { 
+        transform: scale(1.1, 0.9); 
+    }
+}
+.jelly 
+{ 
+    animation: jelly 0.6s both; 
+}
+
+@keyframes trackingIn {
+    0% {
+        letter-spacing: -0.5em; opacity: 0; 
+    }
+    100% { 
+        letter-spacing: normal; opacity: 1; 
+    }
+}
+.tracking-in {
+    animation: trackingIn 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes glitch {
+    0% { 
+        transform: translate(0); }
+    20% {
+         transform: translate(-3px, 2px); 
+    }
+    40% { 
+        transform: translate(-3px, -2px); 
+    }
+    60% { 
+        transform: translate(3px, 2px);
+     }
+    80% { 
+        transform: translate(3px, -2px); 
+    }
+    100% { 
+        transform: translate(0); 
+    }
+}
+.glitch 
+{ 
+    animation: glitch 0.3s linear infinite;
+}
+
+@keyframes focusIn {
+    0% { 
+        filter: blur(12px); opacity: 0; 
+    }
+    100% { 
+        filter: blur(0); opacity: 1; 
+    }
+}
+.focus-in 
+{
+    animation: focusIn 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; 
+}
+
+@keyframes hueShift {
+    0% { 
+        filter: hue-rotate(0deg);
+    }
+    100% {
+         filter: hue-rotate(360deg); 
+    }
+}
+.hue-shift 
+{ 
+    animation: hueShift 4s linear infinite; 
+}
+
+@keyframes swing {
+    0% { 
+        transform: rotate(0deg);
+     }
+    20% { 
+        transform: rotate(15deg); 
+    }
+    40% { 
+        transform: rotate(-10deg); 
+    }
+    60% { 
+        transform: rotate(5deg); 
+    }
+    80% { 
+        transform: rotate(-5deg); 
+    }
+    100% {
+         transform: rotate(0deg); 
+    }
+}
+.swing 
+{ 
+    transform-origin: top center; animation: swing 1s ease-in-out both; 
+}
+
+@keyframes shimmer {
+    0% { 
+        background-position: -200% 0; 
+    }
+    100% { 
+        background-position: 200% 0; 
+    }
+}
+.shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes spiralIn {
+    0% { 
+        transform: rotate(-720deg) scale(0); opacity: 0;
+    }
+    100% { 
+        transform: rotate(0) scale(1); opacity: 1; 
+    }
+}
+.spiral-in 
+{ 
+    animation: spiralIn 0.8s ease-out forwards; 
+}
+
+@keyframes neonGlow {
+    0%, 100% {
+         box-shadow: 0 0 5px #9EF01A, 0 0 10px #9EF01A;
+    }
+    50% {
+         box-shadow: 0 0 20px #9EF01A, 0 0 40px #9EF01A; 
+    }
+}
+.neon-glow
+{ 
+    animation: neonGlow 1.5s ease-in-out infinite; 
+}
+
+@keyframes float {
+    0%, 100% {
+         transform: translateY(0) rotate(0);
+    }
+    33% { 
+        transform: translateY(-10px) rotate(2deg); 
+    }
+    66% { 
+        transform: translateY(5px) rotate(-2deg);
+    }
+}
+.float 
+{ 
+    animation: float 4s ease-in-out infinite; 
+}
+
+@keyframes typing {
+    from {
+         width: 0;
+    }
+    to {
+         width: 100%; 
+    }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #000000;
+    animation: typing 1s steps(30, end) forwards;
+}
+ 
+.phones-grid, .tariffs-grid, .reviews-columns, .reviews-track {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
