@@ -40,8 +40,14 @@
         top: 50%;
         transform: translateY(-50%);
     }
-    #reviews2-prev { left: -1.5rem; }
-    #reviews2-next { right: -1.5rem; }
+    #reviews2-prev 
+    { 
+        left: -1.5rem; 
+    }
+    #reviews2-next 
+    {
+        right: -1.5rem; 
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -398,7 +404,7 @@
     0% { 
         transform: translate(0); }
     20% {
-         transform: translate(-3px, 2px); 
+        transform: translate(-3px, 2px); 
     }
     40% { 
         transform: translate(-3px, -2px); 
@@ -420,10 +426,12 @@
 
 @keyframes focusIn {
     0% { 
-        filter: blur(12px); opacity: 0; 
+        filter: blur(12px); 
+        opacity: 0; 
     }
     100% { 
-        filter: blur(0); opacity: 1; 
+        filter: blur(0);
+        opacity: 1; 
     }
 }
 .focus-in 
@@ -436,7 +444,7 @@
         filter: hue-rotate(0deg);
     }
     100% {
-         filter: hue-rotate(360deg); 
+        filter: hue-rotate(360deg); 
     }
 }
 .hue-shift 
@@ -461,7 +469,7 @@
         transform: rotate(-5deg); 
     }
     100% {
-         transform: rotate(0deg); 
+        transform: rotate(0deg); 
     }
 }
 .swing 
@@ -498,10 +506,10 @@
 
 @keyframes neonGlow {
     0%, 100% {
-         box-shadow: 0 0 5px #9EF01A, 0 0 10px #9EF01A;
+        box-shadow: 0 0 5px #9EF01A, 0 0 10px #9EF01A;
     }
     50% {
-         box-shadow: 0 0 20px #9EF01A, 0 0 40px #9EF01A; 
+        box-shadow: 0 0 20px #9EF01A, 0 0 40px #9EF01A; 
     }
 }
 .neon-glow
@@ -511,7 +519,7 @@
 
 @keyframes float {
     0%, 100% {
-         transform: translateY(0) rotate(0);
+        transform: translateY(0) rotate(0);
     }
     33% { 
         transform: translateY(-10px) rotate(2deg); 
@@ -527,10 +535,10 @@
 
 @keyframes typing {
     from {
-         width: 0;
+        width: 0;
     }
     to {
-         width: 100%; 
+        width: 100%; 
     }
 }
 

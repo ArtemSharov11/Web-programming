@@ -138,35 +138,16 @@
   ],
   "favorites": [
     {
-      "id": "Rn8Abku5tNk",
-      "name": "Бизнес-трансфер",
-      "category": "Транспорт",
-      "description": "Mercedes S-Class для поездок в аэропорт.",
-      "price": 45,
-      "rating": 4.9,
-      "image": "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=800"
-    },
-    {
-      "id": "27BoSIDyJCI",
-      "name": "Завтрак в номер",
-      "category": "Ресторан",
-      "description": "Континентальный завтрак: круассаны, джем и кофе.",
-      "price": 20,
-      "rating": 4.8,
-      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800"
-    }
-  ],
-  "cart": [
-    {
-      "id": "RKt-jY52hnI",
+      "id": "vTwYfn9hACk",
+      "serviceId": "2",
       "name": "Тайский массаж",
       "category": "SPA",
       "description": "Традиционный массаж для глубокого расслабления.",
       "price": 60,
       "rating": 5,
-      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800",
-      "quantity": 1
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800"
     }
   ],
+  "cart": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

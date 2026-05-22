@@ -1,62 +1,116 @@
-const API_URL = "http://localhost:3000";
+const API_URL = 'http://localhost:3000';
+const PAGE_SIZE = 6;
+
 let currentPage = 1;
-const limit = 6;
+let totalPages = 1;
 let activeCategory = 'all';
+let searchTimer;
+
+function getElement(id) {
+    return document.getElementById(id);
+}
+
+function showCatalogMessage(title, text) {
+    const container = getElement('catalog-container');
+    container.innerHTML = `
+        <div class="catalog-message">
+            <h2 class="text-h2">${title}</h2>
+            <p class="text-body-gray-30">${text}</p>
+        </div>
+    `;
+}
+
+function buildServicesUrl() {
+    const search = getElement('search-input').value.trim();
+    const sort = getElement('sort-select').value;
+    const minPrice = getElement('price-min').value;
+    const maxPrice = getElement('price-max').value;
+    const minRating = getElement('rating-min').value;
+    const params = new URLSearchParams({
+        _page: currentPage,
+        _per_page: PAGE_SIZE
+    });
+    const where = {};
+
+    if (search) {
+        where.or = [
+            { name: { contains: search } },
+            { description: { contains: search } },
+            { category: { contains: search } }
+        ];
+    }
+
+    if (activeCategory !== 'all') {
+        where.category = { eq: activeCategory };
+    }
+
+    if (minPrice || maxPrice) {
+        where.price = {};
+        if (minPrice) where.price.gte = Number(minPrice);
+        if (maxPrice) where.price.lte = Number(maxPrice);
+    }
+
+    if (minRating) {
+        where.rating = { gte: Number(minRating) };
+    }
+
+    if (Object.keys(where).length) {
+        params.set('_where', JSON.stringify(where));
+    }
+
+    const sortFields = {
+        'price-asc': 'price',
+        'price-desc': '-price',
+        'name-asc': 'name',
+        'rating-desc': '-rating'
+    };
+    if (sortFields[sort]) params.set('_sort', sortFields[sort]);
+
+    return `${API_URL}/services?${params.toString()}`;
+}
+
+async function fetchJson(url, options) {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+    return response.json();
+}
 
 async function fetchServices() {
+    showCatalogMessage('Загрузка...', 'Получаем услуги с JSON Server');
+
     try {
-        const searchInput = document.getElementById('search-input');
-        const sortSelect = document.getElementById('sort-select');
-        const minPriceInput = document.getElementById('price-min');
-        const maxPriceInput = document.getElementById('price-max');
+        const result = await fetchJson(buildServicesUrl());
+        const services = Array.isArray(result) ? result : result.data;
 
-        const search = searchInput.value;
-        const sort = sortSelect.value;
-        const minPrice = minPriceInput.value;
-        const maxPrice = maxPriceInput.value;
-        let url = `${API_URL}/services?_page=${currentPage}&_per_page=${limit}`;
-        
-        if (search) url += `&name_like=${encodeURIComponent(search)}`;
-        
-        if (activeCategory !== 'all') url += `&category=${encodeURIComponent(activeCategory)}`;
-
-        if (sort !== 'default') {
-            if (sort === 'price-asc') url += `&_sort=price`;
-            if (sort === 'price-desc') url += `&_sort=-price`;
-            if (sort === 'name-asc') url += `&_sort=name`;
-            if (sort === 'rating-desc') url += `&_sort=-rating`;
+        totalPages = Array.isArray(result) ? 1 : Math.max(result.pages || 1, 1);
+        if (currentPage > totalPages) {
+            currentPage = totalPages;
+            return fetchServices();
         }
 
-        if (minPrice) url += `&price_gte=${minPrice}`;
-        if (maxPrice) url += `&price_lte=${maxPrice}`;
-
-        console.log("Новый формат запроса:", url);
-
-        const response = await fetch(url);
-        const result = await response.json();
-
-        const services = result.data || result;
-
-        console.log("Услуги найдены:", services);
         renderCatalog(services);
-        
+        updatePagination();
     } catch (error) {
-        console.error("Ошибка:", error);
+        console.error('Не удалось загрузить каталог:', error);
+        showCatalogMessage(
+            'Сервер недоступен',
+            'Запустите JSON Server командой npm start и обновите страницу.'
+        );
+        updatePagination();
     }
 }
 
 function renderCatalog(services) {
-    const container = document.getElementById('catalog-container');
-    if (!container) return;
-    
+    const container = getElement('catalog-container');
     container.innerHTML = '';
 
-    if (!Array.isArray(services) || services.length === 0) {
-        container.innerHTML = `
-            <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
-                <h2 class="text-h2">Услуги не найдены</h2>
-                <p class="text-body-gray-30">Попробуйте сбросить фильтры или изменить поиск</p>
-            </div>`;
+    if (!services.length) {
+        showCatalogMessage(
+            'Услуги не найдены',
+            'Попробуйте сбросить фильтры или изменить поисковый запрос.'
+        );
         return;
     }
 
@@ -71,11 +125,12 @@ function renderCatalog(services) {
             <div class="service-card__content">
                 <h3 class="service-card__title text-body-34">${item.name}</h3>
                 <p class="service-card__description text-body-gray-30">${item.description}</p>
+                <p class="service-card__rating">Рейтинг: ${item.rating}</p>
                 <div class="service-card__footer">
-                    <span class="service-card__price text-price-large" style="font-size: 1.8rem;">$${item.price}</span>
-                    <div style="display: flex; gap: 10px;">
-                        <button onclick="addToFavorites('${item.id}')" class="cat-btn">❤</button>
-                        <button onclick="addToCart('${item.id}')" class="cat-btn">🛒</button>
+                    <span class="service-card__price text-price-large">$${item.price}</span>
+                    <div class="service-card__actions">
+                        <button type="button" data-favorite="${item.id}" class="cat-btn" aria-label="Добавить ${item.name} в избранное">В избранное</button>
+                        <button type="button" data-cart="${item.id}" class="cat-btn" aria-label="Добавить ${item.name} в корзину">В корзину</button>
                     </div>
                 </div>
             </div>
@@ -84,79 +139,153 @@ function renderCatalog(services) {
     });
 }
 
+function updatePagination() {
+    getElement('current-page-info').textContent = `Страница ${currentPage} из ${totalPages}`;
+    getElement('prev-page').disabled = currentPage <= 1;
+    getElement('next-page').disabled = currentPage >= totalPages;
+}
+
 async function initCategories() {
     try {
-        const response = await fetch(`${API_URL}/services`);
-        const result = await response.json();
-        const allServices = Array.isArray(result) ? result : (result.data || []);
-        
-        const categories = ['all', ...new Set(allServices.map(s => s.category))];
-        const catList = document.getElementById('category-list');
-        if (!catList) return;
+        const result = await fetchJson(`${API_URL}/services`);
+        const services = Array.isArray(result) ? result : result.data;
+        const categories = ['all', ...new Set(services.map(service => service.category))];
+        const categoryList = getElement('category-list');
 
-        catList.innerHTML = '';
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = `cat-btn ${cat === activeCategory ? 'active' : ''}`;
-            btn.textContent = cat === 'all' ? 'Все' : cat;
-            
-            btn.onclick = () => {
-                document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                activeCategory = cat;
+        categoryList.innerHTML = '';
+        categories.forEach(category => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `cat-btn ${category === activeCategory ? 'active' : ''}`;
+            button.textContent = category === 'all' ? 'Все' : category;
+            button.addEventListener('click', () => {
+                categoryList.querySelectorAll('.cat-btn').forEach(item => {
+                    item.classList.remove('active');
+                });
+                button.classList.add('active');
+                activeCategory = category;
                 currentPage = 1;
                 fetchServices();
-            };
-            catList.appendChild(btn);
+            });
+            categoryList.appendChild(button);
         });
-    } catch (e) { console.error("Ошибка категорий:", e); }
+    } catch (error) {
+        console.error('Не удалось загрузить категории:', error);
+    }
 }
 
-async function addToFavorites(id) {
-    const res = await fetch(`${API_URL}/services/${id}`);
-    const item = await res.json();
-    await fetch(`${API_URL}/favorites`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
-    });
-    alert('Добавлено в избранное!');
+async function addToFavorites(serviceId) {
+    try {
+        const where = encodeURIComponent(JSON.stringify({
+            serviceId: { eq: serviceId }
+        }));
+        const existing = await fetchJson(
+            `${API_URL}/favorites?_where=${where}`
+        );
+        if (existing.length) {
+            alert('Эта услуга уже находится в избранном.');
+            return;
+        }
+
+        const service = await fetchJson(`${API_URL}/services/${serviceId}`);
+        const { id, ...serviceData } = service;
+        await fetchJson(`${API_URL}/favorites`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...serviceData, serviceId: id })
+        });
+        alert('Услуга добавлена в избранное.');
+    } catch (error) {
+        console.error('Не удалось добавить в избранное:', error);
+        alert('Не удалось добавить услугу в избранное.');
+    }
 }
 
-async function addToCart(id) {
-    const res = await fetch(`${API_URL}/services/${id}`);
-    const item = await res.json();
-    await fetch(`${API_URL}/cart`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...item, quantity: 1 })
-    });
-    alert('Добавлено в корзину!');
+async function addToCart(serviceId) {
+    try {
+        const where = encodeURIComponent(JSON.stringify({
+            serviceId: { eq: serviceId }
+        }));
+        const existing = await fetchJson(
+            `${API_URL}/cart?_where=${where}`
+        );
+
+        if (existing.length) {
+            const item = existing[0];
+            await fetchJson(`${API_URL}/cart/${item.id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ quantity: item.quantity + 1 })
+            });
+        } else {
+            const service = await fetchJson(`${API_URL}/services/${serviceId}`);
+            const { id, ...serviceData } = service;
+            await fetchJson(`${API_URL}/cart`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...serviceData, serviceId: id, quantity: 1 })
+            });
+        }
+
+        alert('Услуга добавлена в корзину.');
+    } catch (error) {
+        console.error('Не удалось добавить в корзину:', error);
+        alert('Не удалось добавить услугу в корзину.');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initCategories();
     fetchServices();
 
-    document.getElementById('search-input').oninput = () => {
+    getElement('search-input').addEventListener('input', () => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+            currentPage = 1;
+            fetchServices();
+        }, 300);
+    });
+
+    getElement('sort-select').addEventListener('change', () => {
         currentPage = 1;
         fetchServices();
-    };
+    });
 
-    document.getElementById('sort-select').onchange = () => fetchServices();
-    document.getElementById('apply-filters').onclick = () => fetchServices();
-
-    document.getElementById('next-page').onclick = () => {
-        currentPage++;
-        document.getElementById('current-page-info').textContent = `Страница ${currentPage}`;
+    getElement('apply-filters').addEventListener('click', () => {
+        currentPage = 1;
         fetchServices();
-    };
+    });
 
-    document.getElementById('prev-page').onclick = () => {
+    getElement('reset-filters').addEventListener('click', () => {
+        getElement('search-input').value = '';
+        getElement('sort-select').value = 'default';
+        getElement('price-min').value = '';
+        getElement('price-max').value = '';
+        getElement('rating-min').value = '';
+        activeCategory = 'all';
+        currentPage = 1;
+        initCategories();
+        fetchServices();
+    });
+
+    getElement('prev-page').addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
-            document.getElementById('current-page-info').textContent = `Страница ${currentPage}`;
             fetchServices();
         }
-    };
+    });
+
+    getElement('next-page').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            fetchServices();
+        }
+    });
+
+    getElement('catalog-container').addEventListener('click', event => {
+        const favoriteButton = event.target.closest('[data-favorite]');
+        const cartButton = event.target.closest('[data-cart]');
+        if (favoriteButton) addToFavorites(favoriteButton.dataset.favorite);
+        if (cartButton) addToCart(cartButton.dataset.cart);
+    });
 });

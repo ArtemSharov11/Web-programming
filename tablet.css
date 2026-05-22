@@ -1,0 +1,1453 @@
+@media (max-width: 768px) {
+    .container {
+        width: 100%;   
+        max-width: 768px;
+        padding: 0rem 2rem;
+        margin: 0 auto;
+    }
+
+    .header {       
+        padding: 0 1.4rem; 
+        height: 2.5rem;
+        margin-bottom: 2.8rem;
+        padding-top: 0.5rem;
+    }
+
+    .btn-connect {
+        margin: 0 -1.8rem 0 0;
+    }
+
+    .core-section {
+        position: relative;
+        max-width: 100%;      
+        min-height: 25rem;        
+        background-size: cover;  
+        background-position: center center;
+        padding: 1.1rem 0 0 0.4rem;
+        margin: 0 auto;
+    }
+
+    .hero-text {
+        max-width: 22rem;          
+    }
+
+    .hero-text__title {
+        font-size: 2.5rem;   
+    }
+
+    .qr-code {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.6rem;       
+    }
+
+    .features-section {
+        margin-top: 6.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;  
+        gap: 1.25rem;                
+        justify-items: center;      
+    }
+
+    .features-card {
+        max-width: 39rem;
+        padding: 3.5rem 2.5rem 4rem 2.5rem;;
+    }
+
+    .features-card__icon {
+        margin: 0 0 1.3rem 0;
+    }
+
+    .features-card .features-card__title {
+        margin: 0 auto 6.5rem auto;
+    }
+
+    .info-banner {
+        padding: 1.5rem 0 1.6rem 1.9rem;
+        margin-bottom: 4.8rem;
+    }
+
+    .phones-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        gap: 3.7rem;
+        width: 100%;
+        padding-top: 5.3rem;
+        margin-top: -2.8rem;
+    }
+    
+    .phones-header {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;    
+        gap: 2.2rem;
+        margin-bottom: 7rem;
+    }
+
+    .phone-card__image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 38.75rem;
+        margin: 0 auto;
+        overflow: visible;
+    }
+    
+    .phones-header__title, 
+    .phones-header__subtitle {
+        padding: 0;
+        text-align: left;
+    }
+
+    .phones-header__subtitle {
+        max-width: 40rem;
+    }
+
+    .phones-header__subtitle {
+        max-width: 30rem;
+        padding-left: 0; 
+    }
+
+    .phone-card {
+        min-width: 100%; 
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;     
+    }
+
+    .phones-info {
+        width: auto; 
+        max-width: none;
+        margin: 3rem -1.875rem 5rem;    
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .content-cards-section {
+        width: 100%;
+        background-color: #FFFFFF;
+        margin-top: -3.7rem;
+    }
+
+    .content-cards-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        scrollbar-width: none;
+        padding-top: 5rem; 
+    }
+
+    .content-cards-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content-card {
+        min-width: 100%; 
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .content-card__image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 38.75rem; 
+        height: 31rem;       
+        margin: 0 auto; 
+        overflow: visible; 
+    }
+
+    .content-card .content-card__title,
+    .content-card__text {
+        width: 100%;
+        max-width: 38.75rem; 
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;    
+        padding-right: 0.75rem; 
+        box-sizing: border-box;
+    }
+
+    .admin-section {
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto; 
+        padding: 8.8rem 0 8.7rem 0;
+        margin-bottom: 5rem;
+    }
+
+    .admin-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;        
+    }
+
+    .admin-section .admin-texts .admin-title {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 30rem;
+    }
+
+    .admin-section .admin-texts .admin-text {
+        text-align: center;
+        margin: 3.8rem auto 0;
+        max-width: 30rem;
+    }
+
+    .admin-image {
+        display: none;
+    }
+
+    .phones-showcase {
+        margin: 4rem auto 3.4rem 0;
+    }
+
+    .phones-showcase__background {
+        height: auto;
+        padding: 0;          
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -2rem;
+        padding-bottom: 1.4rem;
+    }
+
+    .showcase-phone--left,
+    .showcase-phone--right {
+        display: none;
+    }
+
+    .showcase-phone--center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .brands-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(5, auto);
+        gap: 2.55rem 0.5rem; 
+        margin-top: -2rem;
+        margin-bottom: 4rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .brands-row {
+        display: contents; 
+    }
+
+    .brands-row--first,
+    .brands-row--second {
+        margin-bottom: 0;
+    }
+
+    .pricing-section {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 2rem;
+        margin: -5.2rem 0 0 0;
+        padding: 0;
+    }
+
+    .pricing-nav {
+        padding: 0 0 0 1.3rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .toggle-list {
+        gap: 2.2rem;
+    }
+
+    .text-pricing-descr {
+        display: block;
+        line-height: 1.25;      
+        text-align: left;
+    }
+
+    .active-underline {
+        position: absolute;
+        left: 0;
+        border: none;
+        border-bottom: 2.5px solid #000;
+        width: 135%;
+    }
+
+    .tariffs-section {
+        position: relative;
+        margin-top: 8rem;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .tariffs-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20rem;
+        margin: 0;
+        padding: 0 calc(50% - 13.85rem); 
+        scrollbar-width: none;
+    }
+
+    .tariffs-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tariff-card {
+        width: 100%;
+        flex: 0 0 27.7rem;    
+        max-width: 27.7rem; 
+        min-height: 54.5rem;    
+        display: flex;      
+        scroll-snap-align: center;
+        position: relative; 
+        margin: 0;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .tariff-card__title {
+        padding: 1.2rem 0 0 2rem;
+    }
+
+    .tariff-card--addons .tariff-card__title--inverse {
+        gap: 1rem;
+    }
+
+    .tariff-card .tariff-card__title--inverse {
+        padding: 1rem 1rem 0 1.8rem;
+        align-items: flex-start;
+    }
+
+    .tariff-card__icon {
+        margin: 0;
+    }
+
+    .reviews-grid-section {
+        width: 100%;
+        margin: 4rem 0 5.3rem 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .reviews-section__header {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 4.5rem;
+    }
+
+    .reviews-section__arrows {
+        position: relative;
+        top: auto; 
+        left: auto;     
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 39rem; 
+        padding: 0 0 0 2.7rem;
+        z-index: 10;
+    }
+
+    .reviews-section__arrows img {
+        width: 3rem;
+        height: 3rem;
+        object-fit: contain;
+        pointer-events: auto;
+    }
+
+    .review-card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .review-card__photo {
+        margin: 0.8rem auto 0 auto; 
+        padding-top: 0;
+    }
+
+    .review-card__image {
+        width: 100%;
+        max-width: 25.5rem;
+        height: auto;
+        margin: -0.5rem 0 -1rem 0;
+    }
+
+    .review-card__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.4rem;
+    }
+
+    .review-card__text.text-banner { 
+        max-width: 38rem;
+    }
+
+    .review-card__author {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .reviews-grid-section {
+        width: 100%;
+        margin: 4rem 0 1.7rem 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    #reviews-track2 {
+        align-items: flex-start;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        max-width: 25.2rem;
+        margin: 1rem auto 0 auto;
+    }
+
+    #reviews-track2::-webkit-scrollbar {
+        display: none;
+    }
+
+    #reviews-track2 .review-block {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        display: block;
+        background-color: #F5F5F5;
+        border-radius: 1.25rem;
+        padding: 1.9rem 2rem 0 2rem;
+        box-sizing: border-box;
+    }
+
+    #reviews-prev, #reviews-next {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: -3rem;
+        transform: none;
+    }
+
+    #reviews-prev {
+        left: 2.8rem;
+    }
+
+    #reviews-next {
+        right: 2.6rem;
+    }
+
+    #reviews2-prev,
+    #reviews2-next {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: -0.8rem;
+        transform: translateY(-50%);
+    }
+
+    #reviews2-prev {
+        left: 2.8rem;
+    }
+
+    #reviews2-next {
+        right: 2.7rem;
+    }
+
+    .review-block--emilly,
+    .review-block--christopher,
+    .review-block--margaret,
+    .review-block--clare,
+    .review-block--thomas,
+    .review-block--benedict {
+        height: auto;
+    }
+
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .faq-header__title {
+        margin-bottom: 7rem;
+        max-width: 10rem;  
+        text-align: left;
+    }
+
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2.2rem;
+        width: 100%;
+    }
+
+    .faq-header__questions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        border-bottom: 1px solid #E5E5E5;
+        cursor: pointer;
+        width: 100%;
+        padding-bottom: 1rem;
+        padding-top: 0;
+        margin-bottom: 1.9rem;
+    }
+
+    .faq-question:last-child {
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .faq-question__text {
+        letter-spacing: 0.01rem;
+        max-width: 50rem;  
+    }
+
+    .faq-question__arrow {
+        margin: 0rem -0.8rem 0 0;
+        width: 1.5rem;
+        height: auto;
+        display: block;
+    }  
+
+    .footer-cta {
+        margin-top: 5rem;
+    }
+
+    .footer-cta__icon {
+        margin-bottom: 0.7rem;
+        margin-top: 4.9rem;
+    }
+
+    .footer-cta__title {
+        font-size: 2.5rem;
+    }
+    
+}
+
+@media (min-width: 321px) and (max-width: 767px) {
+    html {
+        font-size: 15px;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .header {
+        height: 3rem;
+        margin-bottom: 1.8rem;
+        padding: 0.45rem 1rem 0;
+    }
+
+    .logo {
+        width: 9rem;
+        height: auto;
+    }
+
+    .burger-menu {
+        width: 1.7rem;
+    }
+
+    .core-section {
+        width: 100%;
+        min-height: 20rem;
+        padding: 0.9rem 0 0 0.8rem;
+        overflow: hidden;
+    }
+
+    .hero-text {
+        max-width: 19rem;
+        padding-left: 0;
+    }
+
+    .hero-text__title {
+        width: auto;
+        font-size: 2rem;
+        line-height: 1.12;
+        letter-spacing: 0.04rem;
+    }
+
+    .qr-code {
+        bottom: 1.2rem;
+        left: 1rem;
+        gap: 1rem;
+    }
+
+    .qr-code__image {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .qr-code__title {
+        font-size: 1.2rem;
+    }
+
+    .qr-code__description {
+        font-size: 0.95rem;
+        line-height: 1.25;
+    }
+
+    .features-section {
+        margin-top: 4rem;
+        margin-bottom: 2.8rem;
+        padding: 0 0.5rem;
+        transform: none;
+    }
+
+    .features-grid {
+        gap: 1rem;
+    }
+
+    .features-card {
+        width: 100%;
+        max-width: 39rem;
+        padding: 2.5rem 1.8rem 3rem;
+    }
+
+    .features-card__icon {
+        width: 3.6rem;
+        height: 3.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .features-card .features-card__title {
+        width: auto;
+        max-width: 24rem;
+        margin-bottom: 3.6rem;
+    }
+
+    .features-card__text {
+        width: auto;
+        max-width: 28rem;
+    }
+
+    .info-banner {
+        margin: -1rem 0 2.5rem;
+        padding: 1rem 1.2rem;
+        transform: none;
+    }
+
+    .phones-header {
+        gap: 1.4rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .phones-header__title,
+    .phones-header__subtitle {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .phones-header__subtitle {
+        width: 30rem;
+    }
+
+    .phones-header__subtitle p {
+        font-size: 1rem;
+    }
+
+    .phones-grid {
+        gap: 2.2rem;
+        padding-top: 4rem;
+        margin-top: -1.5rem;
+    }
+
+    .phone-card__image-wrapper {
+        max-width: 100%;
+        height: 23rem;
+    }
+
+    .phone-card__image {
+        width: 13rem;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .phone-card__title.text-body-34 {
+        font-size: 1.25rem;
+        padding: 0 1rem;
+    }
+
+    .phone-card__text.text-body-30 {
+        max-width: 37rem;
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .phones-info {
+        min-height: auto;
+        margin: 2rem -1rem 3rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .phones-info__text {
+        max-width: 50rem;
+    }
+
+    .content-cards-section {
+        margin-top: -1.8rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .content-cards-grid {
+        align-items: flex-start;
+        padding-top: 3.8rem;
+    }
+
+    .content-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        align-items: flex-start;
+        box-sizing: border-box;
+    }
+
+    .content-card__image-wrapper {
+        width: 100%;
+        max-width: none;
+        height: 25rem;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .content-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .content-card .content-card__title,
+    .content-card__text.text-body-gray-30 {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+
+    .content-card .content-card__title {
+        font-size: 1.7rem;
+    }
+
+    .content-card__text.text-body-gray-30 {
+        font-size: 1rem;
+    }
+
+    .admin-section {
+        padding: 5rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .admin-section .admin-texts .admin-title,
+    .admin-section .admin-texts .admin-text {
+        max-width: 30rem;
+    }
+
+    .phones-showcase {
+        margin-top: 3rem;
+        margin-bottom: 2.7rem;
+    }
+
+    .phones-showcase__background {
+        max-width: 100%;
+        min-height: 30rem;
+    }
+
+    .showcase-phone__image {
+        width: 17rem;
+        height: auto;
+    }
+
+    .brands-section {
+        gap: 1.8rem 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .brand-item__logo {
+        height: 4.8rem;
+    }
+
+    .pricing-section {
+        gap: 1.5rem;
+        margin-top: -2.5rem;
+    }
+
+    .toggle-list {
+        gap: 1.7rem;
+        flex-wrap: wrap;
+    }
+
+    .text-pricing-descr {
+        max-width: 30rem;
+        font-size: 1.1rem;
+        padding-left: 1rem;
+    }
+
+    .tariffs-section {
+        margin-top: 4.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tariffs-grid {
+        gap: 14rem;
+        padding: 0 calc(50% - 10.5rem) 1rem;
+    }
+
+    .reviews-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 2.4rem;
+    }
+
+    .review-card {
+        margin-bottom: 2.2rem;
+    }
+
+    .review-card__image {
+        max-width: 20rem;
+    }
+
+    .review-card__text.text-banner {
+        max-width: 38rem;
+        font-size: 2rem;
+    }
+
+    #reviews-track2 {
+        max-width: 20rem;
+    }
+
+    #reviews-track2 .review-block {
+        padding: 1.2rem 1.4rem;
+    }
+
+    .reviews-grid-section {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .faq-header__title {
+        max-width: 9rem;
+        margin-bottom: 4rem;
+    }
+
+    .faq-question {
+        padding-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .faq-question__arrow {
+        width: 1.1rem;
+        margin-right: -0.2rem;
+    }
+
+    .footer-cta {
+        max-width: 44rem;
+        margin-top: 3.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .footer-cta__icon {
+        width: 3rem;
+        margin-top: 3.8rem;
+    }
+
+    .footer-cta__title {
+        font-size: 2rem;
+    }
+
+    .footer-cta__description.text-body-gray-30 {
+        min-width: 0;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .footer-cta__button {
+        max-width: 16rem;
+        min-height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .text-h2 {
+        font-size: 2.5rem;
+    }
+
+    .text-banner {
+        font-size: 2rem;
+        line-height: 1.18;
+    }
+
+    .text-body-41 {
+        font-size: 1.6rem;
+    }
+
+    .text-body-34 {
+        font-size: 1.35rem;
+    }
+
+    .text-body-30,
+    .text-body-gray-30 {
+        font-size: 1rem;
+    }
+
+    #btn-prev,
+    #btn-next,
+    #content-prev,
+    #content-next,
+    #tariffs-prev,
+    #tariffs-next,
+    #reviews-prev,
+    #reviews-next,
+    #reviews2-prev,
+    #reviews2-next {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #btn-prev,
+    #content-prev,
+    #tariffs-prev {
+        left: 1.8rem;
+    }
+
+    #btn-next,
+    #content-next,
+    #tariffs-next {
+        right: 1.8rem;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+
+    .header {
+        height: 3.5rem;
+        margin-bottom: 0.9rem;
+        padding: 0.45rem 0.7rem 0;
+    }
+
+    .logo {
+        width: 6rem;
+    }
+
+    .burger-menu {
+        width: 1.5rem;
+    }
+
+    .core-section {
+        min-height: 12.5rem;
+        padding: 0.4rem 0 0 0.6rem;
+    }
+
+    .hero-text {
+        max-width: 12rem;
+    }
+
+    .hero-text__title {
+        font-size: 1.1rem;
+        letter-spacing: 0.04rem;
+    }
+
+    .qr-code {
+        bottom: 0.8rem;
+        left: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .qr-code__image {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .qr-code__title {
+        font-size: 0.85rem;
+    }
+
+    .qr-code__description {
+        font-size: 0.65rem;
+    }
+
+    .features-section {
+        margin-top: 2.2rem;
+        margin-bottom: 2.2rem;
+        padding: 0;
+    }
+
+    .features-grid {
+        gap: 0.6rem;
+    }
+
+    .features-card {
+        padding: 1.5rem 1rem 2.1rem;
+    }
+
+    .features-card__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .features-card .features-card__title {
+        max-width: 14rem;
+        margin-bottom: 2rem;
+    }
+
+    .features-card__text {
+        max-width: 16rem;
+    }
+
+    .info-banner {
+        margin-top: -1.4rem;
+        margin-bottom: 1.7rem;
+        padding: 0.7rem 1rem;
+    }
+
+    .phones-header {
+        gap: 0.9rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .phones-header__subtitle p {
+        font-size: 0.6rem;
+    }
+
+    .phones-grid {
+        gap: 0;
+        padding-top: 3rem;
+        margin-top: -2rem;
+    }
+
+    .phone-card__image-wrapper {
+        height: 14rem;
+    }
+
+    .phone-card__image {
+        width: 8rem;
+    }
+
+    .phone-card__title.text-body-34 {
+        font-size: 0.8rem;
+    }
+
+    .phone-card__text.text-body-30 {
+        font-size: 0.6rem;
+    }
+
+    .phones-info {
+        margin-top: 1.2rem;
+        margin-bottom: 1.8rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .content-cards-section {
+        margin-top: -2.4rem;
+        margin-bottom: 2.6rem;
+    }
+
+    .content-cards-grid {
+        padding-top: 3rem;
+    }
+
+    .content-card__image-wrapper {
+        height: 14.8rem;
+    }
+
+    .content-card .content-card__title {
+        font-size: 1.1rem;
+    }
+
+    .content-card__text.text-body-gray-30 {
+        font-size: 0.6rem;
+    }
+
+    .admin-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .phones-showcase {
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .phones-showcase__background {
+        min-height: 20.8rem;
+    }
+
+    .showcase-phone__image {
+        width: 10.8rem;
+    }
+
+    .brands-section {
+        gap: 1.2rem 0.5rem;
+        margin-top: -1rem;
+        margin-bottom: 3rem;
+    }
+
+    .brand-item__logo {
+        height: 3rem;
+    }
+
+    .phones-header + .pricing-section {
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .pricing-nav {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .toggle-list {
+        gap: 1.2rem;
+    }
+
+    .active-underline {
+        bottom: -0.7rem;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .pricing-info {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .text-pricing-descr {
+        font-size: 0.7rem;
+        padding-left: 0;
+    }
+
+    .tariffs-section {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .tariffs-grid {
+        gap: 10rem;
+        padding: 0 calc(50% - 6.5rem) 1rem;
+        align-items: flex-start;
+    }
+
+    .tariff-card {
+        flex: 0 0 13rem;
+        max-width: 13rem;
+        min-height: auto;
+        max-height: 26.5rem;
+        padding-bottom: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tariff-card__header {
+        min-height: 4rem;
+        padding: 0.4rem 0 0 0.4rem;
+    }
+
+    .tariff-card__title,
+    .tariff-card .tariff-card__title--inverse {
+        padding: 0 0 0 0.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .tariff-card__subtitle,
+    .tariff-card__subtitle--inverse {
+        max-width: 10rem;
+        padding: 0 0.6rem;
+        margin: 0 0 0.3rem;
+        font-size: 0.6rem;
+        line-height: 1.35;
+    }
+
+    .tariff-card__accent {
+        margin: 1.5rem 0 0;
+        padding: 0 0 0 1rem;
+        font-size: 0.5rem;
+        letter-spacing: 0.025rem;
+    }
+
+    .tariff-card--basic .tariff-card__list,
+    .tariff-card--pro .tariff-card__list,
+    .tariff-card--addons .tariff-card__list {
+        width: auto;
+        height: auto;
+        max-width: 8rem;
+        margin: 0;
+        margin-bottom: 0.8rem;
+        padding: 0.5rem 0 0 2rem;
+        letter-spacing: 0.01rem;
+    }
+
+    .tariff-card--basic .tariff-card__list {
+        margin-top: 1.1rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .tariff-card--basic .tariff-card__item,
+    .tariff-card--pro .tariff-card__item,
+    .tariff-card--addons .tariff-card__item {
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 0 0.15rem;
+        font-size: 0.6rem;
+        line-height: 1.5;
+    }
+
+    .tariff-card--addons .tariff-card__item {
+        min-width: 10rem;
+        padding-bottom: 0.2rem;
+        font-size: 0.55rem;
+    }
+
+    .tariff-card__footer {
+        margin: 0;
+        padding: 1rem 0 1rem 0.9rem;
+        gap: 0.5rem;
+    }
+
+    .tariff-card__price-info {
+        padding: 1.1rem 0 0 0.3rem;
+        gap: 0.3rem;
+    }
+
+    .tariff-card__price.text-price-large {
+        font-size: 2.2rem;
+    }
+
+    .tariff-card__price.text-price-large-inverse {
+        margin-top: 7.5rem;
+        padding-left: 0.1rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .tariff-card__price-old.text-price-old {
+        font-size: 0.6rem;
+    }
+
+    .tariff-card__period.text-body-gray-30 {
+        font-size: 0.5rem;
+    }
+
+    .tariff-card__icon {
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
+
+    .reviews-section {
+        margin-bottom: 1rem;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 1.6rem;
+    }
+
+    .review-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .review-card__image {
+        max-width: 12rem;
+    }
+
+    .review-card__text.text-banner {
+        font-size: 1.3rem;
+    }
+
+    #reviews-track2 {
+        width: 100%;
+        max-width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #reviews-track2 .review-block {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .review-block__header {
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .review-block__photo {
+        flex: 0 0 auto;
+    }
+
+    .review-block__image {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+    }
+
+    .review-block__info {
+        min-width: 0;
+        gap: 0.3rem;
+    }
+
+    .review-block__source {
+        width: auto;
+        max-width: 6.5rem;
+        height: auto;
+        max-height: 1.15rem;
+    }
+
+    .review-block__text.text-body-30 {
+        width: 100%;
+        max-width: none;
+        overflow-wrap: anywhere;
+    }
+
+    .reviews-grid-section {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-header__title {
+        max-width: 8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .faq-question {
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .faq-question__arrow {
+        width: 0.7rem;
+        margin-right: 0.4rem;
+    }
+
+    .footer-cta {
+        margin-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .footer-cta__icon {
+        width: 2rem;
+        margin-top: 2.6rem;
+    }
+
+    .footer-cta__title {
+        font-size: 1.2rem;
+    }
+
+    .footer-cta__description.text-body-gray-30 {
+        font-size: 0.6rem;
+        padding: 0 1rem;
+    }
+
+    .footer-cta__button {
+        max-width: 11.5rem;
+        min-height: 1.9rem;
+        font-size: 0.6rem;
+    }
+
+    .text-h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-banner {
+        font-size: 1.4rem;
+    }
+
+    .text-body-41 {
+        font-size: 1rem;
+    }
+
+    .text-body-34 {
+        font-size: 1.2rem;
+    }
+
+    .text-body-30,
+    .text-body-gray-30 {
+        font-size: 0.6rem;
+    }
+
+    #btn-prev,
+    #btn-next,
+    #content-prev,
+    #content-next,
+    #tariffs-prev,
+    #tariffs-next,
+    #reviews-prev,
+    #reviews-next,
+    #reviews2-prev,
+    #reviews2-next {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+
+    #btn-prev,
+    #content-prev,
+    #tariffs-prev {
+        left: 1rem;
+    }
+
+    #btn-next,
+    #content-next,
+    #tariffs-next {
+        right: 1rem;
+    }
+}
