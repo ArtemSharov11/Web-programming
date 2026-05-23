@@ -1,0 +1,60 @@
+.auth-container {
+    max-width: 500px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    background: #fff; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+.form-group {
+    margin-bottom: 15px; 
+    position: relative; 
+}
+.form-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: 500; 
+}
+.form-group label::after { 
+    content: " *"; 
+    color: red; }
+.form-group input, .form-group select { 
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+}
+.error-msg {
+    color: #ff4d4d; 
+    font-size: 0.85rem;
+    margin-top: 4px; 
+    display: none; 
+}
+.nickname-box {
+    display: flex; 
+    gap: 10px; align-items: center; 
+}
+.agreement-box {
+    font-size: 0.9rem; 
+    border: 1px solid #eee; 
+    height: 100px; 
+    overflow-y: scroll; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+.btn-reg {
+    width: 100%; 
+    padding: 12px; 
+    background: #9EF01A; 
+    border: none; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    font-weight: 600;
+    opacity: 0.5; 
+    pointer-events: none; 
+}
+.btn-reg.active 
+{ 
+    opacity: 1; pointer-events: all; 
+}
