@@ -9,88 +9,61 @@
 </head>
 <body>
     <header class="header">
-        <a href="index3.html"><img src="img/Frame.svg" class="logo"></a>
+        <a href="index3.html"><img src="img/Frame.svg" alt="" class="logo"></a>
     </header>
 
     <main class="container">
         <div class="auth-container">
-            <h2 class="text-h2" style="font-size: 2rem; margin-bottom: 20px;">Регистрация</h2>
-            <form id="regForm">
-                <div class="form-group">
-                    <label>Фамилия</label>
-                    <input type="text" id="lastName" placeholder="Иванов">
-                    <div class="error-msg">Введите фамилию</div>
-                </div>
-                <div class="form-group">
-                    <label>Имя</label>
-                    <input type="text" id="firstName" placeholder="Иван">
-                    <div class="error-msg">Введите имя</div>
-                </div>
-                <div class="form-group">
-                    <label style="opacity:0.6">Отчество (необязательно)</label>
-                    <input type="text" id="middleName" placeholder="Иванович">
-                </div>
+            <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                <button onclick="showTab('login')" class="cat-btn">Вход</button>
+                <button onclick="showTab('register')" class="cat-btn">Регистрация</button>
+            </div>
 
-                <div class="form-group">
-                    <label>Телефон (РБ)</label>
-                    <input type="text" id="phone" placeholder="+375XXXXXXXXX">
-                    <div class="error-msg">Формат: +375XXXXXXXXX (9 цифр после кода)</div>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="email" placeholder="example@mail.com">
-                    <div class="error-msg">Некорректный email</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Дата рождения</label>
-                    <input type="date" id="birthDate">
-                    <div class="error-msg">Вам должно быть не менее 16 лет</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Никнейм</label>
-                    <div class="nickname-box">
-                        <input type="text" id="nickname" readonly>
-                        <button type="button" id="genNickBtn" class="cat-btn">🌀</button>
+            <div id="loginSection">
+                <h1 class="text-h2">Вход</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" required>
                     </div>
-                    <div class="error-msg" id="nickError">Этот ник уже занят</div>
-                </div>
-
-                <div class="form-group">
-                    <label>Задание пароля</label>
-                    <select id="passMethod">
-                        <option value="manual">Ввести вручную</option>
-                        <option value="auto">Сгенерировать автоматически</option>
-                    </select>
-                </div>
-                <div id="passwordFields">
                     <div class="form-group">
                         <label>Пароль</label>
-                        <input type="password" id="pass1">
-                        <div class="error-msg" id="passError">Пароль слишком простой или некорректный</div>
+                        <input type="password" id="loginPass" required>
                     </div>
+                    <button type="submit" class="btn-reg active">Войти</button>
+                </form>
+            </div>
+
+            <div id="registerSection" style="display: none;">
+                <h1 class="text-h2">Регистрация</h1>
+                <form id="regForm">
+                    <div class="form-group"><label>Фамилия</label><input type="text" id="lastName" required><div class="error-msg">Введите фамилию</div></div>
+                    <div class="form-group"><label>Имя</label><input type="text" id="firstName" required><div class="error-msg">Введите имя</div></div>
+                    <div class="form-group"><label>Отчество</label><input type="text" id="middleName"></div>
+                    <div class="form-group"><label>Телефон (РБ)</label><input type="text" id="phone" placeholder="+375..."><div class="error-msg">Неверный формат</div></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="email" required><div class="error-msg">Неверный email</div></div>
+                    <div class="form-group"><label>Дата рождения</label><input type="date" id="birthDate" required><div class="error-msg">Вам должно быть 16+ лет</div></div>
+                    <div class="form-group"><label>Никнейм</label><div style="display:flex;gap:5px;"><input type="text" id="nickname" readonly><button type="button" id="genNickBtn" class="cat-btn">🌀</button></div></div>
                     <div class="form-group">
-                        <label>Повторите пароль</label>
-                        <input type="password" id="pass2">
-                        <div class="error-msg">Пароли не совпадают</div>
+                        <label>Способ задания пароля</label>
+                        <select id="passMethod"><option value="manual">Вручную</option><option value="auto">Автоматически</option></select>
                     </div>
-                </div>
+                    <div class="form-group"><label>Пароль</label><input type="password" id="pass1"><div class="error-msg">Пароль не подходит</div></div>
+                    <div class="form-group"><label>Повторите пароль</label><input type="password" id="pass2"></div>
+                    <div class="form-group"><input type="checkbox" id="agreeCheck"> Согласен с правилами</div>
+                    <button type="submit" id="regBtn" class="btn-reg">Зарегистрироваться</button>
 
-                <p>Пользовательское соглашение:</p>
-                <div class="agreement-box">
-                    Настоящим подтверждаю, что использование сервиса Hoteza Web подразумевает ваше согласие на обработку персональных данных...
-                </div>
-                <div class="form-group" style="display:flex; gap:10px; align-items:center;">
-                    <input type="checkbox" id="agreeCheck" style="width:auto;">
-                    <span>Я прочитал и согласен</span>
-                </div>
-
-                <button type="submit" id="regBtn" class="btn-reg">Зарегистрироваться</button>
-            </form>
+                </form>
+            </div>
         </div>
     </main>
 
+    <script>
+        function showTab(tab) {
+            document.getElementById('loginSection').style.display = tab === 'login' ? 'block' : 'none';
+            document.getElementById('registerSection').style.display = tab === 'register' ? 'block' : 'none';
+        }
+    </script>    
     <script src="bad_passwords.js"></script>
     <script src="auth.js"></script>
 </body>

@@ -18,13 +18,16 @@
 
     <header class="header">
         <a href="index3.html" style="display: flex; align-items: center;">
-            <img src="img/Frame.svg" alt="Logo" class="logo">
+            <img src="img/Frame.svg" alt="Логотип HOTELA" class="logo">
         </a>
         
         <div style="display: flex; align-items: center; gap: 20px;">
-            <nav style="display: flex; gap: 15px; margin-right: 20px;">
+            <nav style="display: flex; gap: 15px; margin-right: 20px; align-items: center;">
                 <a href="catalog.html" style="text-decoration: none; color: #000;">Каталог</a>
                 <a href="favorites.html" style="text-decoration: none; color: #000;">Избранное</a>
+                <a href="auth.html" id="auth-link" style="background: #9EF01A; padding: 10px 20px; border-radius: 20px; text-decoration: none; color: black; font-weight: 500;">Войти</a>
+                <div id="user-status" style="display: flex; align-items: center; gap: 15px;">
+                </div>
             </nav>
             <a href="index3.html" class="btn-connect" style="position: static; text-decoration: none;">На главную</a>
             <button type="button" class="burger-menu" id="burgerToggle">
@@ -39,7 +42,7 @@
             <p class="text-body-gray-30">Управляйте вашими заказами и услугами</p>
         </section>
 
-        <section class="cart-summary container" style="margin-bottom: 3rem;">
+        <div class="cart-summary container" style="margin-bottom: 3rem;">
             <div id="cart-total-block" style="background: #F1F1F1; padding: 2.5rem; border-radius: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
                 <div>
                     <p class="text-body-gray-30">Общая стоимость:</p>
@@ -49,7 +52,7 @@
                     Оформить покупку
                 </button>
             </div>
-        </section>
+        </div>
 
         <div id="catalog-container" class="catalog-grid container">
         </div>
@@ -60,6 +63,7 @@
     </footer>
 
     <script src="cart.js"></script>
+    <script src="session.js"></script>
     <script src="animation.js"></script>
 </body>
 </html>

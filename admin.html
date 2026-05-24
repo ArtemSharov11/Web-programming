@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ-панель - HOTELA</title>
+    <link rel="stylesheet" href="index3.css"><link rel="stylesheet" href="catalog.css">
+    <style>
+        .admin-section { 
+            background: #fff; 
+            padding: 20px; 
+            border-radius: 15px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ddd; 
+        }
+        .admin-item {
+            display: flex; 
+            justify-content: space-between; 
+            padding: 10px; 
+            border-bottom: 1px solid #eee; 
+            align-items: center; 
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 8px; 
+            margin-bottom: 10px; 
+            border-radius: 5px; 
+            border: 1px solid #ccc; 
+        }
+        @media (max-width: 768px) {
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index3.html"><img src="img/Frame.svg" class="logo" alt="Логотип HOTELA"></a>
+        <a href="catalog.html" class="cat-btn">В каталог</a>
+    </header>
+    <main class="container">
+        <h1 class="text-h2">Панель администратора</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <section class="admin-section">
+                <h2>Добавить услугу</h2>
+                <form id="admin-service-form">
+                    <input type="hidden" id="edit-id">
+                    <input type="text" id="adm-name" placeholder="Название" required>
+                    <input type="text" id="adm-cat" placeholder="Категория" required>
+                    <input type="number" id="adm-price" placeholder="Цена" required>
+                    <input type="text" id="adm-img" placeholder="Ссылка на фото" required>
+                    <textarea id="adm-desc" placeholder="Описание"></textarea>
+                    <button type="submit" class="btn-reg active">Сохранить услугу</button>
+                    <button type="button" onclick="resetForm()" class="cat-btn">Сброс</button>
+                </form>
+                <div id="admin-services-list" style="margin-top: 20px;"></div>
+            </section>
+            <section class="admin-section">
+                <h3>Управление отзывами</h3>
+                <div id="admin-reviews-list"></div>
+            </section>
+        </div>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

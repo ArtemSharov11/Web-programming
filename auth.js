@@ -1,190 +1,151 @@
 const API_URL = "http://localhost:3000";
-let nickAttempts = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('regForm');
-    const inputs = form.querySelectorAll('input');
-    const passMethod = document.getElementById('passMethod');
-    const p1 = document.getElementById('pass1');
-    const p2 = document.getElementById('pass2');
-    const nicknameInput = document.getElementById('nickname');
-    const agreeCheck = document.getElementById('agreeCheck');
-    const regBtn = document.getElementById('regBtn');
-
-    document.getElementById('genNickBtn').onclick = () => {
-        nickAttempts++;
-        const fName = document.getElementById('firstName').value || "User";
-        const lName = document.getElementById('lastName').value || "Guest";
-        
-        if (nickAttempts <= 5) {
-            const randomNum = Math.floor(Math.random() * 990) + 10;
-            const generated = fName.slice(0, 3) + lName.slice(0, 3) + randomNum;
-            nicknameInput.value = generated;
-        } else {
-            nicknameInput.readOnly = false;
-            nicknameInput.placeholder = "Придумайте никнейм сами";
-            alert("Попытки генерации исчерпаны. Введите никнейм вручную.");
-        }
-        validateForm();
-    };
-
-    passMethod.addEventListener('change', () => {
-        if (passMethod.value === 'auto') {
-            const strongPass = generateStrongPassword();
-            p1.value = strongPass;
-            p2.value = strongPass;
-            
-            p1.type = 'text';
-            p2.type = 'text';
-            
-            p1.readOnly = true;
-            p2.readOnly = true;
-            
-        } else {
-            p1.value = '';
-            p2.value = '';
-            p1.type = 'password';
-            p2.type = 'password';
-            p1.readOnly = false;
-            p2.readOnly = false;
-        }
-        validateForm();
-    });
-
-    function generateStrongPassword() {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@$!%*?&";
-        let pass = "";
-        pass += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 26)];
-        pass += "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26)];
-        pass += "0123456789"[Math.floor(Math.random() * 10)];
-        pass += "@$!%*?&"[Math.floor(Math.random() * 7)];
-        
-        for (let i = 0; i < 8; i++) {
-            pass += chars[Math.floor(Math.random() * chars.length)];
-        }
-        return pass.split('').sort(() => 0.5 - Math.random()).join('');
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user || user.role !== 'admin') {
+        alert("Доступ запрещен! Эта страница только для администраторов.");
+        window.location.href = "catalog.html";
+        return;
     }
 
-    p2.onpaste = (e) => e.preventDefault();
+    loadServices();
+    loadReviews();
 
+    const serviceForm = document.getElementById('admin-service-form');
+    const inputs = serviceForm.querySelectorAll('input');
     inputs.forEach(input => {
         input.addEventListener('input', () => {
-            hideError(input);
-            validateForm();
+            validateServiceForm();
         });
     });
-    agreeCheck.addEventListener('change', validateForm);
-
-    async function validateForm() {
-        let isAllValid = true;
-
-        if (document.getElementById('firstName').value.length < 2) isAllValid = false;
-        if (document.getElementById('lastName').value.length < 2) isAllValid = false;
-
-        const phone = document.getElementById('phone');
-        const phoneRegex = /^\+375(25|29|33|44)\d{7}$/;
-        if (!phoneRegex.test(phone.value)) {
-            if (phone.value.length > 0) showError(phone);
-            isAllValid = false;
-        }
-
-        const email = document.getElementById('email');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value)) {
-            if (email.value.length > 0) showError(email);
-            isAllValid = false;
-        }
-
-        const birthDate = document.getElementById('birthDate');
-        if (birthDate.value) {
-            const birth = new Date(birthDate.value);
-            const today = new Date();
-            let age = today.getFullYear() - birth.getFullYear();
-            const m = today.getMonth() - birth.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
-            
-            if (age < 16) {
-                showError(birthDate);
-                isAllValid = false;
-            }
-        } else isAllValid = false;
-
-        const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,20}$/;
-        if (!passRegex.test(p1.value) || TOP_100_PASSWORDS.includes(p1.value)) {
-            if (p1.value.length > 0) showError(p1);
-            isAllValid = false;
-        }
-
-        if (p1.value !== p2.value || p2.value === "") {
-            if (p2.value.length > 0) showError(p2);
-            isAllValid = false;
-        }
-
-        if (nicknameInput.value === "") isAllValid = false;
-
-        if (!agreeCheck.checked) isAllValid = false;
-
-        if (isAllValid) {
-            regBtn.classList.add('active');
-            regBtn.disabled = false;
-        } else {
-            regBtn.classList.remove('active');
-            regBtn.disabled = true;
-        }
-        
-        return isAllValid;
-    }
-
-    form.onsubmit = async (e) => {
-        e.preventDefault();
-        
-        const nick = nicknameInput.value;
-        
-        const res = await fetch(`${API_URL}/users?nickname=${nick}`);
-        const existing = await res.json();
-        
-        if (existing.length > 0) {
-            alert("Этот никнейм уже занят!");
-            showError(nicknameInput);
-            return;
-        }
-
-        const newUser = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            middleName: document.getElementById('middleName').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            birthDate: document.getElementById('birthDate').value,
-            nickname: nick,
-            password: p1.value,
-            role: "client"
-        };
-
-        try {
-            await fetch(`${API_URL}/users`, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(newUser)
-            });
-
-            alert("Регистрация завершена успешно!");
-            window.location.href = "catalog.html";
-        } catch (err) {
-            alert("Ошибка при сохранении пользователя.");
-        }
-    };
 });
 
-function showError(input) {
-    const group = input.closest('.form-group');
-    const msg = group.querySelector('.error-msg');
-    if (msg) msg.style.display = 'block';
-    return false;
+function validateServiceForm() {
+    const name = document.getElementById('adm-name').value;
+    const cat = document.getElementById('adm-cat').value;
+    const price = document.getElementById('adm-price').value;
+    const img = document.getElementById('adm-img').value;
+    const btn = document.getElementById('saveServiceBtn');
+
+    let isValid = true;
+
+    if (name.length < 3) isValid = false;
+    if (cat.length < 2) isValid = false;
+    if (Number(price) <= 0) isValid = false;
+    if (!img.startsWith('http')) isValid = false;
+
+    btn.disabled = !isValid;
+    btn.style.opacity = isValid ? "1" : "0.5";
 }
 
-function hideError(input) {
-    const group = input.closest('.form-group');
-    const msg = group.querySelector('.error-msg');
-    if (msg) msg.style.display = 'none';
+document.getElementById('admin-service-form').onsubmit = async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('edit-id').value;
+    
+    const serviceData = {
+        name: document.getElementById('adm-name').value,
+        category: document.getElementById('adm-cat').value,
+        price: Number(document.getElementById('adm-price').value),
+        image: document.getElementById('adm-img').value,
+        description: document.getElementById('adm-desc').value,
+        rating: 5
+    };
+
+    const method = id ? 'PUT' : 'POST';
+    const url = id ? `${API_URL}/services/${id}` : `${API_URL}/services`;
+
+    await fetch(url, {
+        method: method,
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(serviceData)
+    });
+
+    resetForm();
+    loadServices();
+    alert("Услуга сохранена!");
+};
+
+async function loadReviews(filterType = '', filterValue = '') {
+    let url = `${API_URL}/feedback`;
+    if (filterType === 'service' && filterValue) url += `?serviceId=${filterValue}`;
+    if (filterType === 'user' && filterValue) url += `?userId=${filterValue}`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+    const list = document.getElementById('admin-reviews-list');
+    
+    list.innerHTML = `
+        <div style="margin-bottom: 15px; display:flex; gap:10px; flex-wrap:wrap;">
+            <input type="text" id="filter-id" placeholder="Введите ID" style="width:100px; margin:0;">
+            <button onclick="loadReviews('service', document.getElementById('filter-id').value)" class="cat-btn" style="padding:5px 10px;">По товару</button>
+            <button onclick="loadReviews('user', document.getElementById('filter-id').value)" class="cat-btn" style="padding:5px 10px;">По юзеру</button>
+            <button onclick="loadReviews()" class="cat-btn" style="padding:5px 10px; background:#ccc;">Сброс</button>
+        </div>
+    `;
+
+    if (data.length === 0) {
+        list.innerHTML += '<p>Отзывов не найдено.</p>';
+        return;
+    }
+
+    data.forEach(r => {
+        list.innerHTML += `
+            <div class="admin-item">
+                <div style="font-size:0.85rem">
+                    <b>${r.userName}</b> (User ID: ${r.userId})<br>
+                    Услуга: ${r.serviceName} (ID: ${r.serviceId})<br>
+                    <i>"${r.text}"</i>
+                </div>
+                <button onclick="deleteReview('${r.id}')" class="cat-btn" style="background:#ff4d4d">🗑️</button>
+            </div>`;
+    });
+}
+
+async function loadServices() {
+    const res = await fetch(`${API_URL}/services`);
+    const data = await res.json();
+    const list = document.getElementById('admin-services-list');
+    list.innerHTML = '<h4>Все услуги:</h4>';
+    data.forEach(s => {
+        list.innerHTML += `
+            <div class="admin-item">
+                <span>${s.name} ($${s.price})</span>
+                <div>
+                    <button onclick="editService('${s.id}')" class="cat-btn">✏️</button>
+                    <button onclick="deleteService('${s.id}')" class="cat-btn" style="background:#ff4d4d">🗑️</button>
+                </div>
+            </div>`;
+    });
+}
+
+async function editService(id) {
+    const res = await fetch(`${API_URL}/services/${id}`);
+    const s = await res.json();
+    document.getElementById('edit-id').value = s.id;
+    document.getElementById('adm-name').value = s.name;
+    document.getElementById('adm-cat').value = s.category;
+    document.getElementById('adm-price').value = s.price;
+    document.getElementById('adm-img').value = s.image;
+    document.getElementById('adm-desc').value = s.description;
+    validateServiceForm();
+}
+
+async function deleteService(id) {
+    if (confirm("Удалить услугу из каталога?")) {
+        await fetch(`${API_URL}/services/${id}`, { method: 'DELETE' });
+        loadServices();
+    }
+}
+
+async function deleteReview(id) {
+    if (confirm("Удалить этот отзыв?")) {
+        await fetch(`${API_URL}/feedback/${id}`, { method: 'DELETE' });
+        loadReviews();
+    }
+}
+
+function resetForm() {
+    document.getElementById('admin-service-form').reset();
+    document.getElementById('edit-id').value = '';
+    validateServiceForm();
 }

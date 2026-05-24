@@ -54,17 +54,45 @@ async function removeItem(id) {
 }
 
 document.getElementById('checkout-btn').onclick = async () => {
-    const res = await fetch(`${API_URL}/cart`);
-    const items = await res.json();
-    
-    if (items.length === 0) return alert("Корзина пуста!");
-
-    for (const item of items) {
-        await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user) {
+        alert("Для оформления заказа необходимо авторизоваться!");
+        window.location.href = "auth.html";
+        return;
     }
 
-    alert("🎉 Покупка успешно оформлена! Ваша корзина очищена.");
-    fetchCart();
+    const res = await fetch(`${API_URL}/cart`);
+    const cartItems = await res.json();
+    
+    if (cartItems.length === 0) return alert("Корзина пуста!");
+
+    const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    const newOrder = {
+        userId: user.id,         
+        items: cartItems,         
+        totalPrice: total,       
+        date: new Date().toLocaleString('ru-RU') 
+    };
+
+    try {
+        await fetch(`${API_URL}/orders`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newOrder)
+        });
+
+        for (const item of cartItems) {
+            await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+        }
+
+        alert(`Покупка успешно оформлена!\nЗаказ сохранен в истории. Корзина очищена.`);
+        fetchCart();
+        
+    } catch (error) {
+        console.error("Ошибка при оформлении заказа:", error);
+        alert("Произошла ошибка при сохранении заказа.");
+    }
 };
 
 document.addEventListener('DOMContentLoaded', fetchCart);
