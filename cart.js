@@ -76,14 +76,21 @@ document.getElementById('checkout-btn').onclick = async () => {
     };
 
     try {
-        await fetch(`${API_URL}/orders`, {
+        const orderResponse = await fetch(`${API_URL}/orders`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newOrder)
         });
 
+        if (!orderResponse.ok) {
+            throw new Error(`Order request failed: ${orderResponse.status}`);
+        }
+
         for (const item of cartItems) {
-            await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+            const deleteResponse = await fetch(`${API_URL}/cart/${item.id}`, { method: 'DELETE' });
+            if (!deleteResponse.ok) {
+                throw new Error(`Cart cleanup failed: ${deleteResponse.status}`);
+            }
         }
 
         alert(`Покупка успешно оформлена!\nЗаказ сохранен в истории. Корзина очищена.`);

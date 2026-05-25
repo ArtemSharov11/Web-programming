@@ -5,18 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (burger) {
         burger.addEventListener('click', () => {
+            if (!menu || !overlay) return;
             burger.classList.toggle('is-active');
             menu.classList.toggle('is-open');
             overlay.classList.toggle('is-active');
             document.body.style.overflow = menu.classList.contains('is-open') ? 'hidden' : '';
         });
 
-        overlay.addEventListener('click', () => {
-            burger.classList.remove('is-active');
-            menu.classList.remove('is-open');
-            overlay.classList.remove('is-active');
-            document.body.style.overflow = '';
-        });
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                burger.classList.remove('is-active');
+                menu.classList.remove('is-open');
+                overlay.classList.remove('is-active');
+                document.body.style.overflow = '';
+            });
+        }
     }
 
     const initSlider = (trackId, btnPrevId, btnNextId) => {

@@ -1,123 +1,133 @@
 const API_URL = "http://localhost:3000";
+const MIN_REVIEW_LENGTH = 20;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("review-form").addEventListener("submit", submitReview);
+    document.getElementById("service-select").addEventListener("change", validateReviewForm);
+    document.getElementById("review-text").addEventListener("input", validateReviewForm);
+    validateReviewForm();
     loadServicesForSelect();
     loadAllReviews();
-
-    const sendBtn = document.getElementById('send-review-btn');
-    sendBtn.addEventListener('click', submitReview);
 });
 
+function setReviewError(id, message) {
+    const error = document.querySelector(`[data-error-for="${id}"]`);
+    error.textContent = message;
+    error.style.display = message ? "block" : "none";
+}
+
+function validateReviewForm(showErrors = false) {
+    const serviceId = document.getElementById("service-select").value;
+    const text = document.getElementById("review-text").value.trim();
+    const serviceValid = Boolean(serviceId);
+    const textValid = text.length >= MIN_REVIEW_LENGTH;
+
+    if (showErrors || serviceValid) {
+        setReviewError("service-select", serviceValid ? "" : "Выберите услугу.");
+    }
+    if (showErrors || text.length > 0) {
+        setReviewError(
+            "review-text",
+            textValid ? "" : `Введите не менее ${MIN_REVIEW_LENGTH} символов.`
+        );
+    }
+
+    const button = document.getElementById("send-review-btn");
+    button.disabled = !(serviceValid && textValid);
+    return serviceValid && textValid;
+}
+
 async function loadServicesForSelect() {
-    const res = await fetch(`${API_URL}/services`);
-    const services = await res.json();
-    const select = document.getElementById('service-select');
-    
-    select.innerHTML = '<option value="">-- Выберите услугу из списка --</option>';
-    services.forEach(s => {
-        select.innerHTML += `<option value="${s.id}">${s.name}</option>`;
+    const response = await fetch(`${API_URL}/services`);
+    const services = await response.json();
+    const select = document.getElementById("service-select");
+    select.innerHTML = '<option value="">-- Выберите купленную услугу --</option>';
+
+    services.forEach(service => {
+        const option = document.createElement("option");
+        option.value = service.id;
+        option.textContent = service.name;
+        select.appendChild(option);
     });
 }
 
-async function submitReview() {
-    console.log("Кнопка нажата!"); // Проверим, работает ли кнопка
+async function submitReview(event) {
+    event.preventDefault();
+    if (!validateReviewForm(true)) return;
 
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    const serviceSelect = document.getElementById('service-select');
-    const reviewTextarea = document.getElementById('review-text');
-
-    // Проверка, найдены ли элементы на странице
-    if (!serviceSelect || !reviewTextarea) {
-        console.error("Ошибка: Не найдены ID 'service-select' или 'review-text' в HTML!");
-        return;
-    }
-
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const serviceSelect = document.getElementById("service-select");
+    const reviewTextarea = document.getElementById("review-text");
     const serviceId = serviceSelect.value;
-    const text = reviewTextarea.value.trim();
 
-    console.log("Данные для отправки:", { user, serviceId, textLength: text.length });
-
-    if (!user) {
-        alert("Ошибка: Вы не авторизованы! Зайдите на страницу регистрации.");
-        return;
-    }
-
-    if (user.role === 'admin') {
-        alert("Администраторы не могут оставлять отзывы.");
-        return;
-    }
-
-    if (!serviceId) {
-        alert("Выберите услугу из списка!");
-        return;
-    }
-
-    if (text.length < 20) {
-        alert("Отзыв слишком короткий (минимум 20 символов)!");
-        return;
-    }
-
-    // Проверяем покупки
-    console.log("Проверяем историю заказов для пользователя:", user.id);
-    const resOrders = await fetch(`${API_URL}/orders?userId=${user.id}`);
-    const orders = await resOrders.json();
-    
-    const hasBought = orders.some(order => 
-        order.items.some(item => String(item.id) === String(serviceId))
-    );
-
-    if (!hasBought) {
-        alert("Вы не можете оставить отзыв: услуга не найдена в ваших заказах.");
-        return;
-    }
-
-    const newFeedback = {
-        userId: user.id,
-        userName: `${user.firstName} ${user.lastName}`,
-        serviceId: serviceId,
-        serviceName: serviceSelect.options[serviceSelect.selectedIndex].text,
-        text: text,
-        date: new Date().toLocaleDateString('ru-RU')
-    };
+    if (!user) return showFormMessage("Авторизуйтесь, чтобы оставить отзыв.");
+    if (user.role === "admin") return showFormMessage("Администраторы не могут оставлять отзывы.");
 
     try {
+        const ordersResponse = await fetch(`${API_URL}/orders?userId=${encodeURIComponent(user.id)}`);
+        const orders = await ordersResponse.json();
+        const hasBought = orders.some(order =>
+            Array.isArray(order.items) &&
+            order.items.some(item => String(item.id) === String(serviceId))
+        );
+
+        if (!hasBought) return showFormMessage("Эта услуга не найдена в истории ваших покупок.");
+
         const response = await fetch(`${API_URL}/feedback`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(newFeedback)
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                userId: user.id,
+                userName: `${user.firstName} ${user.lastName}`,
+                serviceId,
+                serviceName: serviceSelect.options[serviceSelect.selectedIndex].text,
+                text: reviewTextarea.value.trim(),
+                date: new Date().toLocaleDateString("ru-RU")
+            })
         });
 
-        if (response.ok) {
-            alert("Отзыв успешно отправлен!");
-            reviewTextarea.value = '';
-            loadAllReviews();
-        }
-    } catch (e) {
-        console.error("Ошибка при отправке на сервер:", e);
+        if (!response.ok) throw new Error("Feedback request failed");
+        reviewTextarea.value = "";
+        serviceSelect.value = "";
+        validateReviewForm();
+        showFormMessage("Отзыв успешно отправлен.", true);
+        await loadAllReviews();
+    } catch {
+        showFormMessage("Не удалось отправить отзыв. Проверьте JSON Server.");
     }
 }
 
 async function loadAllReviews() {
-    const res = await fetch(`${API_URL}/feedback`);
-    const reviews = await res.json();
-    const list = document.getElementById('reviews-list');
-    
-    list.innerHTML = reviews.length ? '' : '<p>Отзывов пока нет. Будьте первым!</p>';
+    const response = await fetch(`${API_URL}/feedback`);
+    const reviews = await response.json();
+    const list = document.getElementById("reviews-list");
+    list.innerHTML = "";
 
-    reviews.reverse().forEach(rev => {
-        list.innerHTML += `
-            <div class="review-item">
-                <div class="review-author">${rev.userName} <span style="font-weight:400; color:#808080">об услуге</span> "${rev.serviceName}"</div>
-                <div class="review-date">${rev.date}</div>
-                <div class="text-body-30">${rev.text}</div>
-            </div>
-        `;
+    if (reviews.length === 0) {
+        list.innerHTML = "<p>Отзывов пока нет.</p>";
+        return;
+    }
+
+    reviews.slice().reverse().forEach(review => {
+        const item = document.createElement("article");
+        item.className = "review-item";
+        const author = document.createElement("div");
+        author.className = "review-author";
+        author.textContent = `${review.userName} об услуге "${review.serviceName}"`;
+        const date = document.createElement("div");
+        date.className = "review-date";
+        date.textContent = review.date;
+        const text = document.createElement("p");
+        text.className = "text-body-30";
+        text.textContent = review.text;
+        item.append(author, date, text);
+        list.appendChild(item);
     });
 }
 
-function showError(msg) {
-    const errorDiv = document.getElementById('review-error');
-    errorDiv.textContent = msg;
-    errorDiv.style.display = 'block';
-    setTimeout(() => { errorDiv.style.display = 'none'; }, 4000);
+function showFormMessage(message, success = false) {
+    const element = document.getElementById("review-form-message");
+    element.textContent = message;
+    element.classList.toggle("success", success);
+    element.style.display = "block";
 }
