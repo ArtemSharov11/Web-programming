@@ -1,0 +1,242 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "name": "Завтрак в номер",
+      "category": "Ресторан",
+      "description": "Континентальный завтрак: круассаны, джем и кофе.",
+      "price": 20,
+      "time": 20,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800"
+    },
+    {
+      "id": "2",
+      "name": "Тайский массаж",
+      "category": "SPA",
+      "description": "Традиционный массаж для глубокого расслабления.",
+      "price": 60,
+      "time": 60,
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800"
+    },
+    {
+      "id": "3",
+      "name": "Подготовка номера",
+      "category": "Сервис",
+      "description": "Обновление запаса воды и ароматерапия перед сном.",
+      "price": 10,
+      "time": 10,
+      "rating": 4.5,
+      "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800"
+    },
+    {
+      "id": "4",
+      "name": "Бизнес-трансфер",
+      "category": "Транспорт",
+      "description": "Комфортная поездка в аэропорт на автомобиле бизнес-класса.",
+      "price": 45,
+      "time": 30,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=800"
+    },
+    {
+      "id": "5",
+      "name": "Набор для йоги",
+      "category": "Спорт",
+      "description": "Коврик и блоки для занятий в номере.",
+      "price": 5,
+      "time": 5,
+      "rating": 4.2,
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800"
+    },
+    {
+      "id": "6",
+      "name": "Винная карта",
+      "category": "Бар",
+      "description": "Эксклюзивная подборка вин из нашего погреба.",
+      "price": 30,
+      "time": 10,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800"
+    },
+    {
+      "id": "7",
+      "name": "Меню подушек",
+      "category": "Сервис",
+      "description": "Выбор идеальной подушки для комфортного сна.",
+      "price": 0,
+      "time": 10,
+      "rating": 4.6,
+      "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800"
+    },
+    {
+      "id": "8",
+      "name": "Ранний заезд",
+      "category": "Размещение",
+      "description": "Заселение в номер до стандартного времени.",
+      "price": 30,
+      "time": 0,
+      "rating": 4,
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800"
+    },
+    {
+      "id": "9",
+      "name": "Прачечная",
+      "category": "Сервис",
+      "description": "Бережный уход за одеждой гостя.",
+      "price": 15,
+      "time": 720,
+      "rating": 4.3,
+      "image": "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=800"
+    },
+    {
+      "id": "10",
+      "name": "Ужин от шефа",
+      "category": "Ресторан",
+      "description": "Авторское сет-меню из пяти блюд.",
+      "price": 85,
+      "time": 40,
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800"
+    },
+    {
+      "id": "11",
+      "name": "Электросамокат",
+      "category": "Досуг",
+      "description": "Аренда транспорта для прогулки по городу.",
+      "price": 15,
+      "time": 60,
+      "rating": 4.4,
+      "image": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?q=80&w=800"
+    },
+    {
+      "id": "12",
+      "name": "Настольные игры",
+      "category": "Досуг",
+      "description": "Популярные игры для компании.",
+      "price": 5,
+      "time": 10,
+      "rating": 4.1,
+      "image": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=800"
+    },
+    {
+      "id": "13",
+      "name": "Детский набор",
+      "category": "Сервис",
+      "description": "Халат, тапочки и безопасная косметика для детей.",
+      "price": 0,
+      "time": 15,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=800"
+    },
+    {
+      "id": "14",
+      "name": "Коктейль у бассейна",
+      "category": "Бар",
+      "description": "Освежающий напиток с доставкой к бассейну.",
+      "price": 12,
+      "time": 10,
+      "rating": 4.5,
+      "image": "https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=800"
+    },
+    {
+      "id": "15",
+      "name": "Поздний выезд",
+      "category": "Размещение",
+      "description": "Продление номера до 18:00.",
+      "price": 40,
+      "time": 0,
+      "rating": 4.2,
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "SphSC2m322o",
+      "name": "Завтрак в номер",
+      "category": "Ресторан",
+      "description": "Континентальный завтрак: круассаны, джем и кофе.",
+      "price": 20,
+      "time": 20,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800"
+    }
+  ],
+  "cart": [
+    {
+      "id": "ED-x8PUAzME",
+      "name": "Завтрак в номер",
+      "category": "Ресторан",
+      "description": "Континентальный завтрак: круассаны, джем и кофе.",
+      "price": 20,
+      "time": 20,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800",
+      "quantity": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "admin-1",
+      "firstName": "Админ",
+      "lastName": "Главный",
+      "middleName": "Сергеевич",
+      "phone": "+375291111111",
+      "email": "admin@mail.ru",
+      "birthDate": "1990-01-01",
+      "nickname": "SuperAdmin",
+      "password": "Password1!",
+      "role": "admin"
+    },
+    {
+      "id": "user-1",
+      "firstName": "Иван",
+      "lastName": "Тестовый",
+      "middleName": "",
+      "phone": "+375292222222",
+      "email": "user@mail.ru",
+      "birthDate": "2000-05-15",
+      "nickname": "Tester",
+      "password": "Password1!",
+      "role": "client"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "f1",
+      "userId": "user-1",
+      "userName": "Иван Тестовый",
+      "serviceId": "1",
+      "serviceName": "Завтрак в номер",
+      "text": "Очень быстрая доставка и всё было горячим. Спасибо!",
+      "date": "20.05.2024"
+    },
+    {
+      "userId": "user-1",
+      "userName": "Иван Тестовый",
+      "serviceId": "1",
+      "serviceName": "Завтрак в номер",
+      "text": "ААААААААААААААААААААААААА",
+      "date": "19.05.2026",
+      "id": "O8x2ElWShVo"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-100",
+      "userId": "user-1",
+      "items": [
+        {
+          "id": "1",
+          "name": "Завтрак в номер",
+          "price": 20,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 20,
+      "date": "19.05.2024, 14:30:00"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

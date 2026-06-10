@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог услуг - HOTELA</title>
+    <link rel="icon" href="img/Frame.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="index3.css">
+    <link rel="stylesheet" href="tablet.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="phone.css" media="(max-width: 320px)">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+
+    <header class="header">
+
+        <a href="index3.html" style="display: flex; align-items: center;">
+            <img src="img/Frame.svg" alt="Logo" class="logo">
+        </a>
+        
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <a href="catalog.html" style="text-decoration:none; color:black;">Каталог</a>
+            <a href="favorites.html" style="text-decoration:none; color:black;">Избранное</a>
+            <a href="cart.html" style="text-decoration:none; color:black;">Корзина <span class="interactive-counter" data-counter="cart">0</span></a>
+            <button type="button" class="burger-menu" id="burgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <nav class="side-menu__nav">
+            <a href="index3.html">Главная</a>
+            <a href="index3.html#tariffs">Тарифы</a>
+            <a href="catalog.html" style="color: #9EF01A;">Каталог услуг</a>
+            <hr>
+            <p class="side-menu__text">Подключиться сейчас</p>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="container">
+        <section class="catalog-intro fade-in">
+        </section>
+        <section class="catalog-controls container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Поиск услуги по названию или описанию...">
+            </div>
+
+            <div class="filters-row">
+
+                <select id="sort-select">
+                    <option value="default">Сортировать по...</option>
+                    <option value="price-asc">Цена: дешевле</option>
+                    <option value="price-desc">Цена: дороже</option>
+                    <option value="name-asc">Название: А-Я</option>
+                    <option value="rating-desc">Рейтинг: высокий</option>
+                </select>
+
+                <div class="category-list" id="category-list">
+                    <button class="cat-btn active" data-category="all">Все</button>
+                </div>
+            </div>
+
+            <div class="filter-range" style="margin-top: 1rem; display: flex; gap: 10px; align-items: center;">
+                <span class="text-body-gray-30">Цена от:</span>
+                <input type="number" id="price-min" placeholder="0" style="width: 80px; padding: 5px; border-radius: 8px; border: 1px solid #ccc;">
+                <span class="text-body-gray-30">до:</span>
+                <input type="number" id="price-max" placeholder="100" style="width: 80px; padding: 5px; border-radius: 8px; border: 1px solid #ccc;">
+                <button id="apply-filters" class="cat-btn">Применить фильтры</button>
+            </div>
+        </section>
+
+        <div id="catalog-container" class="catalog-grid container"></div>
+        <div class="pagination container" style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 2rem 0;">
+            <button id="prev-page" class="cat-btn">← Назад</button>
+            <span id="current-page-info" class="text-body-30">Страница 1</span>
+            <button id="next-page" class="cat-btn">Вперед →</button>
+        </div>
+    </main>
+
+    <footer class="container" style="margin-top: 5rem; padding-bottom: 2rem;">
+        <p class="site-footer__copyright">© 2022 Hoteza Web. Все права защищены.</p>
+    </footer>
+
+    <script src="favorites.js"></script>
+    <script src="animation.js"></script>
+</body>
+</html>
+

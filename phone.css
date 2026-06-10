@@ -1,0 +1,945 @@
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: 480px;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: 3.5rem;
+        padding: 0 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 0.9rem;
+    }
+
+    .logo {
+        position: static;
+        width: 6rem;
+        height: auto;
+    }
+
+    .btn-connect {
+        position: static;
+        width: 6rem; 
+        padding: 0.4rem 0.7rem;
+        font-size: 0.5rem;
+        height: auto;
+        border-radius: 1rem;
+        margin-right: 0rem;
+        white-space: nowrap;
+    }
+
+    .core-section {
+        width: 20.4rem;
+        min-height: 11.5rem;
+        margin: 0rem auto;
+        padding: 0.4rem 0 0 0.6rem;
+        background-image: url('img/hero-photo.png');
+        background-size: cover;
+        background-position: center;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .core-section__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-text {
+        max-width: 85%; 
+        padding: 0;
+        text-align: left;
+    }
+
+    .hero-text__title {
+        width: 10rem;
+        font-size: 1rem;
+        line-height: 1.2;
+        color: #FFFFFF;
+        letter-spacing: 0.07rem;
+        font-weight: 500;
+    }
+
+    .qr-code {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0;
+        margin-left: -1rem;
+    }
+
+    .qr-code__image {
+        width: 3.5rem;
+        height: 3.5rem;
+        background: #FFFFFF;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .qr-code__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .qr-code__title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0;
+        color: #FFFFFF;
+    }
+
+    .qr-code__description {
+        font-size: 0.65rem;
+        line-height: 1.2;
+        color: #FFFFFF;
+        margin: 0;
+    }
+
+    .qr-code__smile {
+        display: none; 
+    }
+    
+
+    .features-grid--2-cols,
+    .content-cards-grid,
+    .tariffs-grid,
+    .admin-section {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .features-section {
+        margin-top: 0rem;
+        margin-bottom: 4rem;
+        padding: 0 1rem;   
+        box-sizing: border-box;
+        transform: none;   
+        background: #FFFFFF;
+    }
+
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;      
+        margin-top: 2.2rem;       
+        width: 100% ;
+    }
+
+    .features-card {
+        padding: 1.5rem 0rem 2.1rem 0rem;        
+        border: 1px solid #E5E5E5;
+        border-radius: 1rem;
+        background: #FFFFFF;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        min-height: auto;      
+        width: 100%;
+    }
+
+    .features-card__icon {
+        width: 2.5rem;        
+        height: 2.5rem;
+        margin-bottom: 0.4rem;
+        object-fit: contain;
+    }
+    .features-card .features-card__title {
+        margin-bottom: 3.3rem;
+        width: 14rem;
+    }
+
+    .features-card__text {
+        width: 16rem;
+        letter-spacing: 0.01rem;
+    }   
+
+    .info-banner {
+        margin: -2.4rem 0 1.7em 0;
+        transform: scale(0.93);
+        padding: 0.7rem 0 0.7rem 1.2rem;
+        letter-spacing: 0.04rem;
+        background-color: #9EF01A;
+        border-radius: 1.25rem;
+        box-sizing: border-box;
+    }
+
+    .info-banner__text {
+        max-width: 75rem; 
+        text-align: left;
+    }   
+
+    .text-banner {
+        font-size: 1.4rem;
+        line-height: 1.18;
+    }
+    
+    .phones-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .phones-header__title {
+        margin-left: 1rem;
+        max-width: 18rem;
+        text-align: left;
+    }
+
+    .phones-header__subtitle {
+        min-width: 14rem;
+        margin-left: 1rem;
+        text-align: left;
+        font-size: 0.1rem;
+        margin-top: 0.1rem;
+        max-width: 13rem;
+        letter-spacing: 0.01rem;
+    }
+
+    .phones-header__subtitle p {
+        font-size: 0.6rem;
+    }
+
+    .phones-grid {
+        display: flex; 
+        flex-direction: row;
+        gap: 0;
+        padding-top: 5rem;
+    }
+
+    .phone-card {
+        display: flex;
+        min-width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .phone-card__image-wrapper {
+        width: 100%;
+        max-width: 18.5rem; 
+        height: 14rem;
+        background-color: #F1F1F1;
+        border-radius: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .phone-card__image {
+        width: 8rem; 
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+    }
+
+    .phone-card__title.text-body-34 {
+        margin: 0.6rem 0 0.4rem 0;
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+
+    .phone-card__text.text-body-30 {
+        max-width: 20rem;
+        font-size: 0.6rem;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+
+    .phones-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+        width: auto; 
+        min-height: 10rem;
+        max-width: none;
+        margin: 1.3rem -1.875rem 2rem;    
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .phones-info__text {
+        max-width: 22rem;
+        line-height: 1.1;
+        width: 100%;
+    }
+
+    .content-cards-section {
+        width: 100%;
+        background-color: #FFFFFF;
+        margin-top: -2.2rem;
+        margin-bottom: 3.8rem;
+    }
+
+    .content-cards-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        scrollbar-width: none;
+        padding-top: 4rem; 
+    }
+
+    .content-cards-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .content-card {
+        min-width: 100%; 
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .content-card__image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 18.5rem; 
+        height: 14.8rem;     
+        margin: 0 auto; 
+        overflow: visible; 
+    }
+
+    .content-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    .content-card .content-card__title {
+        width: 100%;
+        max-width: 18.5rem;
+        font-size: 1.1rem;
+        text-align: left;
+        margin: 0.4rem auto 0.4rem 1.8rem; 
+        padding: 0 0.5rem; 
+        box-sizing: border-box;
+    }
+
+    .content-card__text.text-body-gray-30 {
+        width: 100%;
+        max-width: 18rem; 
+        font-size: 0.6rem;
+        line-height: 1.5;
+        text-align: left;
+        box-sizing: border-box;
+        margin-left: 2.3rem;
+        letter-spacing: 0.02rem;
+    }
+
+    .admin-section {
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 0 3.8rem 0;
+        margin-bottom: 2.2rem;
+    }
+
+    .admin-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;        
+    }
+
+    .admin-section .admin-texts .admin-title {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 15rem;
+    }
+
+    .admin-section .admin-texts .admin-text {
+        text-align: center;
+        margin: 1.8rem auto 0;
+        max-width: 14rem;
+        line-height: 1.5;
+        letter-spacing: 0.01rem;
+        font-size: 0.6rem;
+    }
+
+    .admin-image {
+        display: none;
+    }
+
+    .phones-showcase {
+        margin: 4rem auto 2.5rem 0;
+        padding-bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .phones-showcase__background {
+        width: 100%;
+        max-width: 21rem;      
+        height: 20.8rem;         
+        background-color: #F1F1F1;
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        gap: 0;
+        overflow: hidden;
+    }
+
+    .showcase-phone--left,
+    .showcase-phone--right {
+        display: none;
+    }
+
+    .showcase-phone--center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .showcase-phone__image {
+        width: 10.8rem; 
+        height: 20rem;        
+        display: block;
+        object-fit: contain;
+    }
+
+    .brands-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);        
+        gap: 1.2rem 0.5rem; 
+        margin: 2.3rem auto 4.1rem auto;
+        justify-items: center;
+        align-items: center;
+        max-width: 21rem;
+        width: 100%;
+    }
+
+    .brands-row {
+        display: contents;
+    }
+
+    .brand-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .brand-item__logo {
+        height: 3rem; 
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .pricing-nav {
+        padding-left: 1.5rem;
+    }
+
+    .pricing-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: -1rem 0 0 0;
+        gap: 0.7rem;
+    }
+    
+    .toggle-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 1.2rem; 
+        align-items: center;
+    }
+
+    .active-underline {
+        position: absolute;
+        bottom: -0.7rem; 
+        border: none;
+        border-bottom: 2px solid #000;
+        margin-left: -0.3rem;
+        width: 130%;
+    }
+
+    .text-pricing-descr {
+        padding-left: 1rem;
+        text-align: left;
+        font-size: 0.7rem;
+        max-width: 13rem;
+    }
+
+    .tariffs-section {
+        margin-top: 3.8rem; 
+        margin-bottom: 0.5rem;
+        padding: 0 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tariffs-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10rem;
+        padding: 0 calc(50% - 6.5rem) 1rem;
+        scrollbar-width: none;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .tariffs-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tariff-card {
+        flex: 0 0 13rem;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        border-radius: 1rem;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        max-height: 26.5rem;
+    }
+
+    .tariff-card--basic .tariff-card__item,
+    .tariff-card--pro .tariff-card__item,
+    .tariff-card--addons .tariff-card__item {
+        font-size: 0.6rem;
+        padding: 0 0 0.15rem 0;
+    }
+
+    .tariff-card--addons .tariff-card__item {
+        font-size: 0.55rem;
+        padding: 0 0 0.2rem 0;
+        min-width: 10rem;
+    }
+
+    .tariff-card--basic .tariff-card__list,
+    .tariff-card--pro .tariff-card__list,
+    .tariff-card--addons .tariff-card__list {
+        margin-top: 0rem;
+        padding: 0.5rem 0 0 2rem;
+        max-width: 8rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tariff-card--basic .tariff-card__list {
+        margin-top: 1.1rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .tariff-card--basic .tariff-card__item {
+        margin-bottom: 0rem;
+        line-height: 1.5;
+    }
+
+    .tariff-card .tariff-card__title--inverse {
+        padding: 0.1rem 0 0 0.5rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .tariff-card__price.text-price-large-inverse {
+        margin-top: 7.5rem;
+        padding-left: 0.1rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.03rem;
+    }
+
+    .tariff-card__icon {
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
+
+    .tariff-card__accent {
+        font-size: 0.5rem;
+        padding: 0 0 0 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        letter-spacing: 0.025rem;
+    }
+
+    .tariff-card__header {
+        min-height: 4rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0.4rem 0 0 0.4rem;
+    }
+
+    .tariff-card__title {
+        padding: 0 0 0 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .tariff-card__subtitle {
+        font-size: 0.6rem;
+        padding: 0 0.6rem;
+        max-width: 10rem;
+        letter-spacing: 0.01rem;
+        margin: 0 0 0.3rem 0;
+    }
+
+    .tariff-card__list {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .tariff-card__item {
+        font-size: 0.6rem;
+        padding: 0 0 0.2rem 0;
+        width: 100%;
+    }
+
+    .tariff-card__footer {
+        padding: 1rem 0 1rem 0.9rem;
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    .tariff-card__price-info {
+        padding: 1.1rem 0 0 0.3rem;
+        gap: 0.3rem;
+    }
+        
+
+    .tariff-card__price.text-price-large {
+        font-size: 2.2rem;
+    }
+
+    .tariff-card__price-old.text-price-old {
+        font-size: 0.6rem;
+    }
+
+    .reviews-section {
+        margin-bottom: 0.2rem;
+    }
+
+    .reviews-section__header {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+
+    #reviews-prev, #reviews-next {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: -1.3rem;
+        transform: none;
+    }
+
+    #reviews-prev {
+        left: 2.3rem;
+    }
+
+    #reviews-next {
+        right: 2.2rem;
+    }
+
+    .reviews-section__title {
+        margin-bottom: 2.4rem;
+    }
+
+    .review-card {
+        flex-direction: column;
+        gap: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 1.8rem;
+    }
+
+    .review-card__image {
+        width: 12rem;
+        height: auto;
+        border-radius: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .review-card__text.text-banner {
+        max-width: 18rem;
+        margin-bottom: 0;
+        padding-left: 1rem;
+        letter-spacing: 0.03rem;
+        line-height: 1.17;
+        font-size: 1.3rem;
+    }
+
+    .review-card__author {
+        margin-top: -0.2rem;
+        padding-left: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem; 
+    }
+
+    .review-card__position.text-body-gray-30 {
+        font-size: 0.6rem; 
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .review-block__image {
+        object-fit: cover;
+        width: 2rem;
+    }
+
+    .review-card__name {
+        font-size: 0.7rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0;
+    }
+
+    .reviews-grid-section {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #guest-track {
+        padding: 0 1rem;
+    }
+
+    .reviews-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        min-width: 18.5rem;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+    }
+
+    .review-block {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .reviews-column:first-child {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .reviews-column:first-child .review-block:first-child {
+        margin-top: 2rem; 
+        width: 100%;
+        min-width: 12rem;
+        height: auto;      
+        min-height: 8.5rem; 
+        background-color: #F5F5F5;
+        border-radius: 1.25rem;
+        box-sizing: border-box;
+        padding: 0.7rem 0 0 0.9rem;
+    }
+
+    .review-block__image {
+        width: 2rem;
+        border-radius: 50%;
+    }
+
+    .review-block__header {
+        display: flex;
+        margin-bottom: 0.2rem;
+        gap: 0.2rem;
+    }
+
+    .review-block__info {
+        gap: 0rem;
+    }
+
+    .review-block__source {
+        width: 3rem;
+        object-fit: contain;
+    }
+
+    .review-block__name {
+        font-size: 0.6rem;
+    }
+
+    .review-block__text.text-body-30 {
+        font-size: 0.6rem;
+        line-height: 1.4;
+        max-width: 100%;
+        width: 10.3rem;
+        letter-spacing: 0.02rem;
+        line-height: 1.45;
+    }
+
+    #reviews-track2 {
+        max-width: 12.2rem;
+        margin: 0 auto;
+        align-items: flex-start;
+    }
+
+    #reviews-track2 .review-block {
+        padding: 0.7rem 0.9rem 0.7rem 1rem;
+        margin-top: 1.8rem;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    #reviews2-prev,
+    #reviews2-next {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: 0.8rem;
+        transform: translateY(-50%);
+    }
+
+    #reviews2-prev {
+        left: 2.3rem;
+    }
+
+    #reviews2-next {
+        right: 2.3rem;
+    }
+
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .faq-header__title {
+        max-width: 8rem;
+        padding-left: 1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .faq-question {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0.8rem 0 0 0.9rem; 
+        border-bottom: 1px solid #E5E5E5;
+    }
+
+    .faq-question__text {
+        margin-bottom: 0.55rem;
+        letter-spacing: 0.01rem;
+        max-width: 50rem;  
+    }
+
+    .faq-question__arrow {
+        margin: -0.5rem 0.4rem 0 0;
+        width: 0.7rem;
+        height: auto;
+        display: block;
+    } 
+
+    .footer-cta {
+        border-radius: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        padding: 0;
+        padding-bottom: 3rem;            
+        width: 100%;
+        max-width: 21rem; 
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .footer-cta__icon {
+        width: 2rem;
+        margin-top: 2.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .footer-cta__title {
+        font-size: 1.2rem; 
+        line-height: 1;
+        margin: 0 0 2rem 0;
+    }
+
+    .footer-cta__description.text-body-gray-30 {
+        font-size: 0.6rem;
+        min-width: 21rem;
+        letter-spacing: 0.01rem;
+        margin-bottom: 1.2rem;
+        padding: 0;
+    }
+
+    .footer-cta__button {
+        width: 100%;       
+        max-width: 11.5rem;
+        min-height: 1.9rem;
+        padding: 0;
+        font-size: 0.6rem;
+    }
+
+    .site-footer__copyright {
+        font-size: 0.47rem;
+        margin-top: 1.7rem;
+        text-align: center;
+    }
+
+    .text-h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-body-41 {
+        font-size: 1rem;
+    }
+
+    .text-body-34 {
+        font-size: 1.2rem;
+    }
+
+    .text-body-30, .text-body-gray-30 {
+        font-size: 0.6rem;
+    }
+
+    .text-pricing-nav {
+        font-size: 0.7rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .tariff-card__price-old.text-price-old {
+        font-size: 0.6rem;         
+        font-weight: 400;
+        line-height: 1;
+        color: #FF6B6B;
+    }
+    
+    .tariff-card__period.text-body-gray-30 {
+        font-size: 0.5rem;          
+        font-weight: 400;
+        line-height: 1;
+        color: #808080;  
+    }   
+}

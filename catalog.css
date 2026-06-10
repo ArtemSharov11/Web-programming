@@ -1,0 +1,340 @@
+.catalog-intro {
+    text-align: center;
+    margin: 4rem 0 3rem;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+    gap: 2.5rem;
+    padding: 1rem 0;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    border: 1px solid #F1F1F1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.service-card__image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card__image {
+    transform: scale(1.1);
+}
+
+.service-card__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #9EF01A;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.service-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-card__title {
+    margin-bottom: 0.8rem;
+}
+
+.service-card__description {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.service-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.2rem;
+    border-top: 1px solid #F1F1F1;
+}
+
+.service-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    color: #747474;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .service-card__image-container {
+        height: 180px;
+    }
+}
+
+
+
+
+
+.filter-panel {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-buttons button {
+    padding: 0.8rem 1.2rem;
+    background-color: #F1F1F1;
+    border: 1px solid #E5E5E5;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+    background-color: #9EF01A;
+    border-color: #9EF01A;
+    transform: translateY(-2px);
+}
+
+.total-sum-banner {
+    background: #000;
+    color: #9EF01A;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.filter-buttons button.active {
+    background-color: #000;
+    color: #9EF01A;
+    border-color: #000;
+    transform: scale(1.05);
+}
+
+.catalog-controls {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#search-input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #E5E5E5;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #9EF01A;
+}
+
+.filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+#sort-select {
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #E5E5E5;
+    background: #fff;
+    cursor: pointer;
+}
+
+.category-list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid #F1F1F1;
+    background: #F1F1F1;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cat-btn.active {
+    background: #9EF01A;
+    border-color: #9EF01A;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.array-methods {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+}
+
+.array-methods__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.array-methods__header h2,
+.array-methods__header p {
+    margin: 0;
+}
+
+.array-methods__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.method-btn,
+.method-reset {
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.method-btn:hover,
+.method-reset:hover,
+.method-btn.active {
+    background: #9EF01A;
+    border-color: #9EF01A;
+    transform: translateY(-2px);
+}
+
+.method-result {
+    min-height: 1.4rem;
+    margin: 1rem 0 0;
+    color: #555;
+}
+
+.pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.no-results img {
+    width: 100px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.page-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.auth-link {
+    padding: 5px 15px;
+    background: #9ef01a;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 800px) {
+    .header {
+        gap: 12px;
+        flex-wrap: wrap;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header > div,
+    .header nav,
+    .page-nav {
+        max-width: 100%;
+        gap: 10px !important;
+        margin-right: 0 !important;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .catalog-controls,
+    .filter-range {
+        max-width: 100%;
+    }
+
+    .filter-range,
+    #user-status {
+        flex-wrap: wrap;
+    }
+
+    .array-methods__header {
+        flex-direction: column;
+    }
+}
