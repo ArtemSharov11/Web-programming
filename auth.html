@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход и регистрация - HOTELA</title>
+    <link rel="stylesheet" href="index3.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index3.html"><img src="img/Frame.svg" alt="Логотип HOTELA" class="logo"></a>
+        <a href="catalog.html" class="cat-btn">В каталог</a>
+    </header>
+
+    <main class="container">
+        <div class="auth-container">
+            <div class="auth-tabs" role="tablist" aria-label="Вход или регистрация">
+                <button type="button" onclick="showTab('login')" class="cat-btn">Вход</button>
+                <button type="button" onclick="showTab('register')" class="cat-btn">Регистрация</button>
+            </div>
+
+            <section id="loginSection">
+                <h1 class="text-h2">Вход</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" class="required-label">Email</label>
+                        <input type="email" id="loginEmail" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPass" class="required-label">Пароль</label>
+                        <input type="password" id="loginPass" autocomplete="current-password" required>
+                    </div>
+                    <div id="loginError" class="form-error" role="alert"></div>
+                    <button type="submit" class="btn-reg active">Войти</button>
+                </form>
+            </section>
+
+            <section id="registerSection" hidden>
+                <h1 class="text-h2">Регистрация</h1>
+                <p class="required-note"><span>*</span> Обязательные поля</p>
+                <form id="regForm" novalidate>
+                    <div class="form-group">
+                        <label for="lastName" class="required-label">Фамилия</label>
+                        <input type="text" id="lastName" autocomplete="family-name" required>
+                        <div class="error-msg" data-error-for="lastName"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName" class="required-label">Имя</label>
+                        <input type="text" id="firstName" autocomplete="given-name" required>
+                        <div class="error-msg" data-error-for="firstName"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName">Отчество</label>
+                        <input type="text" id="middleName" autocomplete="additional-name">
+                        <div class="error-msg" data-error-for="middleName"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="required-label">Телефон РБ</label>
+                        <input type="tel" id="phone" placeholder="+375291234567" autocomplete="tel" required>
+                        <div class="error-msg" data-error-for="phone"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="required-label">Email</label>
+                        <input type="email" id="email" autocomplete="email" required>
+                        <div class="error-msg" data-error-for="email"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate" class="required-label">Дата рождения</label>
+                        <input type="date" id="birthDate" required>
+                        <div class="error-msg" data-error-for="birthDate"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname" class="required-label">Никнейм</label>
+                        <div class="nickname-box">
+                            <input type="text" id="nickname" autocomplete="username" readonly required>
+                            <button type="button" id="genNickBtn" class="cat-btn">Сгенерировать</button>
+                        </div>
+                        <small id="nicknameHint">Введите имя и фамилию, затем сгенерируйте никнейм.</small>
+                        <div class="error-msg" data-error-for="nickname"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passMethod" class="required-label">Способ задания пароля</label>
+                        <select id="passMethod">
+                            <option value="manual">Самостоятельно</option>
+                            <option value="auto">Автоматически</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass1" class="required-label">Пароль</label>
+                        <input type="password" id="pass1" autocomplete="new-password" required>
+                        <div class="error-msg" data-error-for="pass1"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass2" class="required-label">Повторите пароль</label>
+                        <input type="password" id="pass2" autocomplete="new-password" required>
+                        <div class="error-msg" data-error-for="pass2"></div>
+                    </div>
+
+                    <div class="agreement-box" tabindex="0">
+                        <h2>Соглашение пользователя</h2>
+                        <p>Пользователь подтверждает достоверность регистрационных данных и согласие на их обработку для работы учебного сервиса HOTELA.</p>
+                        <p>Пользователь обязуется не передавать пароль третьим лицам и соблюдать правила использования сервиса.</p>
+                    </div>
+                    <label class="agreement-check">
+                        <input type="checkbox" id="agreeCheck" required>
+                        Я прочитал(а) и принимаю Соглашение пользователя
+                    </label>
+                    <div id="registrationError" class="form-error" role="alert"></div>
+                    <button type="submit" id="regBtn" class="btn-reg" disabled>Зарегистрироваться</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function showTab(tab) {
+            document.getElementById("loginSection").hidden = tab !== "login";
+            document.getElementById("registerSection").hidden = tab !== "register";
+        }
+    </script>
+    <script src="bad_passwords.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

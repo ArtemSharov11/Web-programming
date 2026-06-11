@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - HOTELA</title>
+    <link rel="icon" href="img/Frame.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="index3.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="auth.css">
+    <style>
+        .admin-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+        .admin-section {
+            display: block;
+            min-width: 0;
+            width: auto;
+            max-width: 100%;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+        .admin-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            overflow-wrap: anywhere;
+        }
+        #admin-services-list,
+        #admin-reviews-items {
+            max-height: 520px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+            box-sizing: border-box;
+        }
+        #admin-services-list h3 {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            margin: 0;
+            padding: 12px 0;
+            background: #fff;
+        }
+        .admin-actions,
+        .review-filters {
+            display: flex;
+            flex: 0 0 auto;
+            gap: 8px;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        .admin-item > span,
+        .admin-item > div:first-child {
+            min-width: 0;
+        }
+        .danger {
+            background: #d63a3a;
+            color: #fff;
+        }
+        .admin-section textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 11px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        .admin-section textarea.invalid {
+            border-color: #d32020;
+        }
+        .review-filters input {
+            flex: 1 1 140px;
+            min-width: 0;
+            padding: 10px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+        }
+        @media (max-width: 800px) {
+            .admin-layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            main > .text-h2 {
+                font-size: clamp(2rem, 12vw, 3rem);
+                overflow-wrap: anywhere;
+            }
+            .admin-item {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .admin-actions {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index3.html"><img src="img/Frame.svg" class="logo" alt="Логотип HOTELA"></a>
+        <a href="catalog.html" class="cat-btn">В каталог</a>
+    </header>
+
+    <main class="container">
+        <h1 class="text-h2">Панель администратора</h1>
+        <div class="admin-layout">
+            <section class="admin-section">
+                <div style="display:flex; justify-content:space-between; gap:1rem; align-items:center; flex-wrap:wrap;">
+                    <h2>Управление услугами</h2>
+                    <button type="button" id="open-service-modal" class="cat-btn active">Добавить услугу</button>
+                </div>
+                <div class="interactive-modal" id="service-modal" aria-hidden="true">
+                    <section class="interactive-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="serviceFormTitle">
+                        <header class="interactive-modal__header">
+                            <h2 id="serviceFormTitle" class="interactive-modal__title">Добавить услугу</h2>
+                            <button type="button" id="close-service-modal" class="interactive-modal__close" aria-label="Закрыть">×</button>
+                        </header>
+                        <form id="admin-service-form" novalidate>
+                            <input type="hidden" id="edit-id">
+                            <div class="form-group">
+                                <label for="adm-name" class="required-label">Название</label>
+                                <input type="text" id="adm-name" required>
+                                <div class="error-msg" data-error-for="adm-name"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-cat" class="required-label">Категория</label>
+                                <input type="text" id="adm-cat" required>
+                                <div class="error-msg" data-error-for="adm-cat"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-price" class="required-label">Цена</label>
+                                <input type="number" id="adm-price" min="0.01" max="100000" step="0.01" required>
+                                <div class="error-msg" data-error-for="adm-price"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-img" class="required-label">Ссылка на изображение</label>
+                                <input type="url" id="adm-img" required>
+                                <div class="error-msg" data-error-for="adm-img"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-desc" class="required-label">Описание</label>
+                                <textarea id="adm-desc" required></textarea>
+                                <div class="error-msg" data-error-for="adm-desc"></div>
+                            </div>
+                            <button type="submit" id="saveServiceBtn" class="btn-reg" disabled>Добавить услугу</button>
+                            <button type="button" onclick="resetForm()" class="cat-btn">Сбросить</button>
+                        </form>
+                    </section>
+                </div>
+                <div id="admin-services-list"></div>
+            </section>
+
+            <section class="admin-section">
+                <h2>Управление отзывами</h2>
+                <div class="review-filters">
+                    <label for="filter-id" class="visually-hidden">ID услуги или пользователя</label>
+                    <input type="text" id="filter-id" placeholder="Введите ID">
+                    <button type="button" onclick="filterReviews('service')" class="cat-btn">По услуге</button>
+                    <button type="button" onclick="filterReviews('user')" class="cat-btn">По пользователю</button>
+                    <button type="button" onclick="loadReviews()" class="cat-btn">Сбросить</button>
+                </div>
+                <div id="admin-reviews-items"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="animation.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+
